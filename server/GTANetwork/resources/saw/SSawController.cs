@@ -10,8 +10,9 @@ public class SSawController : Script {
 	public SSawController() {
 		API.onPlayerConnected += onPlayerConnected;
 		API.onPlayerFinishedDownload += onPlayerDownload;
+		API.onClientEventTrigger += onClientEvent;
 		API.sendChatMessageToAll("~r~ALERT: ~w~SAW system was restarted.~w~");
-		API.sendChatMessageToAll("~p~The world has been reset.\nSorry for the inconvenience.~w~");
+		API.sendChatMessageToAll("~p~* The world has been reset.\n* Sorry for the inconvenience.~w~");
 	}
 
 	[Command("debug-event-playerconn")]
@@ -29,10 +30,26 @@ public class SSawController : Script {
 		}
 	}
 
+	public void onClientEvent(Client player, string name, params object[] args) {
+		switch (name) {
+			case "player-tp":
+				API.setEntityInvincible(player, true);
+				API.setEntityPosition(player, (Vector3)args[0] + new Vector3(0f, 0f, 300f));
+				break;
+		}
+	}
+
 	[Command("debug-getpos")]
 	public void MDebugPos(Client player) {
 		Vector3 pos = API.getEntityPosition(player);
 		API.sendChatMessageToPlayer(player, "~b~Position:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z);
+		Vector3 rot = API.getEntityRotation(player);
+		API.sendChatMessageToPlayer(player, "~y~Rotation:~w~ ~g~X:~w~ "+rot.X+" ~g~Y:~w~ "+rot.Y+" ~g~Z:~w~ "+rot.Z);
+	}
+
+	[Command("debug-tp")]
+	public void MDebugTp(Client player) {
+		API.triggerClientEvent(player, "teleport");
 	}
 
 	[Command("debug-disable-player")]

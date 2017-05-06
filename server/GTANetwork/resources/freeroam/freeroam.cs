@@ -13,6 +13,7 @@ public class FreeroamScript : Script
     public FreeroamScript()
     {
         API.onClientEventTrigger += onClientEventTrigger;
+        API.onPlayerFinishedDownload += onPlayerDownload;
     }
 
     public Dictionary<Client, List<NetHandle>> VehicleHistory = new Dictionary<Client, List<NetHandle>>();
@@ -79,6 +80,17 @@ public class FreeroamScript : Script
             
             API.setPlayerIntoVehicle(sender, veh, -1);        
         }
+    }
+
+    [Command("pos")]
+    public void MDebugPos(Client player) {
+        Vector3 pos = API.getEntityPosition(player);
+        Vector3 rot = API.getEntityRotation(player);
+        API.sendChatMessageToPlayer(player, "~b~Position:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z+" ~g~A:~w~ "+rot.Z);
+    }
+
+    public void onPlayerDownload(Client player) {
+        API.sendChatMessageToPlayer(player, "Hey, thanks for helping out.\n~b~F1~w~ for a mini-trainer, ~g~/pos~w~ for coords.\nI need ~h~all~h~ of the coords numbers.");
     }
 
 

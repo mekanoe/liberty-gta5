@@ -1227,3 +1227,839 @@ Parameter name: source
 [23:05:13] Stopped saw!
 [23:05:13] Starting saw
 [23:05:13] Resource saw started!
+[23:14:44] Stopping saw
+[23:14:44] Stopped saw!
+[23:14:44] Starting saw
+[23:14:44] Resource saw started!
+[23:14:59] Stopping saw
+[23:14:59] Stopped saw!
+[23:14:59] Starting saw
+[23:14:59] Resource saw started!
+[23:17:39] Stopping saw
+[23:17:39] Stopped saw!
+[23:17:39] Starting saw
+[23:17:39] Error/warning while compiling script!
+[23:17:39] Error (CS1525) at 272: Unexpected symbol `='
+[23:17:39] ERROR STARTING RESOURCE saw
+[23:17:39] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[23:17:52] Starting saw
+[23:17:52] Error/warning while compiling script!
+[23:17:52] Error (CS0019) at 272: Operator `==' cannot be applied to operands of type `int' and `string'
+[23:17:52] ERROR STARTING RESOURCE saw
+[23:17:52] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[23:18:08] Starting saw
+[23:18:09] Resource saw started!
+[23:23:24] Stopping saw
+[23:23:24] Stopped saw!
+[23:23:24] Starting saw
+[23:23:24] Error/warning while compiling script!
+[23:23:24] Error (CS0163) at 274: Control cannot fall through from one case label `case "weather":' to another
+[23:23:24] Warning (CS0162) at 278: Unreachable code detected
+[23:23:24] ERROR STARTING RESOURCE saw
+[23:23:24] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[23:23:35] Starting saw
+[23:23:35] Resource saw started!
+[23:53:41] Starting freeroam
+[23:53:41] Stopping saw
+[23:53:41] Stopped saw!
+[23:53:42] Resource freeroam started!
+[23:55:52] Starting saw
+[23:55:52] Stopping freeroam
+[23:55:52] Stopped freeroam!
+[23:55:52] Resource saw started!
+[00:11:56] Stopping saw
+[00:11:56] Stopped saw!
+[00:11:56] Starting saw
+[00:11:56] Error/warning while compiling script!
+[00:11:56] Error (CS1502) at 203: The best overloaded method match for `GTANetworkServer.API.sendNativeToAllPlayers(ulong, params object[])' has some invalid arguments
+[00:11:56] Error (CS1503) at 203: Argument `#1' cannot convert `string' expression to type `ulong'
+[00:11:56] Error (CS1502) at 205: The best overloaded method match for `GTANetworkServer.API.sendNativeToAllPlayers(ulong, params object[])' has some invalid arguments
+[00:11:56] Error (CS1503) at 205: Argument `#1' cannot convert `string' expression to type `ulong'
+[00:11:56] Error (CS0127) at 210: `SSawWorld.GetWorldBlackoutState()': A return keyword must not be followed by any expression when method returns void
+[00:11:56] ERROR STARTING RESOURCE saw
+[00:11:56] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[00:12:28] Starting saw
+[00:12:28] Error/warning while compiling script!
+[00:12:28] Error (CS1502) at 203: The best overloaded method match for `GTANetworkServer.API.sendNativeToAllPlayers(ulong, params object[])' has some invalid arguments
+[00:12:28] Error (CS1503) at 203: Argument `#1' cannot convert `string' expression to type `ulong'
+[00:12:28] Error (CS1502) at 205: The best overloaded method match for `GTANetworkServer.API.sendNativeToAllPlayers(ulong, params object[])' has some invalid arguments
+[00:12:28] Error (CS1503) at 205: Argument `#1' cannot convert `string' expression to type `ulong'
+[00:12:28] ERROR STARTING RESOURCE saw
+[00:12:28] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[00:12:48] Starting saw
+[00:12:48] Error/warning while compiling script!
+[00:12:48] Error (CS1061) at 203: Type `GTANetworkServer.API' does not contain a definition for `sendChatMessageToAllPlayers' and no extension method `sendChatMessageToAllPlayers' of type `GTANetworkServer.API' could be found. Are you missing an assembly reference?
+[00:12:48] Error (CS1061) at 205: Type `GTANetworkServer.API' does not contain a definition for `sendChatMessageToAllPlayers' and no extension method `sendChatMessageToAllPlayers' of type `GTANetworkServer.API' could be found. Are you missing an assembly reference?
+[00:12:48] ERROR STARTING RESOURCE saw
+[00:12:48] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[00:13:06] Starting saw
+[00:13:06] Resource saw started!
+[00:13:24] Stopping saw
+[00:13:24] Stopped saw!
+[00:13:24] Starting saw
+[00:13:24] Resource saw started!
+[00:20:55] Stopping saw
+[00:20:55] Stopped saw!
+[00:20:55] Starting saw
+[00:20:55] Resource saw started!
+[00:33:13] Stopping saw
+[00:33:13] Stopped saw!
+[00:33:13] Starting saw
+[00:33:13] Resource saw started!
+[00:36:47] Stopping saw
+[00:36:47] Stopped saw!
+[00:36:47] Starting saw
+[00:36:47] Resource saw started!
+[00:38:43] Stopping saw
+[00:38:43] Stopped saw!
+[00:38:43] Starting saw
+[00:38:43] Resource saw started!
+[00:40:58] Stopping saw
+[00:40:58] Stopped saw!
+[00:40:58] Starting saw
+[00:40:58] Resource saw started!
+[00:44:01] Stopping saw
+[00:44:01] Stopped saw!
+[00:44:01] Starting saw
+[00:44:01] Resource saw started!
+[00:44:11] Stopping saw
+[00:44:11] Stopped saw!
+[00:44:11] Starting saw
+[00:44:11] Resource saw started!
+[00:51:39] Stopping saw
+[00:51:39] Stopped saw!
+[00:51:39] Starting saw
+[00:51:39] Resource saw started!
+[01:17:09] Stopping saw
+[01:17:09] Stopped saw!
+[01:17:09] Starting saw
+[01:17:10] Resource saw started!
+[01:17:48] Stopping saw
+[01:17:48] Stopped saw!
+[01:17:48] Starting saw
+[01:17:48] Resource saw started!
+[01:18:25] Stopping saw
+[01:18:25] Stopped saw!
+[01:18:25] Starting saw
+[01:18:25] Resource saw started!
+[01:20:24] Stopping saw
+[01:20:24] Stopped saw!
+[01:20:24] Starting saw
+[01:20:25] Resource saw started!
+[01:21:20] Stopping saw
+[01:21:20] Stopped saw!
+[01:21:20] Starting saw
+[01:21:20] Resource saw started!
+[01:23:55] Stopping saw
+[01:23:55] Stopped saw!
+[01:23:55] Starting saw
+[01:23:55] Resource saw started!
+[01:24:22] Stopping saw
+[01:24:22] Stopped saw!
+[01:24:22] Starting saw
+[01:24:22] Resource saw started!
+[01:24:43] Stopping saw
+[01:24:43] Stopped saw!
+[01:24:43] Starting saw
+[01:24:43] Resource saw started!
+[01:31:39] Stopping saw
+[01:31:39] Stopped saw!
+[01:31:39] Starting saw
+[01:31:39] Resource saw started!
+[01:31:50] Stopping saw
+[01:31:50] Stopped saw!
+[01:31:50] Starting saw
+[01:31:50] Resource saw started!
+[01:32:09] Stopping saw
+[01:32:09] Stopped saw!
+[01:32:09] Starting saw
+[01:32:10] Resource saw started!
+[01:32:19] Stopping saw
+[01:32:19] Stopped saw!
+[01:32:19] Starting saw
+[01:32:19] Resource saw started!
+[01:46:56] Stopping saw
+[01:46:56] Stopped saw!
+[01:46:56] Starting saw
+[01:46:56] Error/warning while compiling script!
+[01:46:56] Error (CS1002) at 48: ; expected
+[01:46:56] ERROR STARTING RESOURCE saw
+[01:46:56] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:47:02] Starting saw
+[01:47:03] Error/warning while compiling script!
+[01:47:03] Error (CS1502) at 39: The best overloaded method match for `SPowerStation.onEventTrigger(GTANetworkServer.Client, string)' has some invalid arguments
+[01:47:03] Error (CS1503) at 39: Argument `#2' cannot convert `object' expression to type `string'
+[01:47:03] Error (CS0120) at 47: An object reference is required to access non-static member `SSawWorld.GetWorldBlackoutState()'
+[01:47:03] Error (CS0120) at 47: An object reference is required to access non-static member `SSawWorld.SetWorldBlackoutState(bool)'
+[01:47:03] ERROR STARTING RESOURCE saw
+[01:47:03] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:47:21] Starting saw
+[01:47:21] Error/warning while compiling script!
+[01:47:21] Error (CS0120) at 47: An object reference is required to access non-static member `SSawWorld.GetWorldBlackoutState()'
+[01:47:21] Error (CS0120) at 47: An object reference is required to access non-static member `SSawWorld.SetWorldBlackoutState(bool)'
+[01:47:21] ERROR STARTING RESOURCE saw
+[01:47:21] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:53:38] Starting saw
+[01:53:38] Error/warning while compiling script!
+[01:53:38] Error (CS0266) at 47: Cannot implicitly convert type `object' to `bool'. An explicit conversion exists (are you missing a cast?)
+[01:53:38] ERROR STARTING RESOURCE saw
+[01:53:38] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:54:27] Starting saw
+[01:54:27] Resource saw started!
+[01:55:12] Stopping saw
+[01:55:12] Stopped saw!
+[01:55:12] Starting saw
+[01:55:12] Resource saw started!
+[01:55:20] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:20] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:20] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:24] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:24] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:24] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:25] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:25] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:25] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:26] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:26] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:26] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:26] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:26] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:26] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:26] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:26] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:26] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:30] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:30] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:30] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:31] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:31] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:31] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:31] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:31] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:31] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:32] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:32] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:32] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:32] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:32] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:32] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:33] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:33] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:33] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:38] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:38] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:38] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:38] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:38] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:38] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:38] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:38] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:38] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:38] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:38] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:38] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:39] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:39] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:39] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:39] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:39] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:39] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:39] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:39] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:39] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:39] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:39] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:39] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:55:39] ERROR: call() - No class named 'CSawWorld' was found.
+[01:55:39] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:55:39] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00041] in <c0643361416a4a17aee0436f5928b457>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <c0643361416a4a17aee0436f5928b457>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:56:32] Stopping saw
+[01:56:32] Stopped saw!
+[01:56:32] Starting saw
+[01:56:32] Resource saw started!
+[01:57:03] Stopping saw
+[01:57:03] Stopped saw!
+[01:57:03] Starting saw
+[01:57:04] Resource saw started!
+[01:57:05] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:05] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:05] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:05] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:05] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:05] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:05] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:05] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:05] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:05] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:05] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:05] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:05] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:05] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:05] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:05] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:05] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:05] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:05] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:05] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:05] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:05] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:05] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:05] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:09] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:09] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:09] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:09] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:09] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:09] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:09] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:09] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:09] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:10] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:10] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:10] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:10] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:10] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:10] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:12] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:12] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:12] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:12] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:12] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:12] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:12] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:12] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:12] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:12] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:12] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:12] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:12] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:12] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:12] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:12] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:12] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:12] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:12] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:12] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:12] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:13] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:13] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:13] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00059] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <72ff7142ddc64b7c8b32e2cdcaf28d80>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:44] Stopping saw
+[01:57:44] Stopped saw!
+[01:57:44] Starting saw
+[01:57:45] Resource saw started!
+[01:57:45] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:45] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:45] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:45] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:45] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:45] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:45] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:45] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:45] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:47] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:47] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:47] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:57:47] ERROR: call() - No class named 'CSawWorld' was found.
+[01:57:47] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:57:47] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <ab463fedc9bd4e1b8cec6e0bae1abfdd>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:58:56] Stopping saw
+[01:58:56] Stopped saw!
+[01:58:56] Starting saw
+[01:58:57] Resource saw started!
+[01:58:57] ERROR: call() - No class named 'CSawWorld' was found.
+[01:58:57] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:58:57] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:58:57] ERROR: call() - No class named 'CSawWorld' was found.
+[01:58:57] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:58:57] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:58:57] ERROR: call() - No class named 'CSawWorld' was found.
+[01:58:57] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:58:57] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:58:57] ERROR: call() - No class named 'CSawWorld' was found.
+[01:58:57] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:58:57] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[01:58:57] ERROR: call() - No class named 'CSawWorld' was found.
+[01:58:57] EXCEPTION IN RESOURCE saw INSIDE SCRIPTENGINE SPowerStation
+[01:58:57] System.NullReferenceException: Object reference not set to an instance of an object
+  at SPowerStation.onEventTrigger (GTANetworkServer.Client player, System.String type) [0x00058] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at SPowerStation.onClientEvent (GTANetworkServer.Client player, System.String eventName, System.Object[] args) [0x0001b] in <3bf7fde8fd5e4338bc8fbc977ecc8be3>:0 
+  at GTANetworkServer.API.invokeClientEvent (GTANetworkServer.Client sender, System.String eventName, System.Object[] arsg) [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine+<>c__DisplayClass58_0.<InvokeClientEvent>b__0 () [0x0000e] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[02:01:54] Stopping saw
+[02:01:54] Stopped saw!
+[02:01:54] Starting saw
+[02:01:54] Resource saw started!
+[02:02:05] ERROR: call() - No class named 'CSawWorld' was found.
+[02:02:05] ERROR: call() - No class named 'CSawWorld' was found.
+[02:02:05] ERROR: call() - No class named 'CSawWorld' was found.
+[02:02:05] ERROR: call() - No class named 'CSawWorld' was found.
+[02:02:05] ERROR: call() - No class named 'CSawWorld' was found.
+[02:02:07] ERROR: call() - No class named 'CSawWorld' was found.
+[02:02:07] ERROR: call() - No class named 'CSawWorld' was found.
+[02:04:29] Stopping saw
+[02:04:29] Stopped saw!
+[02:04:29] Starting saw
+[02:04:29] Resource saw started!
+[02:05:16] Stopping saw
+[02:05:16] Stopped saw!
+[02:05:16] Starting saw
+[02:05:16] Resource saw started!
+[02:06:47] Stopping saw
+[02:06:47] Stopped saw!
+[02:06:47] Starting saw
+[02:06:47] Resource saw started!
+[02:07:56] Stopping saw
+[02:07:56] Stopped saw!
+[02:07:56] Starting saw
+[02:07:56] Resource saw started!
+[02:08:46] Stopping saw
+[02:08:46] Stopped saw!
+[02:08:46] Starting saw
+[02:08:46] Resource saw started!
+[02:27:35] Stopping saw
+[02:27:35] Stopped saw!
+[02:27:35] Starting saw
+[02:27:35] Resource saw started!
+[02:34:01] Stopping saw
+[02:34:01] Stopped saw!
+[02:34:01] Starting saw
+[02:34:02] Resource saw started!
+[03:06:43] Stopping saw
+[03:06:43] Stopped saw!
+[03:06:43] Starting saw
+[03:06:43] Error/warning while compiling script!
+[03:06:43] Error (CS8070) at 35: Control cannot fall out of switch statement through final case label `case "player-tp":'
+[03:06:43] ERROR STARTING RESOURCE saw
+[03:06:43] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[03:06:58] Starting saw
+[03:06:59] Resource saw started!
+[03:08:37] Stopping saw
+[03:08:37] Stopped saw!
+[03:08:37] Starting saw
+[03:08:37] Error/warning while compiling script!
+[03:08:37] Error (CS1061) at 36: Type `GTANetworkServer.API' does not contain a definition for `setPlayerInvincible' and no extension method `setPlayerInvincible' of type `GTANetworkServer.API' could be found. Are you missing an assembly reference?
+[03:08:37] ERROR STARTING RESOURCE saw
+[03:08:37] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[03:08:49] Starting saw
+[03:08:49] Error/warning while compiling script!
+[03:08:49] Error (CS1061) at 36: Type `GTANetworkServer.API' does not contain a definition for `setPlayerInvincible' and no extension method `setPlayerInvincible' of type `GTANetworkServer.API' could be found. Are you missing an assembly reference?
+[03:08:49] ERROR STARTING RESOURCE saw
+[03:08:49] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[03:09:41] Starting saw
+[03:09:41] Resource saw started!
+[03:10:04] Stopping saw
+[03:10:04] Stopped saw!
+[03:10:04] Starting saw
+[03:10:05] Resource saw started!
+[03:10:38] Stopping saw
+[03:10:38] Stopped saw!
+[03:10:38] Starting saw
+[03:10:38] Resource saw started!
+[03:11:54] Stopping saw
+[03:11:54] Stopped saw!
+[03:11:54] Starting saw
+[03:11:54] Resource saw started!
+[03:14:45] Starting freeroam
+[03:14:45] Stopping saw
+[03:14:45] Stopped saw!
+[03:14:45] Resource freeroam started!
+[03:21:05] Stopping freeroam
+[03:21:05] Stopped freeroam!
+[03:21:05] Starting freeroam
+[03:21:05] Resource freeroam started!
+[03:52:06] Player disconnected: kayteh (Katie) [10.0.0.64], reason: Switching servers
+[03:52:21] Terminating...
+[03:52:21] Stopping freeroam
+[03:52:21] Stopped freeroam!
+[03:52:21] Stopping speedometer
+[03:52:21] Stopped speedometer!
+[03:52:21] Stopping admin
+[03:52:21] Stopped admin!
+-> SERVER STARTED AT 5/4/2017 7:50:26 PM[19:50:26] Starting...
+[19:50:26] Loading resources...
+[19:50:26] Starting admin
+[19:50:27] Resource admin started!
+[19:50:27] Starting speedometer
+[19:50:27] Resource speedometer started!
+[19:50:27] Starting freeroam
+[19:50:27] Resource freeroam started!
+[19:50:27] Started! Waiting for connections.
+[19:53:23] Initiating connection: [10.0.0.64:50450]
+[19:53:23] Processing connection: kayteh (Katie) [10.0.0.64]
+[19:53:23] Player disconnected: kayteh (Katie) [10.0.0.64], reason: bye
+[19:53:27] Initiating connection: [10.0.0.64:51509]
+[19:53:27] Processing connection: kayteh (Katie) [10.0.0.64]
+[19:53:27] Connection established: kayteh (Katie) [10.0.0.64]
+[20:49:15] Stopping freeroam
+[20:49:15] Stopped freeroam!
+[20:49:15] Starting freeroam
+[20:49:15] Resource freeroam started!
+[20:53:46] Player disconnected: kayteh (Katie) [10.0.0.64], reason: Quit

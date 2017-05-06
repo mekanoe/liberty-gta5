@@ -1,15 +1,45 @@
+function debounce(func, wait, immediate) {
+    let timeout
+    return function() {
+        let context = this, args = arguments
+        let later = function() {
+            timeout = null
+            if (!immediate) {
+                func.apply(context, args)
+            }
+        }
+        let callNow = immediate && !timeout
+        clearTimeout(timeout)
+        timeout = setTimeout(later, wait)
+        if (callNow) {
+            func.apply(context, args)
+        }
+    }
+}
+
 class PlayerEntity {
     constructor () {
         this.disabled = false
+        this.nearbyEvent = null
+        this.triggeredNearbyEvent = false
+        this.entity = API.getLocalPlayer()
     }
 
     disablePlayer (state = true) {
         this.disabled = state
     }
 
-    disableTick() {
+    onTick() {
         if (this.disabled) {
             API.disableAllControlsThisFrame()
+        }
+
+        if (this.nearbyEvent !== null && this.triggeredNearbyEvent === false) {
+            if (API.isControlPressed(23)) {
+                API.triggerServerEvent('triggerableEvent:trigger', this.nearbyEvent)
+                // API.sendChatMessage('pressed trigger for '+ this.nearbyEvent)
+                this.triggeredNearbyEvent = true
+            }
         }
     }
 }
@@ -45,9 +75,34 @@ API.onServerEventTrigger.connect(function (name, args) {
         case 'enablePlayer':
             Player.disablePlayer(false)
             break
+
+        case 'teleport':
+            if (API.isWaypointSet()) {
+                API.triggerServerEvent("player-tp", API.getWaypointPosition())
+            }
+
+        case 'worldEv:blackout:on':
+            API.playSoundFrontEnd('Power_Down', 'DLC_HEIST_HACKING_SNAKE_SOUNDS')
+            break
+
+        case 'worldEv:blackout:off':
+            API.playSoundFrontEnd('Drill_Pin_Break', 'DLC_HEIST_FLEECA_SOUNDSET')
+            break     
+
+        case 'triggerableEvent:enter':
+            Player.nearbyEvent = args[0]
+            // API.sendNotification(`Entered trigger for ~b~${args[0]}.`)
+            break
+
+        case 'triggerableEvent:exit':
+            Player.nearbyEvent = null
+            Player.triggeredNearbyEvent = false
+            // API.sendNotification(`Exited trigger for ~b~${args[0]}.`)
+            break
+
     }
 });
 
 API.onUpdate.connect(() => {
-    Player.disableTick()
+    Player.onTick()
 })

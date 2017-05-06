@@ -4,4 +4,9 @@
 	<script src="CSawPlayer.js" type="client" lang="javascript" />
 	<script src="SSawController.cs" type="server" lang="csharp" />
 	<script src="SSawWorld.cs" type="server" lang="csharp" />
+	<script src="SPowerStation.cs" type="server" lang="csharp" />
+
+	<!-- <file src="data/spawns.json" /> -->
+	<!-- <file src="data/loot.json" /> -->
+	<!-- <file src="data/events.json" /> -->
 </meta>

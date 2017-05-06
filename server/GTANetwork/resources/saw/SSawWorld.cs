@@ -17,14 +17,14 @@ public class SSawWorld : Script {
 	// We sync world state every 1 minute
 	private DateTime lastSync;
 
-	// Time cycle is 6 Earth hours = 24 Game hours.
-	// Every sync step (1 minute) will move the clock 4 minutes 
+	// Time cycle is 3 Earth hours = 24 Game hours.
+	// Every sync step (1 minute) will move the clock 8 minutes 
 	// This number is in zulu time, the sync system understands up to a 4 digit int.
 	private int gameTime = 0800;
 	private int timeSpeed = 4;
 
 	// This is in seconds. World will only sync this fast.
-	private int worldTickRate = 60;
+	private int worldTickRate = 30;
 
 	// This is IN-GAME TIME ^^^^
 	private int lastWeatherStepTime = 0;
@@ -195,6 +195,27 @@ public class SSawWorld : Script {
 
 	}
 
+	public void SetWorldBlackoutState(bool state) {
+		isBlackout = state;
+		GlobalBlackoutSync();
+
+		if (state) {
+			API.sendChatMessageToAll("~b~* San Andreas goes dark...");
+			API.triggerClientEventForAll("worldEv:blackout:on");
+		} else {
+			API.sendChatMessageToAll("~g~* San Andreas comes back to life...");
+			API.triggerClientEventForAll("worldEv:blackout:off");
+		}
+	}
+
+	public void ToggleWorldBlackoutState() {
+		SetWorldBlackoutState(!isBlackout);
+	}
+
+	public bool GetWorldBlackoutState() {
+		return isBlackout;
+	}
+ 
 	private void TimeTick() {
 		int hours = gameTime / 100 % 23;
 		int minutes = gameTime % 100 % 60;
@@ -209,7 +230,7 @@ public class SSawWorld : Script {
 	}
 
 	private void WeatherTick() {
-		if (gameTime - lastWeatherStepTime >= 100) {
+		if (gameTime - lastWeatherStepTime >= 300) {
 			WeatherStep();
 		}
 	}
@@ -248,14 +269,14 @@ public class SSawWorld : Script {
 		API.sendChatMessageToAll("~p~Synced.~w~\n~b~Current Time: ~w~"+gameTime+"\n~y~Current Weather: ~w~"+currentWeather);
 	}
 
-	[Command("debug-world")]
-	public void MDebugWorld(Client sender, bool debugState) {
+	[Command("debug-world-msgs")]
+	public void MDebugWorldMessages(Client sender, bool debugState) {
 		debug = debugState;
 		API.sendChatMessageToPlayer(sender, "Debug messages set to ~r~"+debugState);
 	}
 
-	[Command("debug-time")]
-	public void MDebugTime(Client sender, string thing, int val) {
+	[Command("debug-world")]
+	public void MDebugWorld(Client sender, string thing, int val) {
 		switch (thing) {
 			case "speed":
 				timeSpeed = val;
@@ -267,6 +288,14 @@ public class SSawWorld : Script {
 				break;
 			case "tickrate":
 				worldTickRate = val;
+				break;
+			case "blackout":
+				SetWorldBlackoutState(val == 1);
+				break;
+			case "weather":
+				weatherIndex = 0;
+				RandomWeatherPattern();
+				GlobalWeatherSync();
 				break;
 			default:
 				API.sendChatMessageToPlayer(sender, "~r~ERROR: ~w~Dunno what "+thing+"is.");
