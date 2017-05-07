@@ -1,0 +1,5 @@
+<meta>
+	<info name="LibertyRP: Autoloader" author="LibertyRP:Katie" version="0.1" />
+
+	<script src="SAutoloader.cs" type="server" lang="csharp" />
+</meta>
