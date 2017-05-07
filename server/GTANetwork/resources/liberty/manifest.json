@@ -1,5 +1,6 @@
 {
   "modules": [
-    "gamemode"
+    "gamemode",
+    "spawn-manager"
   ]
 }

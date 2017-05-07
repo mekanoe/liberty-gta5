@@ -11,7 +11,8 @@ main () {
 
   check_deps
 
-  find * -type dir -not -name "_*" | xargs -I '%' -- jq -n --arg DIRS "%" '{ modules: $DIRS | split("\n") }' > manifest.json
+  local DIRS=$(find * -type dir -not -name "_*")
+  jq -n --arg DIRS "${DIRS}" '{ modules: $DIRS | split("\n") }' | tee manifest.json
   echo "wrote to manifest.json"
 
   cd "$originalWd"

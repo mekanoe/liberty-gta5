@@ -1,4 +1,4 @@
 <meta>
 	<info name="LibertyRP: Gamemode" author="LibertyRP:Katie" version="0.1" type="gamemode" />
-
+	<script src="SGamemode.cs" type="server" lang="csharp" />
 </meta>
