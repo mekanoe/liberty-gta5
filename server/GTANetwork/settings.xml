@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <servername>San Andreas Wasteland [Survival][NOT RP] - LibertyRP.net DEV</servername>
+  <servername>LibertyRP DEV</servername>
   <serverport>4499</serverport>
   <maxplayers>50</maxplayers>
   <minclientversion>0.0.0.0</minclientversion>
@@ -19,7 +19,7 @@
   <refresh_rate>120</refresh_rate>
   <resource src="admin" />
   <resource src="speedometer" />
-  <resource src="freeroam" />
+  <resource src="liberty/_loader" />
   <announce_lan>true</announce_lan>
   <upnp>false</upnp>
   <fqdn></fqdn>

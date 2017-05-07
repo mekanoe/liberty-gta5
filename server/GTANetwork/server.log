@@ -2063,3 +2063,263 @@ Parameter name: source
 [20:49:15] Starting freeroam
 [20:49:15] Resource freeroam started!
 [20:53:46] Player disconnected: kayteh (Katie) [10.0.0.64], reason: Quit
+[19:55:26] Terminating...
+[19:55:26] Stopping freeroam
+[19:55:26] Stopped freeroam!
+[19:55:26] Stopping speedometer
+[19:55:26] Stopped speedometer!
+[19:55:26] Stopping admin
+[19:55:26] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:55:28 PM[19:55:28] Starting...
+[19:55:28] Loading resources...
+[19:55:28] Starting admin
+[19:55:29] Resource admin started!
+[19:55:29] Starting speedometer
+[19:55:29] Resource speedometer started!
+[19:55:29] Starting liberty/_loader
+[19:55:29] Error/warning while compiling script!
+[19:55:29] Error (CS0103) at 12: The name `Encoding' does not exist in the current context
+[19:55:29] ERROR STARTING RESOURCE liberty/_loader
+[19:55:29] System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Select[TSource,TResult] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] selector) [0x00010] in <2392cff65f724abaaed9de072f62bc4a>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x00a39] in <13566cfda3e944de863f8ac823770d4d>:0 
+[19:55:29] Started! Waiting for connections.
+[19:55:34] Terminating...
+[19:55:34] Stopping speedometer
+[19:55:34] Stopped speedometer!
+[19:55:34] Stopping admin
+[19:55:34] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:55:51 PM[19:55:51] Starting...
+[19:55:52] Loading resources...
+[19:55:52] Starting admin
+[19:55:52] Resource admin started!
+[19:55:52] Starting speedometer
+[19:55:52] Resource speedometer started!
+[19:55:52] Starting liberty/_loader
+[19:55:52] Resource liberty/_loader started!
+[19:55:52] Started! Waiting for connections.
+[19:55:52] EXCEPTION IN RESOURCE liberty/_loader INSIDE SCRIPTENGINE SAutoloader
+[19:55:52] System.IO.FileNotFoundException: Could not find file "/Users/katie/Devel/GTA5/server/GTANetwork/..\manifest.json".
+File name: '/Users/katie/Devel/GTA5/server/GTANetwork/..\manifest.json'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0021a] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options, System.String msgPath, System.Boolean bFromProxy, System.Boolean useLongPath, System.Boolean checkHost) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions,string,bool,bool,bool)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize, System.Boolean checkHost) [0x00079] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00009] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string,System.Text.Encoding)
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at SAutoloader.autoload () [0x0000a] in <2a5ebcbcd9bd43239e17bef68f231d94>:0 
+  at GTANetworkServer.API.invokeResourceStart () [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.<InvokeResourceStart>b__28_0 () [0x00009] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[19:56:06] Terminating...
+[19:56:06] Stopping liberty/_loader
+[19:56:06] Stopped liberty/_loader!
+[19:56:06] Stopping speedometer
+[19:56:06] Stopped speedometer!
+[19:56:06] Stopping admin
+[19:56:06] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:56:07 PM[19:56:07] Starting...
+[19:56:07] Loading resources...
+[19:56:07] Starting admin
+[19:56:07] Resource admin started!
+[19:56:07] Starting speedometer
+[19:56:07] Resource speedometer started!
+[19:56:07] Starting liberty/_loader
+[19:56:08] Resource liberty/_loader started!
+[19:56:08] Started! Waiting for connections.
+[19:56:08] EXCEPTION IN RESOURCE liberty/_loader INSIDE SCRIPTENGINE SAutoloader
+[19:56:08] System.IO.FileNotFoundException: Could not find file "/Users/katie/Devel/GTA5/server/manifest.json".
+File name: '/Users/katie/Devel/GTA5/server/manifest.json'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0021a] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options, System.String msgPath, System.Boolean bFromProxy, System.Boolean useLongPath, System.Boolean checkHost) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions,string,bool,bool,bool)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize, System.Boolean checkHost) [0x00079] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00009] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string,System.Text.Encoding)
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at SAutoloader.autoload () [0x0000a] in <52ff89bb05a344f5895e63cf692046c7>:0 
+  at GTANetworkServer.API.invokeResourceStart () [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.<InvokeResourceStart>b__28_0 () [0x00009] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[19:56:19] Terminating...
+[19:56:19] Stopping liberty/_loader
+[19:56:19] Stopped liberty/_loader!
+[19:56:19] Stopping speedometer
+[19:56:19] Stopped speedometer!
+[19:56:19] Stopping admin
+[19:56:19] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:56:20 PM[19:56:20] Starting...
+[19:56:20] Loading resources...
+[19:56:20] Starting admin
+[19:56:20] Resource admin started!
+[19:56:20] Starting speedometer
+[19:56:20] Resource speedometer started!
+[19:56:20] Starting liberty/_loader
+[19:56:21] Resource liberty/_loader started!
+[19:56:21] Started! Waiting for connections.
+[19:56:21] EXCEPTION IN RESOURCE liberty/_loader INSIDE SCRIPTENGINE SAutoloader
+[19:56:21] System.IO.FileNotFoundException: Could not find file "/Users/katie/Devel/GTA5/server/manifest.json".
+File name: '/Users/katie/Devel/GTA5/server/manifest.json'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0021a] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options, System.String msgPath, System.Boolean bFromProxy, System.Boolean useLongPath, System.Boolean checkHost) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions,string,bool,bool,bool)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize, System.Boolean checkHost) [0x00079] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00009] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string,System.Text.Encoding)
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at SAutoloader.autoload () [0x0000a] in <59d8129d56e04362887b65203c5bdc52>:0 
+  at GTANetworkServer.API.invokeResourceStart () [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.<InvokeResourceStart>b__28_0 () [0x00009] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[19:56:59] Terminating...
+[19:56:59] Stopping liberty/_loader
+[19:56:59] Stopped liberty/_loader!
+[19:56:59] Stopping speedometer
+[19:56:59] Stopped speedometer!
+[19:56:59] Stopping admin
+[19:56:59] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:56:59 PM[19:56:59] Starting...
+[19:57:00] Loading resources...
+[19:57:00] Starting admin
+[19:57:00] Resource admin started!
+[19:57:00] Starting speedometer
+[19:57:00] Resource speedometer started!
+[19:57:00] Starting liberty/_loader
+[19:57:00] Resource liberty/_loader started!
+[19:57:00] Started! Waiting for connections.
+[19:57:00] EXCEPTION IN RESOURCE liberty/_loader INSIDE SCRIPTENGINE SAutoloader
+[19:57:00] System.IO.FileNotFoundException: Could not find file "/Users/katie/Devel/GTA5/server/GTANetwork/resources/liberty/_loader/manifest.json".
+File name: '/Users/katie/Devel/GTA5/server/GTANetwork/resources/liberty/_loader/manifest.json'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0021a] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options, System.String msgPath, System.Boolean bFromProxy, System.Boolean useLongPath, System.Boolean checkHost) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions,string,bool,bool,bool)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize, System.Boolean checkHost) [0x00079] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00009] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string,System.Text.Encoding)
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at SAutoloader.autoload () [0x0001a] in <02e013122e21452186d20d7e9ce6229f>:0 
+  at GTANetworkServer.API.invokeResourceStart () [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.<InvokeResourceStart>b__28_0 () [0x00009] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[19:57:10] Terminating...
+[19:57:10] Stopping liberty/_loader
+[19:57:10] Stopped liberty/_loader!
+[19:57:10] Stopping speedometer
+[19:57:10] Stopped speedometer!
+[19:57:10] Stopping admin
+[19:57:10] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:57:11 PM[19:57:11] Starting...
+[19:57:11] Loading resources...
+[19:57:11] Starting admin
+[19:57:11] Resource admin started!
+[19:57:11] Starting speedometer
+[19:57:11] Resource speedometer started!
+[19:57:11] Starting liberty/_loader
+[19:57:12] Resource liberty/_loader started!
+[19:57:12] Started! Waiting for connections.
+[19:57:12] EXCEPTION IN RESOURCE liberty/_loader INSIDE SCRIPTENGINE SAutoloader
+[19:57:12] System.IO.DirectoryNotFoundException: Could not find a part of the path "/Users/katie/Devel/GTA5/server/GTANetwork/resources/liberty/_loader../manifest.json".
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x001cf] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options, System.String msgPath, System.Boolean bFromProxy, System.Boolean useLongPath, System.Boolean checkHost) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions,string,bool,bool,bool)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize, System.Boolean checkHost) [0x00079] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00009] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string,System.Text.Encoding)
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+  at SAutoloader.autoload () [0x0001a] in <b35cb0e7fab046ae84ba9b6aaf70dcbe>:0 
+  at GTANetworkServer.API.invokeResourceStart () [0x0000a] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.<InvokeResourceStart>b__28_0 () [0x00009] in <13566cfda3e944de863f8ac823770d4d>:0 
+  at GTANetworkServer.ScriptingEngine.MainThreadLoop () [0x0008d] in <13566cfda3e944de863f8ac823770d4d>:0 
+[19:57:21] Terminating...
+[19:57:21] Stopping liberty/_loader
+[19:57:21] Stopped liberty/_loader!
+[19:57:21] Stopping speedometer
+[19:57:21] Stopped speedometer!
+[19:57:21] Stopping admin
+[19:57:21] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:57:22 PM[19:57:22] Starting...
+[19:57:22] Loading resources...
+[19:57:22] Starting admin
+[19:57:22] Resource admin started!
+[19:57:22] Starting speedometer
+[19:57:22] Resource speedometer started!
+[19:57:22] Starting liberty/_loader
+[19:57:23] Resource liberty/_loader started!
+[19:57:23] Started! Waiting for connections.
+[19:57:23] Starting liberty/gamemode
+[19:57:23] ERROR STARTING RESOURCE liberty/gamemode
+[19:57:23] System.InvalidOperationException: There is an error in XML document (0, 0). ---> System.Xml.XmlException: Root element is missing.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x0002a] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowWithoutLineInfo (System.String res) [0x00017] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlTextReaderImpl.ParseDocumentContent () [0x0041e] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00097] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlTextReader.Read () [0x00000] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlReader.MoveToContent () [0x0004b] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderResourceInfo.Read17_meta () [0x00008] in <917f5d9090cf4cd8b3adbc5458fc95ba>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00038] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+   --- End of inner exception stack trace ---
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.XmlReader xmlReader, System.String encodingStyle, System.Xml.Serialization.XmlDeserializationEvents events) [0x00139] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.XmlReader xmlReader, System.String encodingStyle) [0x00000] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.IO.Stream stream) [0x0001c] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x000e5] in <13566cfda3e944de863f8ac823770d4d>:0 
+[19:58:39] Terminating...
+[19:58:39] Stopping liberty/_loader
+[19:58:39] Stopped liberty/_loader!
+[19:58:39] Stopping speedometer
+[19:58:39] Stopped speedometer!
+[19:58:39] Stopping admin
+[19:58:39] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:58:39 PM[19:58:39] Starting...
+[19:58:40] Loading resources...
+[19:58:40] Starting admin
+[19:58:40] Resource admin started!
+[19:58:40] Starting speedometer
+[19:58:40] Resource speedometer started!
+[19:58:40] Starting liberty/_loader
+[19:58:40] Resource liberty/_loader started!
+[19:58:40] Started! Waiting for connections.
+[19:58:40] LIBERTYRP AUTOLOADER: loading liberty/gamemode
+[19:58:40] Starting liberty/gamemode
+[19:58:40] ERROR STARTING RESOURCE liberty/gamemode
+[19:58:40] System.InvalidOperationException: There is an error in XML document (0, 0). ---> System.Xml.XmlException: Root element is missing.
+  at System.Xml.XmlTextReaderImpl.Throw (System.Exception e) [0x0002a] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlTextReaderImpl.ThrowWithoutLineInfo (System.String res) [0x00017] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlTextReaderImpl.ParseDocumentContent () [0x0041e] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlTextReaderImpl.Read () [0x00097] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlTextReader.Read () [0x00000] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.XmlReader.MoveToContent () [0x0004b] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderResourceInfo.Read17_meta () [0x00008] in <5ac83d5391da43028e4277b990d47f52>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00038] in <dbb16e0bacdc4a0f87478e401bc29b6c>:0 
+   --- End of inner exception stack trace ---
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.XmlReader xmlReader, System.String encodingStyle, System.Xml.Serialization.XmlDeserializationEvents events) [0x00139] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.XmlReader xmlReader, System.String encodingStyle) [0x00000] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.IO.Stream stream) [0x0001c] in <7a7beac9df414bd3b6be31930c5e0f8b>:0 
+  at GTANetworkServer.GameServer.StartResource (System.String resourceName, System.String father) [0x000e5] in <13566cfda3e944de863f8ac823770d4d>:0 
+[19:59:26] Terminating...
+[19:59:26] Stopping liberty/_loader
+[19:59:26] Stopped liberty/_loader!
+[19:59:26] Stopping speedometer
+[19:59:26] Stopped speedometer!
+[19:59:26] Stopping admin
+[19:59:26] Stopped admin!
+-> SERVER STARTED AT 5/6/2017 7:59:27 PM[19:59:27] Starting...
+[19:59:27] Loading resources...
+[19:59:27] Starting admin
+[19:59:27] Resource admin started!
+[19:59:27] Starting speedometer
+[19:59:27] Resource speedometer started!
+[19:59:27] Starting liberty/_loader
+[19:59:28] Resource liberty/_loader started!
+[19:59:28] Started! Waiting for connections.
+[19:59:28] LIBERTYRP AUTOLOADER: loading liberty/gamemode
+[19:59:28] Starting liberty/gamemode
+[19:59:28] Resource liberty/gamemode started!
