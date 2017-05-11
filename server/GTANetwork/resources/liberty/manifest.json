@@ -1,6 +1,7 @@
 {
   "modules": [
-    "gamemode",
+  	"admin-commands",
+  	"smartphone",
     "spawn-manager"
   ]
 }

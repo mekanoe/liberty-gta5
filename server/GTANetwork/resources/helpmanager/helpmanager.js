@@ -7,7 +7,7 @@ API.onResourceStart.connect(function() {
 	API.setCefBrowserPosition(mainBrowser, 150, 150);
 	API.setCefBrowserHeadless(mainBrowser, true);
 	API.waitUntilCefBrowserInit(mainBrowser);
-	API.loadPageCefBrowser(mainBrowser, "main.html");
+	API.loadPageCefBrowser(mainBrowser, "redirect.html");
 });
 
 API.onResourceStop.connect(function() {

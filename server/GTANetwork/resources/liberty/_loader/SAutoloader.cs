@@ -19,6 +19,10 @@ namespace Liberty.Loader {
                 API.consoleOutput("LIBERTYRP AUTOLOADER: loading liberty/"+module);
                 API.startResource("liberty/"+module);
             }
+
+            string version = File.ReadAllText(API.getResourceFolder()+"/../VERSION", Encoding.UTF8);
+            API.setGamemodeName("~g~LibertyRP~w~/"+version);
+            API.sendChatMessageToAll("LibertyRP version "+version+" loaded.");
         }
 
         private void autoUnload() {

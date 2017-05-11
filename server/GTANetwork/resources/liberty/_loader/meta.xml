@@ -1,5 +1,5 @@
 <meta>
-	<info name="LibertyRP: Autoloader" author="LibertyRP:Katie" version="0.1" />
+	<info name="LibertyRP: Autoloader" author="LibertyRP:Katie" version="0.1" type="gamemode" />
 
 	<script src="SAutoloader.cs" type="server" lang="csharp" />
 </meta>

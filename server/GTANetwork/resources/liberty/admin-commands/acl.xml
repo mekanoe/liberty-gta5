@@ -1,0 +1,8 @@
+<acl>
+    <acl name="Everyone">
+        <right name="command.car" access="false" />
+    </acl>
+    <acl name="Admin">
+        <right name="command.car" access="true" />
+    </acl>
+</acl>
