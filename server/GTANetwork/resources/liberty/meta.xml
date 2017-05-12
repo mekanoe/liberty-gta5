@@ -1,0 +1,8 @@
+<meta>
+	<script src="admin-commands/SAdminCommands.cs" lang="csharp" type="server" />
+
+	<script src="rpc/SRpc.cs" lang="csharp" type="server" />
+	<script src="rpc/WebServer.cs" lang="csharp" type="server" />
+
+	<script src="spawn-manager/SSpawnManager.cs" lang="csharp" type="server" />
+</meta>
