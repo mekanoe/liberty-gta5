@@ -1,0 +1,28 @@
+{
+	"weather": [
+		{
+			"report": "Clear skies",
+			"cycle": [ 0, 0, 1, 0, 1, 0, 0, 1, 0 ]
+		},
+		{
+			"report": "Light showers",
+			"cycle": [ 2, 5, 8, 8, 8, 8, 5, 2 ]
+		},
+		{
+			"report": "Light showers, thunderstorms expected later",
+			"cycle": [ 2, 5, 8, 6, 7, 7, 7, 6, 5, 2 ]
+		},
+		{
+			"report": "Light clouds",
+			"cycle": [ 1, 1, 2, 1, 1, 2, 1 ]
+		}, 
+		{
+			"report": "Rain showers",
+			"cycle": [ 2, 5, 8, 6, 6, 6, 6, 5, 2 ]
+		},
+		{
+			"report": "Severe thunderstorms",
+			"cycle": [ 5, 7, 7, 7, 7, 5, 2 ]
+		}
+	]
+}

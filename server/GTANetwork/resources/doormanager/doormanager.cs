@@ -102,6 +102,11 @@ public class DoorManager : Script
 		transitionDoor(doorid, target, time);
 	}
 
+	[Command("deletedoor")]
+	public void Debug_DeleteDoorCMD(Client sender, int doorId) {
+		removeDoor(doorId);
+	}
+
 	private void ClientEventTrigger(Client sender, string eventName, object[] args)
 	{
 		if (eventName == "doormanager_debug_createdoor")

@@ -1,8 +1,0 @@
-{
-  "modules": [
-    "admin-commands",
-    "rpc",
-    "smartphone",
-    "spawn-manager"
-  ]
-}

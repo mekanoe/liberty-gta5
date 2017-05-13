@@ -1,8 +1,18 @@
 <meta>
+	<script src="SVersionSetter.cs" lang="csharp" type="server" />
+
 	<script src="admin-commands/SAdminCommands.cs" lang="csharp" type="server" />
+
+	<script src="npc-businesses/Bank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SPillboxBank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SChumashBank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SPaletoBayBank.cs" lang="csharp" type="server" />
 
 	<script src="rpc/SRpc.cs" lang="csharp" type="server" />
 	<script src="rpc/WebServer.cs" lang="csharp" type="server" />
 
 	<script src="spawn-manager/SSpawnManager.cs" lang="csharp" type="server" />
+
+	<script src="world/SWorldController.cs" lang="csharp" type="server" />
+	<script src="world/CWorldSync.js" lang="javascript" type="client" />
 </meta>

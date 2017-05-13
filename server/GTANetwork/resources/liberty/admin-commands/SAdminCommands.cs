@@ -16,6 +16,13 @@ namespace Liberty.AdminCommands {
             API.setPlayerIntoVehicle(sender, veh, -1);  
         }
 
+        [Command("loc")]
+        public void MDebugPos(Client player) {
+            Vector3 pos = API.getEntityPosition(player);
+            Vector3 rot = API.getEntityRotation(player);
+            API.sendChatMessageToPlayer(player, "~b~Position:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z+" ~g~A:~w~ "+rot.Z);
+        }
+
         public void RCarSpawn(string playerName, string modelName) {
             VehicleHash model = API.vehicleNameToModel(modelName);
             Client target = API.getPlayerFromName(playerName);
@@ -23,6 +30,21 @@ namespace Liberty.AdminCommands {
                 MCarSpawn(target, model);
                 API.consoleOutput("car "+modelName+" spawned for "+ playerName);
             }
+        }
+
+        public void RReloadLiberty() {
+            API.stopResource("liberty");
+            API.startResource("liberty");
+        }
+
+        [Command("gtao-update")]
+        public void MGTAOUpdate(Client sender) {
+            API.exported.gtaocharacter.updatePlayerFace(sender);
+        }
+
+        [Command("gtao-init")]
+        public void MGTAOInit(Client sender) {
+            API.exported.gtaocharacter.initializePedFace(sender);
         }
     }
 }

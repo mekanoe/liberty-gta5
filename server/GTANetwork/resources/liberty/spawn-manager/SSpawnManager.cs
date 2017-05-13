@@ -22,7 +22,7 @@ namespace Liberty.SpawnManager {
 
         private void onPlayerDownload(Client player) {
             API.sendChatMessageToPlayer(player, "~b~Welcome!~w~");
-            spawnPlayer(player);
+            //spawnPlayer(player);
         }
 
         private void onPlayerConnected(Client player) {
@@ -57,6 +57,7 @@ namespace Liberty.SpawnManager {
             API.setEntityPosition(player, _defaultSpawnLoc);
             API.setEntityRotation(player, _defaultSpawnRot);
             API.setEntityData(player, "v_player_spawned", true);
+            API.setPlayerSkin(player, API.pedNameToModel("Skater01AFY"));
         }
 
 

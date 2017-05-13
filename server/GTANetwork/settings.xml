@@ -6,7 +6,7 @@
   <minclientversion>0.0.0.0</minclientversion>
   <minclientversion_auto_update>true</minclientversion_auto_update>
   <announce>false</announce>
-  <password>19216801</password>
+  <password></password>
   <masterserver>http://master.gtanet.work/</masterserver>
   <acl_enabled>true</acl_enabled>
   <loglevel>0</loglevel>
@@ -18,7 +18,7 @@
   <onfoot_lagcomp>true</onfoot_lagcomp>
   <refresh_rate>120</refresh_rate>
   <resource src="admin" />
-  <resource src="speedometer" />
+  <resource src="doormanager" />
   <resource src="liberty" />
   <announce_lan>true</announce_lan>
   <upnp>false</upnp>
