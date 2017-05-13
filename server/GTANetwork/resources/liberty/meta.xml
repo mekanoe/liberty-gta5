@@ -11,6 +11,11 @@
 	<script src="npc-businesses/SChumashBank.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SPaletoBayBank.cs" lang="csharp" type="server" />
 
+	<script src="npc-businesses/ClothingShop.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SSuburbanProsperity.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SPonsonbysPortola.cs" lang="csharp" type="server" />
+
+
 	<script src="rpc/SRpc.cs" lang="csharp" type="server" />
 	<script src="rpc/WebServer.cs" lang="csharp" type="server" />
 

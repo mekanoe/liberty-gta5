@@ -57,7 +57,7 @@ namespace Liberty.npcBusinesses {
         }
 
         private void createTrigger() {
-            bankTrigger = API.createCylinderColShape(bankTriggerPos, 1f, 1f);
+            bankTrigger = API.createCylinderColShape(bankTriggerPos, 1f, 3f);
             API.createMarker(1, bankTriggerPos, new Vector3(), new Vector3(),
                 new Vector3(1f, 1f, 1f), 255, 33, 108, 24);
 

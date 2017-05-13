@@ -5,7 +5,7 @@ let menuOpen = false
 let menuClose
 
 API.onResourceStart.connect(() => {
-	openBankMenu()
+	// openBankMenu()
 })
 
 API.onUpdate.connect(() => {
