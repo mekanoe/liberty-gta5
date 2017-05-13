@@ -6,7 +6,7 @@ using GTANetworkShared;
 namespace Liberty.SpawnManager {
     class SSpawnManager : Script {
         private readonly Vector3 _defaultSpawnLoc = new Vector3(434.0596f, -629.2777f, 28.71821); 
-        private readonly Vector3 _defaultSpawnRot = new Vector3(0f, 0f, -75.29266f);
+        private readonly Vector3 _defaultSpawnRot = new Vector3(0f, 0f, 75.29266f);
         private ColShape _defaultSpawnCol;
 
         public SSpawnManager() {

@@ -5,7 +5,7 @@ using GTANetworkShared;
 namespace Liberty.npcBusinesses {
     class SPaletoBayBank : Bank {
         public SPaletoBayBank() : base() {
-            bankName = "Paleto Bay Bank";
+            bankName = "Paleto Bay Savings & Trust";
 
             tellerPos = new Vector3(-112.2346f, 6471.284f, 31.62673f); 
             tellerRot = 148f;

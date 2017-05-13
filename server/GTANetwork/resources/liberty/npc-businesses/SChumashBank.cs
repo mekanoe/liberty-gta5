@@ -7,7 +7,7 @@ namespace Liberty.npcBusinesses {
         public SChumashBank() : base() {
             // debug = true;
 
-            bankName = "Chumash Bank";
+            bankName = "Chumash Bank of Liberty";
 
             tellerPos = new Vector3(-2960.864f, 482.8853f, 15.70311f); 
             tellerRot = 89.26839f;

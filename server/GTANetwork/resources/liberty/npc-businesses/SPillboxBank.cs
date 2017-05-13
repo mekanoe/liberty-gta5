@@ -7,7 +7,7 @@ namespace Liberty.npcBusinesses {
     class SPillboxBank : Bank {
 
         public SPillboxBank() : base() {
-            bankName = "Pillbox Bank";
+            bankName = "Pillbox Hill Bank of Liberty";
 
             tellerPos = new Vector3(149.4395f, -1042.0f, 29.3741f); 
             tellerRot = -17f;

@@ -44,14 +44,14 @@ namespace Liberty.npcBusinesses {
             bankInteriorCol.onEntityEnterColShape += (shape, entity) => {
                 Client player;
                 if ((player = API.getPlayerFromHandle(entity)) != null) {
-                    API.triggerClientEvent(player, "npcbiz:enter", bankName);
+                    API.triggerClientEvent(player, "npcbiz:enter", "bank", bankName);
                 }
             };
 
             bankInteriorCol.onEntityExitColShape += (shape, entity) => {
                 Client player;
                 if ((player = API.getPlayerFromHandle(entity)) != null) {
-                    API.triggerClientEvent(player, "npcbiz:exit", bankName);
+                    API.triggerClientEvent(player, "npcbiz:exit", "bank", bankName);
                 }
             };
         }
@@ -71,14 +71,14 @@ namespace Liberty.npcBusinesses {
                 if ((player = API.getPlayerFromHandle(entity)) != null) {
                     API.sendChatMessageToPlayer(player, "~g~[~o~Teller~g~]:~w~ Hello! How can I help you?");
                     API.sendNotificationToPlayer(player, "Press ~b~F~w~ to use the bank.");
-                    API.triggerClientEvent(player, "npcbiz:triggerEnter", bankName);
+                    API.triggerClientEvent(player, "npcbiz:triggerEnter", "bank", bankName);
                 }
             };
 
             bankTrigger.onEntityExitColShape += (shape, entity) => {
                 Client player;
                 if ((player = API.getPlayerFromHandle(entity)) != null) {
-                    API.triggerClientEvent(player, "npcbiz:triggerExit", bankName);
+                    API.triggerClientEvent(player, "npcbiz:triggerExit", "bank", bankName);
                 }
             };
         }

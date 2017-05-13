@@ -878,7 +878,7 @@ class PlayerTextNotification {
         this._b = b
     }
 
-    leanUpNotification() {
+    cleanUpNotification() {
         this._drawing = false
         textnotification = null
     }
@@ -2142,6 +2142,25 @@ function killMenu() {
     API.callNative("_TRANSITION_FROM_BLURRED", 3000);
     menuElements = [[]];
     currentPage = 0;
+}
+
+function reset() {
+    killMenu()
+    button = null
+    panel = null
+    image = null
+    notification = null
+    notifications = []
+    textnotification = null
+    textnotifications = []
+    padding = 10
+    selectedInput = null
+    tabIndex = []
+    tab = 0
+    menuElements = []
+    isReady = false
+    currentPage = 0
+    clickDelay = new Date().getTime()
 }
 // On-Keydown Event
 API.onKeyDown.connect(function (sender, e) {

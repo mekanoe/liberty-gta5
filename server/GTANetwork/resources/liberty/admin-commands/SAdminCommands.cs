@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using GTANetworkServer;
 using GTANetworkShared;
 
@@ -33,6 +34,10 @@ namespace Liberty.AdminCommands {
         }
 
         public void RReloadLiberty() {
+            API.startThread(new ThreadStart(_reload));
+        }
+
+        private void _reload() {
             API.stopResource("liberty");
             API.startResource("liberty");
         }

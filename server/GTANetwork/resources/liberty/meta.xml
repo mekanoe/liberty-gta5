@@ -1,9 +1,12 @@
 <meta>
 	<script src="SVersionSetter.cs" lang="csharp" type="server" />
+	<script src="libs/nativemenu.js" lang="javascript" type="client" />
+	<script src="libs/enums.js" lang="javascript" type="client" />
 
 	<script src="admin-commands/SAdminCommands.cs" lang="csharp" type="server" />
 
 	<script src="npc-businesses/Bank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/CBank.js" lang="javascript" type="client" />
 	<script src="npc-businesses/SPillboxBank.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SChumashBank.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SPaletoBayBank.cs" lang="csharp" type="server" />
