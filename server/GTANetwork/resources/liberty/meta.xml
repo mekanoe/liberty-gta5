@@ -21,6 +21,9 @@
 
 	<script src="spawn-manager/SSpawnManager.cs" lang="csharp" type="server" />
 
+	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />
+	<!-- <script src="static-uis/CStreetLocation.js" lang="javascript" type="client" /> -->
+
 	<script src="world/SWorldController.cs" lang="csharp" type="server" />
 	<script src="world/CWorldSync.js" lang="javascript" type="client" />
 </meta>
