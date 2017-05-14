@@ -208,6 +208,14 @@ public class DoorManager : Script
 		}
 	}
 
+	public void removeAllDoors() {
+		for(int i = _doorCounter; i >= 0; i--) {
+			removeDoor(i);
+		}
+
+		_doorCounter = 0;
+	}
+
 	public void removeDoor(int id)
 	{
 		if (_doorColShapes.ContainsKey(id))

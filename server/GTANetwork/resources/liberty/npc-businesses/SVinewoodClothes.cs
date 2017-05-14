@@ -3,8 +3,8 @@ using GTANetworkServer;
 using GTANetworkShared;
 
 namespace Liberty.npcBusinesses {
-    class SSuburbanProsperity : ClothingShop {
-        public SSuburbanProsperity() : base() {
+    class SVinewoodClothes : ClothingShop {
+        public SVinewoodClothes() : base() {
             // debug = true;
 
             shopName = "Suburban Outfitters";
@@ -23,7 +23,7 @@ namespace Liberty.npcBusinesses {
         }
 
         private void doors() {
-            int d1 = API.exported.doormanager.registerDoor(1780022985, new Vector3(-1201.435f, -776.8566f, 17.99184f));
+            int d1 = API.exported.doormanager.registerDoor(1780022985, new Vector3(127.8201, -211.8274, 55.22751));
 
             API.exported.doormanager.refreshDoorState(d1);
         }

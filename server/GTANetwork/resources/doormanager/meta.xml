@@ -6,6 +6,7 @@
 
 	<export function="registerDoor" class="DoorManager" />
 	<export function="removeDoor" class="DoorManager" />
+	<export function="removeAllDoors" class="DoorManager" />
 	<export function="setDoorState" class="DoorManager" />
 	<export function="getCloseDoor" class="DoorManager" />
 	<export function="getAllCloseDoors" class="DoorManager" />

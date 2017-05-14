@@ -698,8 +698,18 @@ const Enums = {
     }
 }
 
-const screenX = API.getScreenResolutionMantainRatio().Width
+let offsetX = 0
+let screenX = API.getScreenResolutionMantainRatio().Width
 const screenY = API.getScreenResolutionMantainRatio().Height
+if (screenX / screenY > 1.7777) {
+    // aspect ratio is larger than 16:9
+    const idealBox = Math.ceil(screenY * 1.7777)
+    // ex: 2850 - 1920 == 660 / 2 == 330 
+    offsetX = (screenX - idealBox) / 2
+    // and gotta set the ideal box to make it work
+    screenX = idealBox
+}
+
 const panelMinX = (screenX / 32)
 const panelMinY = (screenY / 18)
 let button = null
@@ -842,7 +852,7 @@ class PlayerTextNotification {
     constructor(text) {
         var playerPos = API.getEntityPosition(API.getLocalPlayer()).Add(new Vector3(0, 0, 1))
         var point = API.worldToScreenMantainRatio(playerPos)
-        this._xPos = Point.Round(point).X
+        this._xPos = (Point.Round(point).X) + offsetX
         this._yPos = Point.Round(point).Y
         this._drawing = true
         this._alpha = 255
@@ -890,9 +900,9 @@ class PlayerTextNotification {
 
 class ProgressBar {
     constructor(x, y, width, height, currentProgress) {
-        this._xPos = x * panelMinX
+        this._xPos = (x * panelMinX) + offsetX
         this._yPos = y * panelMinY
-        this._width = width * panelMinX - 10
+        this._width = (width * panelMinX - 10) - offsetX
         this._height = height * panelMinY - 10
         this._currentProgress = currentProgress
         this._r = 0
@@ -1048,7 +1058,7 @@ class Notification {
 
 class TextElement {
     constructor(text, x, y, width, height, line) {
-        this._xPos = x
+        this._xPos = (x)
         this._yPos = y + (panelMinY * line)
         this._width = width
         this._height = height
@@ -1296,7 +1306,7 @@ class Panel {
     constructor(page, x, y, width, height) {
         this._page = page;
         this._padding = 10;
-        this._xPos = x * panelMinX;
+        this._xPos = (x * panelMinX) + offsetX
         this._yPos = y * panelMinY;
         this._width = width * panelMinX;
         this._height = height * panelMinY;

@@ -137,6 +137,14 @@ namespace Liberty.world {
             int hours = gameTime / 100 % 24;
             int minutes = gameTime % 100 % 60;
             string ampm = (hours < 12) ? "AM" : "PM";
+            
+            if (hours == 0) {
+                hours = 12;
+            }
+
+            if (hours > 12) {
+                hours = hours - 12;
+            }
 
             return ""+hours+":"+minutes.ToString("D2")+" "+ampm;
         }

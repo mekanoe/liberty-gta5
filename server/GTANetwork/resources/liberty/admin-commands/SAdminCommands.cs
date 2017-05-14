@@ -23,6 +23,11 @@ namespace Liberty.AdminCommands {
             Vector3 rot = API.getEntityRotation(player);
             API.sendChatMessageToPlayer(player, "~b~Position:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z+" ~g~A:~w~ "+rot.Z);
         }
+        [Command("rot")]
+        public void MDebugRot(Client player) {
+            Vector3 pos = API.getEntityRotation(player);
+            API.sendChatMessageToPlayer(player, "~b~Rotation:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z);
+        }
 
         public void RCarSpawn(string playerName, string modelName) {
             VehicleHash model = API.vehicleNameToModel(modelName);

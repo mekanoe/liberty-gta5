@@ -1,5 +1,16 @@
-const screenX = API.getScreenResolutionMantainRatio().Width
+let offsetX = 0
+let screenX = API.getScreenResolutionMantainRatio().Width
 const screenY = API.getScreenResolutionMantainRatio().Height
+
+if (screenX / screenY > 1.7777) {
+	// aspect ratio is larger than 16:9
+	const idealBox = Math.ceil(screenY * 1.7777)
+	// ex: 2850 - 1920 == 660 / 2 == 330 
+	offsetX = (screenX - idealBox) / 2
+	// and gotta set the ideal box to make it work
+	screenX = idealBox
+}
+
 let localPlayer
 
 const anchor = {
@@ -19,6 +30,8 @@ API.onUpdate.connect(() => {
 
 API.onResourceStart.connect(() => {
 	localPlayer = API.getLocalPlayer()
+	// API.sendChatMessage(`SMR: X: ${screenX}, Y: ${screenY}, ORIGX: ${API.getScreenResolutionMantainRatio().Width}, OFF: ${offsetX}`)
+	// API.sendChatMessage(`SCR: X: ${API.getScreenResolution().Width}, Y: ${API.getScreenResolution().Height}`)
 })
 
 function drawSpeedo() {
@@ -38,7 +51,7 @@ function drawSpeedo() {
 	// Speed
 	API.drawText(
 		`${speedMPH}`,
-		anchor.x,
+		offsetX + anchor.x,
 		anchor.y,
 		1,
 		200,
@@ -54,7 +67,7 @@ function drawSpeedo() {
 
 	API.drawText(
 		`MPH`,
-		anchor.x,
+		offsetX + anchor.x,
 		anchor.y+65,
 		0.45,
 		100,
