@@ -14,7 +14,7 @@ namespace Liberty {
         private void onResourceStart() {
             string version = File.ReadAllText(API.getResourceFolder()+"/VERSION", Encoding.UTF8);
             API.setGamemodeName("~g~LibertyRP~w~/"+version);
-            API.sendChatMessageToAll("LibertyRP version "+version+" loaded.");
+            // API.sendChatMessageToAll("LibertyRP version "+version+" loaded.");
         }
 
         private void onResourceEnd() {

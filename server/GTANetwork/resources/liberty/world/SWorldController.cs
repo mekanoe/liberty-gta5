@@ -47,13 +47,22 @@ namespace Liberty.world {
                 gameTime = API.getWorldSyncedData("VTime");
             }
 
-            lastWeatherStep = gameTime;
+            if (API.hasWorldData("VWxLastStep")) {
+                lastWeatherStep = API.getWorldData("VWxLastStep");
+            } else {
+                lastWeatherStep = gameTime;
+            }
+
             fetchWeather();
 
             if (API.hasWorldData("VWxCycle")) {
                 currentWeatherCycle = weatherCycles[API.getWorldData("VWxCycle")];
             } else {
                 setRandomCycle();
+            }
+
+            if (API.hasWorldData("VWxIndex")) {
+                currentWeatherIndex = (int)API.getWorldData("VWxIndex");
             }
 
             timeSync();
@@ -113,11 +122,13 @@ namespace Liberty.world {
                     currentWeatherIndex = 0;
                 } else {
                     currentWeatherIndex += 1;
-                    API.sendChatMessageToAll("wx state changed to "+currentWeatherCycle.cycle[currentWeatherIndex]);
-
+                    // API.sendChatMessageToAll("wx state changed to "+currentWeatherCycle.cycle[currentWeatherIndex]);
                 }
 
+                API.setWorldData("VWxIndex", currentWeatherIndex);
                 lastWeatherStep = gameTime;
+                API.setWorldData("VWxLastStep", lastWeatherStep);
+
             }
 
         }

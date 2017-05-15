@@ -1,9 +1,14 @@
 <meta>
 	<script src="SVersionSetter.cs" lang="csharp" type="server" />
-	<script src="libs/nativemenu.js" lang="javascript" type="client" />
-	<script src="libs/enums.js" lang="javascript" type="client" />
+	<script src="libs/nativemenu/nativemenu.js" lang="javascript" type="client" />
+<!-- 	<script src="libs/enums.js" lang="javascript" type="client" /> -->
+
+	<script src="libs/clienthttp/clienthttp.js" lang="javascript" type="client" />
+	<script src="libs/clienthttp/clienthttp.cs" lang="csharp" type="server" />
 
 	<script src="admin-commands/SAdminCommands.cs" lang="csharp" type="server" />
+
+	<!-- <script src="npc-businesses/SShopUtil.cs" lang="csharp" type="server" /> -->
 
 	<script src="npc-businesses/Bank.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/CBank.js" lang="javascript" type="client" />
@@ -24,6 +29,7 @@
 	<script src="npc-businesses/GunShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SPillboxGuns.cs" lang="csharp" type="server" />
 
+	<script src="npc-businesses/CCarShop.js" lang="javascript" type="client" />
 	<script src="npc-businesses/SMotoShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SSupercarShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/STruckShop.cs" lang="csharp" type="server" />
@@ -33,10 +39,14 @@
 	<script src="rpc/WebServer.cs" lang="csharp" type="server" />
 
 	<script src="spawn-manager/SSpawnManager.cs" lang="csharp" type="server" />
+	<script src="spawn-manager/CSpawn.js" lang="javascript" type="client" />
 
 	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />
+	<script src="static-uis/CAdminAnnounce.js" lang="javascript" type="client" />
 	<!-- <script src="static-uis/CStreetLocation.js" lang="javascript" type="client" /> -->
 
 	<script src="world/SWorldController.cs" lang="csharp" type="server" />
 	<script src="world/CWorldSync.js" lang="javascript" type="client" />
+
+	<assembly ref="System.Net.Http.dll" />
 </meta>

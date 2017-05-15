@@ -13,8 +13,8 @@ namespace Liberty.npcBusinesses {
         }
 
         private void onStart() {
-            API.startThread(new ThreadStart(decorations));
             npcTriggers();
+            decorations();
         }
 
         private List<CarShopDecoration> decorVehicles = new List<CarShopDecoration> {

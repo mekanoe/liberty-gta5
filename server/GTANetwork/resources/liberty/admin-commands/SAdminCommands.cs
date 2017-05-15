@@ -17,16 +17,32 @@ namespace Liberty.AdminCommands {
             API.setPlayerIntoVehicle(sender, veh, -1);  
         }
 
-        [Command("loc")]
+        [Command("loc", Alias="pos,l,p")]
         public void MDebugPos(Client player) {
             Vector3 pos = API.getEntityPosition(player);
             Vector3 rot = API.getEntityRotation(player);
             API.sendChatMessageToPlayer(player, "~b~Position:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z+" ~g~A:~w~ "+rot.Z);
         }
-        [Command("rot")]
+        [Command("rot", Alias="r")]
         public void MDebugRot(Client player) {
             Vector3 pos = API.getEntityRotation(player);
             API.sendChatMessageToPlayer(player, "~b~Rotation:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z);
+        }
+
+        [Command("announce", GreedyArg=true)]
+        public void Announce(Client player, string text) {
+            API.sendChatMessageToAll("~#FF0088~", "~h~[GM MESSAGE]~h~ "+text);
+        }
+
+        [Command("gmdirect", GreedyArg=true)]
+        public void GMDirect(Client gm, string playerName, string text) {
+            var player = API.getPlayerFromName(playerName);
+            if (player != null) {
+                API.sendChatMessageToPlayer(player, "~#FFC0CB~", "~h~[GM DIRECT] "+API.getPlayerName(gm)+":~h~ "+text);
+                API.sendChatMessageToPlayer(gm, "~#FFC0CB~", "~h~[GM DIRECT to "+playerName+"]~h~ "+text);
+            } else {
+                API.sendChatMessageToPlayer(gm, "~r~ERROR:~w~ Player name '"+playerName+"' not found.");
+            }
         }
 
         public void RCarSpawn(string playerName, string modelName) {

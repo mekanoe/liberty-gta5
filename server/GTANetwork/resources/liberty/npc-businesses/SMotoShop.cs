@@ -66,13 +66,13 @@ namespace Liberty.npcBusinesses {
                     d.Color2Name
                 );
 
-                // API.sleep(2);
-                API.setEntityPositionFrozen(v, true);
                 API.setEntityInvincible(v, true);
                 API.setVehicleLocked(v, true);
                 API.setVehicleEngineStatus(v, false);
                 API.setVehicleNumberPlate(v, "4SANDERS");
                 API.setVehicleNumberPlateStyle(v, 5);
+                API.sleep(175);
+                API.setEntityPositionFrozen(v, true);
             }
         }
 

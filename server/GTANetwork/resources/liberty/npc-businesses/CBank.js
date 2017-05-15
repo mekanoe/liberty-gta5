@@ -21,7 +21,7 @@ API.onUpdate.connect(() => {
 })
 
 API.onServerEventTrigger.connect((name, args) => {
-	if (args[0] == "bank") {
+	if (args[0] === "bank") {
 		switch (name) {
 			case 'npcbiz:triggerEnter':
 				triggerActive = true

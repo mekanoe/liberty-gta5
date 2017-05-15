@@ -1,0 +1,69 @@
+{
+	"moto": [
+		{
+			"name": "Akuma",
+			"realname": "akuma",
+			"price": 35000
+		},
+		{
+			"name": "Avarus",
+			"realname": "avarus",
+			"price": 35000
+		},
+		{
+			"name": "Bagger",
+			"realname": "bagger",
+			"price": 16000
+		},
+		{
+			"name": "Bati 801",
+			"realname": "bati",
+			"price": 10000
+		},
+		{
+			"name": "Carbon RS",
+			"realname": "carbonrs",
+			"price": 30000
+		},
+		{
+			"name": "Daemon",
+			"realname": "daemon",
+			"price": 18000
+		},
+		{
+			"name": "Double T",
+			"realname": "doublet",
+			"price": 20000
+		},
+		{
+			"name": "Faggio",
+			"realname": "faggio",
+			"price": 5000
+		},
+		{
+			"name": "Hexer",
+			"realname": "hexer",
+			"price": 17000
+		},
+		{
+			"name": "Innovation",
+			"realname": "innovation",
+			"price": 11000
+		},
+		{
+			"name": "Nemesis",
+			"realname": "nemesis",
+			"price": 12000
+		},
+		{
+			"name": "Vader",
+			"realname": "vader",
+			"price": 9000
+		},
+		{
+			"name": "Sanctus",
+			"realname": "sanctus",
+			"price": 45000
+		}
+	]
+}
