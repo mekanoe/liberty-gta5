@@ -61,8 +61,12 @@ namespace Liberty.npcBusinesses {
                 API.sleep(250);
                 API.setEntityPositionFrozen(v, true);
 
-                if (d.VehicleModel == VehicleHash.Benson || d.VehicleModel == VehicleHash.Mule) {
-                    API.setVehicleMod(v, 48, 0);
+                if (d.VehicleModel == VehicleHash.Benson || d.VehicleModel == VehicleHash.Mule || d.VehicleModel == VehicleHash.Pounder) {
+                    for (int i = 7; i >= 0; i-- ) {
+                        API.setVehicleExtra(v, i, false);
+                    }
+
+                    API.setVehicleExtra(v, 1, true);
                 }
             }
         }
