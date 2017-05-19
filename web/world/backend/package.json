@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "standard && node index.js",
+    "fix": "standard --fix",
+    "migrate": "migrate"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bcryptjs-then": "^1.0.1",
+    "dotenv": "^4.0.0",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-csrf": "^3.0.6",
+    "koa-passport": "^3.0.0",
+    "koa-session": "^5.0.0",
+    "node-discover": "^0.6.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg": "^6.2.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.30.4",
+    "superagent": "^3.5.2",
+    "uuid": "^3.0.1",
+    "uws": "^0.14.5"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2"
+  }
+}

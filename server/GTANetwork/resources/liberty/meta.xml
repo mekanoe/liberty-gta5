@@ -1,6 +1,7 @@
 <meta>
 	<script src="SVersionSetter.cs" lang="csharp" type="server" />
 	<script src="libs/nativemenu/nativemenu.js" lang="javascript" type="client" />
+	<script src="libs/uikit.js" lang="javascript" type="client" />
 <!-- 	<script src="libs/enums.js" lang="javascript" type="client" /> -->
 
 	<script src="libs/clienthttp/clienthttp.js" lang="javascript" type="client" />
@@ -42,11 +43,26 @@
 	<script src="spawn-manager/CSpawn.js" lang="javascript" type="client" />
 
 	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />
-	<script src="static-uis/CAdminAnnounce.js" lang="javascript" type="client" />
+	<!-- <script src="static-uis/CAdminAnnounce.js" lang="javascript" type="client" /> -->
+	<script src="static-uis/CContextWheel.js" lang="javascript" type="client" />
 	<!-- <script src="static-uis/CStreetLocation.js" lang="javascript" type="client" /> -->
 
 	<script src="world/SWorldController.cs" lang="csharp" type="server" />
 	<script src="world/CWorldSync.js" lang="javascript" type="client" />
 
 	<assembly ref="System.Net.Http.dll" />
+
+	<settings>
+		<setting 
+			name="server_identifier" 
+			description="What the server reports itself as to the world servers. 
+			  This is important for RPC, otherwise the world server doesn't know what to do."
+			value="libertyrp-dev-katie" 
+		/>
+		<setting
+			name="cluster_name"
+			description="This prevents the game server and the world servers from clustering with the wrong cluster."
+			value="dev"
+		/>
+	</settings>
 </meta>

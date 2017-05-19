@@ -1,9 +1,9 @@
-/* 
+/*
   clienthttp is a polyfill of the WHATWG Fetch API.
   using this is simple, add both clienthttp.js and clienthttp.cs as scripts,
   then you'll find resource.clienthttp.fetch (and it's helper classes) available.
 
-  These are safe to run in parallel. If you need to run ten http requests, 
+  These are safe to run in parallel. If you need to run ten http requests,
   all 10 will resolve in a timely manner.
 
   You **can** put clienthttp.cs in it's own resource, and make it async if you believe it will improve things.
@@ -23,12 +23,12 @@
         handleError(err)
     })
 
-    fetch("https://world.gta.libertyrp.net/economy/bank", { 
-        method: 'POST', 
-        body: JSON.stringify({ 
-            action: 'deposit', 
-            amount: 100000 
-        }) 
+    fetch("https://world.gta.libertyrp.net/economy/bank", {
+        method: 'POST',
+        body: JSON.stringify({
+            action: 'deposit',
+            amount: 100000
+        })
     }).then((response) => {
         if (response.status !== 200) {
             throw new Error(response.statusText)
@@ -44,10 +44,10 @@
   Client recieves, resolves promise.
 */
 
-///////////////////////////////////////////////////
+/// ////////////////////////////////////////////////
 /// SERVER-SIDE COMMS
-///////////////////////////////////////////////////
-/////////////////////////
+/// ////////////////////////////////////////////////
+/// //////////////////////
 
 const __requests = {}
 
@@ -69,31 +69,29 @@ API.onServerEventTrigger.connect((name, args) => {
 
     if (__requests[token] === undefined) {
       throw new TypeError('server responded to a request that does not exist')
-      return
     }
 
     const req = __requests[token]
 
     if (error) {
       return req.reject(new TypeError(body))
-    } 
+    }
 
     return req.resolve({status, body, headers: JSON.parse(headers)})
   }
 })
 
-function generateToken() {
-  const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-  let text = ""
+function generateToken () {
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  let text = ''
 
-  for (let i = 0; i < 32; i++)
-      text += possible.charAt(Math.floor(Math.random() * possible.length))
+  for (let i = 0; i < 32; i++) { text += possible.charAt(Math.floor(Math.random() * possible.length)) }
 
   return text
 }
 
 class ServerRequest {
-  constructor(req) {
+  constructor (req) {
     this.data = {
       body: req._serverbody(),
       url: req.url,
@@ -101,12 +99,12 @@ class ServerRequest {
       headers: req.headers.map,
       method: req.method,
       mode: req.mode,
-      referrer: req.referrer,
+      referrer: req.referrer
     }
     // API.sendChatMessage('created http event: '+this.url)
   }
 
-  run() {
+  run () {
     return new Promise((resolve, reject) => {
       const token = generateToken()
       __requests[token] = {
@@ -119,21 +117,21 @@ class ServerRequest {
   }
 }
 
-///////////////////////////////////////////////////
+/// ////////////////////////////////////////////////
 /// FETCH API POLYFILL
-///////////////////////////////////////////////////
-/////////////////////////
+/// ////////////////////////////////////////////////
+/// //////////////////////
 
 const methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT']
 const redirectStatuses = [301, 302, 303, 307, 308]
 
-function normalizeMethod(method) {
+function normalizeMethod (method) {
   var upcased = method.toUpperCase()
   return (methods.indexOf(upcased) > -1) ? upcased : method
 }
-function normalizeName(name) {
+function normalizeName (name) {
   if (typeof name !== 'string') {
-    name = ""+name
+    name = '' + name
   }
   if (/[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(name)) {
     throw new TypeError('Invalid character in header field name')
@@ -141,23 +139,23 @@ function normalizeName(name) {
   return name.toLowerCase()
 }
 
-function normalizeValue(value) {
+function normalizeValue (value) {
   if (typeof value !== 'string') {
-    value = ""+value
+    value = '' + value
   }
   return value
 }
 
 // Build a destructive iterator for the value list
-function iteratorFor(items) {
+function iteratorFor (items) {
   var iterator = {
-    next: function() {
+    next: function () {
       var value = items.shift()
       return {done: value === undefined, value: value}
     }
   }
 
-  iterator[Symbol.iterator] = function() {
+  iterator[Symbol.iterator] = function () {
     return iterator
   }
 
@@ -165,19 +163,19 @@ function iteratorFor(items) {
 }
 
 class Headers {
-  constructor(headers) {
+  constructor (headers) {
     this.map = {}
 
     if (headers instanceof Headers) {
-      headers.forEach(function(value, name) {
+      headers.forEach(function (value, name) {
         this.append(name, value)
       }, this)
     } else if (Array.isArray(headers)) {
-      headers.forEach(function(header) {
+      headers.forEach(function (header) {
         this.append(header[0], header[1])
       }, this)
     } else if (headers) {
-      Object.getOwnPropertyNames(headers).forEach(function(name) {
+      Object.getOwnPropertyNames(headers).forEach(function (name) {
         this.append(name, headers[name])
       }, this)
     }
@@ -185,31 +183,31 @@ class Headers {
     this[Symbol.iterator] = this.entries
   }
 
-  append(name, value) {
+  append (name, value) {
     name = normalizeName(name)
     value = normalizeValue(value)
     var oldValue = this.map[name]
-    this.map[name] = oldValue ? oldValue+','+value : value
+    this.map[name] = oldValue ? oldValue + ',' + value : value
   }
 
-  delete(name) {
+  delete (name) {
     delete this.map[normalizeName(name)]
   }
 
-  get(name) {
+  get (name) {
     name = normalizeName(name)
     return this.has(name) ? this.map[name] : null
   }
 
-  has(name) {
+  has (name) {
     return this.map.hasOwnProperty(normalizeName(name))
   }
 
-  set(name, value) {
+  set (name, value) {
     this.map[normalizeName(name)] = normalizeValue(value)
   }
 
-  forEach(callback, thisArg) {
+  forEach (callback, thisArg) {
     for (var name in this.map) {
       if (this.map.hasOwnProperty(name)) {
         callback.call(thisArg, this.map[name], name, this)
@@ -217,27 +215,27 @@ class Headers {
     }
   }
 
-  keys() {
+  keys () {
     var items = []
-    this.forEach(function(value, name) { items.push(name) })
+    this.forEach(function (value, name) { items.push(name) })
     return iteratorFor(items)
   }
 
-  values() {
+  values () {
     var items = []
-    this.forEach(function(value) { items.push(value) })
+    this.forEach(function (value) { items.push(value) })
     return iteratorFor(items)
   }
 
-  entries() {
+  entries () {
     var items = []
-    this.forEach(function(value, name) { items.push([name, value]) })
+    this.forEach(function (value, name) { items.push([name, value]) })
     return iteratorFor(items)
   }
 }
 
 class Request {
-  constructor(input, options = {}) {
+  constructor (input, options = {}) {
     let body = options.body
 
     if (input instanceof Request) {
@@ -272,23 +270,23 @@ class Request {
     }
   }
 
-  clone() {
+  clone () {
     return new Request(this)
   }
 
-  _serverbody() {
+  _serverbody () {
     this.body = this.body
     this.bodyUsed = true
     return this.body
   }
 
-  _requestobj() {
+  _requestobj () {
 
   }
 }
 
 class Response {
-  constructor(response) {// 
+  constructor (response) { //
     // API.sendChatMessage('in response')
     this.type = 'default'
     this.status = 'status' in response ? response.status : 200
@@ -296,7 +294,7 @@ class Response {
     this.statusText = 'statusText' in response ? response.statusText : 'OK'
     try {
       this.headers = new Headers(response.headers)
-    } catch(e) {
+    } catch (e) {
       // API.sendChatMessage(`~r~ERR:~w~ ${e.stack}`)
     }
     this.url = response.url || ''
@@ -305,17 +303,17 @@ class Response {
     this._response = response
   }
 
-  text() {
+  text () {
     return Promise.resolve(this.body)
   }
 
-  json() {
+  json () {
     return this.text().then((t) => {
       return Object.assign({}, JSON.parse(t))
     })
-  } 
+  }
 
-  clone() {
+  clone () {
     return new Response(this._response, {
       status: this.status,
       statusText: this.statusText,
@@ -324,13 +322,13 @@ class Response {
     })
   }
 
-  error() {
+  error () {
     const response = new Response(null, {status: 0, statusText: ''})
     response.type = 'error'
     return response
   }
 
-  redirect(url, status) {
+  redirect (url, status) {
     if (redirectStatuses.indexOf(status) === -1) {
       throw new RangeError('Invalid status code')
     }
@@ -339,7 +337,7 @@ class Response {
   }
 }
 
-function fetch(input, init) {
+function fetch (input, init) {
   return new Promise((resolve, reject) => {
     // API.sendChatMessage('in fetch')
 
@@ -356,7 +354,7 @@ function fetch(input, init) {
       }).catch((err) => {
         return reject(new TypeError('Network request failed', err))
       })
-    } catch(e) {
+    } catch (e) {
       // API.sendChatMessage(`~r~ERR:~w~ ${e.stack}`)
     }
   })

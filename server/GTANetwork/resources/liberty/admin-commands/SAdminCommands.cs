@@ -29,6 +29,18 @@ namespace Liberty.AdminCommands {
             API.sendChatMessageToPlayer(player, "~b~Rotation:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z);
         }
 
+        [Command("f")]
+        public void FreezeVehicle(Client player, bool val) {
+            var v = API.getPlayerVehicle(player);
+            API.setEntityPositionFrozen(v, val);
+        }
+
+        [Command("sr")]
+        public void SetRotation(Client player, float x, float y, float z) {
+            var v = API.getPlayerVehicle(player);
+            API.setEntityRotation(v, new Vector3(x, y, z));
+        }
+
         [Command("announce", GreedyArg=true)]
         public void Announce(Client player, string text) {
             API.sendChatMessageToAll("~#FF0088~", "~h~[GM MESSAGE]~h~ "+text);

@@ -33,17 +33,25 @@ namespace Liberty.rpc {
 
                     var call = API.fromJson(json);
                     var args = call.args.ToObject<object[]>();
-                    API.call((string)call.c, (string)call.m, args);
-                    // API.call("SAdminCommands", "RCarSpawn", "kayteh");
+                    var returnVal = API.call((string)call.c, (string)call.m, args);
+                    return "{\"status\": \"ok\", \"return\": "+API.toJson(returnVal)+"}";
                 } catch(Exception e) {
-                    API.consoleOutput("an error: "+e);
-                    return "{\"status\": \"err\"}";
+                    API.consoleOutput("rpc error: "+e);
+                    return "{\"status\": \"rpc_error\"}";
                 }
+            } 
 
-                return "{\"status\": \"ok\"}";
-            } else {
-                return "{\"status\": \"err\"}";
+            if (request.RawUrl == "/~check") {
+                string clusterName = API.getSetting<string>("cluster_name");
+                string ident = API.getSetting<string>("server_identifier");
+                if (request.Headers.Get("Cluster-Name") == clusterName) {
+                    return "{\"status\": \"ok\", \"identifier\": \""+ident+"\"}";
+                } else {
+                    return "{\"status\": \"bad_cluster\"}";
+                }
             }
+
+            return "{\"status\": \"not_implemented\"}";
         }
     }
 
