@@ -1,12 +1,12 @@
-const { debug } = require('yargs').argv
-
+// const { debug } = require('yargs').argv
+// process.env.DEBUG = process.env.DEBUG || debug
 // logger template//
 // const log = new (require('../logger'))('server/thing')
 
 class Logger {
   constructor (name, debugOverride = false) {
     this.name = name
-    this.debugOn = (debug || process.env.DEBUG) || debugOverride
+    this.debugOn = (process.env.DEBUG === 'true') || debugOverride
   }
 
   fatal (text, ...data) {
@@ -42,6 +42,12 @@ class Logger {
   debug (text, ...data) {
     if (this.debugOn) {
       console.log(`DEBUG  ${this.name}:\n    ${text}`, data)
+    }
+  }
+
+  sql (logger, ...data) {
+    if (logger.debugOn) {
+      console.log('DEBUG SQL:\n    ', data)
     }
   }
 }

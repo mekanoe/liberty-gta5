@@ -4,7 +4,8 @@ const commander = require('commander')
 const inquirer = require('inquirer')
 const World = require('../World')
 
-const W = new World(null, null, {})
+const W = new World(null, null, {}, true)
+
 log.debug('test', W.M)
 
 commander
@@ -38,6 +39,7 @@ commander
 commander.parse(process.argv)
 
 async function userPrompt () {
+  await W.awaitServices()
   let answers = await inquirer.prompt([
     { type: 'input', name: 'username', message: 'Username?', default: commander.username },
     { type: 'password', name: 'password', message: 'Password?', default: commander.password },
@@ -45,13 +47,11 @@ async function userPrompt () {
     { type: 'list', name: 'perms', message: 'What\'s this user\'s permissions?', default: 'normal', choices: ['normal', 'gm', 'superuser'] }
   ])
 
-  log.debug('omg', answers)
-
   const User = W.M.User
   let user
   try {
-    user = await User.build({
-      id: User.getNewId(),
+    user = User.build({
+      id: await User.getNewId(),
       username: answers.username,
       email: answers.email,
       permissions: (answers.perms === 'normal') ? [] : [answers.perms]
@@ -63,12 +63,12 @@ async function userPrompt () {
     log.fatal('error during character build/create', e, -1)
   }
 
-
   console.log('ok!')
   process.exit()
 }
 
 async function characterPrompt () {
+  await W.awaitServices()
   let answers = await inquirer.prompt([
     { type: 'input', name: 'username', message: 'What account does this character belong to?', default: commander.username },
     { type: 'input', name: 'name', message: "What's the name?" },
@@ -77,4 +77,19 @@ async function characterPrompt () {
 
   const User = W.M.User
   const Character = W.M.Character
+
+  let user = await User.getByUsername(answers.username)
+  if (user === null) {
+    log.fatal("can't find user", answers.username)
+  }
+
+  let char = await Character.build({
+    id: await Character.getNewId(),
+    name: answers.name,
+    gender: answers.gender,
+    phoneNumber: await Character.generatePhone()
+  })
+
+  await char.save()
+  await char.setUser(user)
 }

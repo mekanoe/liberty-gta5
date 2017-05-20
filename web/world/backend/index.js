@@ -2,8 +2,8 @@ require('dotenv').config({silent: true})
 const log = new (require('./logger'))('index')
 
 const http = require('http')
-const koa = require('koa')
-const app = koa()
+const Koa = require('koa')
+const app = new Koa()
 const _io = require('socket.io')
 const router = require('koa-router')()
 const World = require('./World')
@@ -12,7 +12,7 @@ const World = require('./World')
 const server = http.createServer(app.callback())
 const io = _io(server, { transports: ['websocket'], wsEngine: 'uws' })
 
-const D = new World(router, io, app.context) // eslint-disable-line no-unused-vars
+const W = new World(router, io, app.context) // eslint-disable-line no-unused-vars
 
 // body parser
 const bodyParser = require('koa-bodyparser')
@@ -21,14 +21,14 @@ app.use(bodyParser())
 // Sessions
 const session = require('koa-session')
 app.keys = ['7d91MFztQrxYWqwLHEN5bNjjbOqSb8fS']
-app.use(session({ store: D.sessionStore() }, app))
+app.use(session({ store: W.sessionStore() }, app))
 
 const passport = require('koa-passport')
 app.use(passport.initialize())
 app.use(passport.session())
 
 // Construct the World!
-D.mountRoutes()
+// W.mountRoutes()
 
 // Request logger
 app.use(async (next) => {

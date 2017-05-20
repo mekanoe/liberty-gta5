@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs-then')
 const uuid = require('uuid/v4')
 
 // CHANGE THIS AT RISK OF LOSS OF LIFE
-const BCRYPT_DIFF = 12
+const BCRYPT_DIFF = 14
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('user', {
@@ -44,12 +44,12 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Character)
   }
 
-  User.Instance.prototype.createSecret = async function (password) {
+  User.prototype.createSecret = async function (password) {
     this.secret = await bcrypt.hash(password, BCRYPT_DIFF)
     return this
   }
 
-  User.Instance.prototype.validateSecret = async function (password) {
+  User.prototype.validateSecret = async function (password) {
     return bcrypt.compare(password, this.secret)
   }
 
@@ -61,6 +61,10 @@ module.exports = (sequelize, DataTypes) => {
     // }
 
     return id
+  }
+
+  User.getByUsername = async function (username) {
+    return User.findOne({ where: { username } })
   }
 
   return User

@@ -3,26 +3,30 @@ const Sequelize = require('sequelize')
 const fetchModels = require('./models')
 
 class World {
-  constructor (router, io, ctx) {
+  constructor (router, io, ctx, serverless = false) {
     this.router = router
     this.io = io
     this.ctx = ctx
 
     ctx.io = io
 
-    if (process.env.DEBUG) log.warn('debug mode is on')
+    if (log.debugOn) log.warn('debug mode is on')
 
-    this._mountServices()
+    this.__initialized = this._mountServices(serverless)
   }
 
-  async _mountServices () {
-    const sequelize = new Sequelize(process.env.DB_URL)
+  async awaitServices () {
+    await this.__initialized
+  }
+
+  async _mountServices (serverless) {
+    const sequelize = new Sequelize(process.env.DB_URL, { logging: log.sql.bind(log, log) })
     this.ctx.sql = sequelize
     this.M = fetchModels(sequelize)
     this.ctx.M = this.M
     await sequelize.sync()
 
-    this.ctx.rpc = new (require('./services/rpc'))(this.ctx)
+    this.ctx.rpc = new (require('./services/rpc'))(this.ctx, !serverless)
     this.ctx.auth = new (require('./services/auth'))(this.ctx)
   }
 

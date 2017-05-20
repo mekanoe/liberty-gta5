@@ -24,8 +24,8 @@ module.exports = (sql) => {
   })
 
   Object.keys(models).forEach((v) => {
-    if (models[v].hasOwnProperty('__assocations')) {
-      models[v].__assocations(models)
+    if (models[v].hasOwnProperty('__associations')) {
+      models[v].__associations(models)
     }
     if (models[v].hasOwnProperty('__instanceMethods')) {
       models[v].__instanceMethods(models[v])

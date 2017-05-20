@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     useSkin: {
       type: DataTypes.BOOLEAN,
-      default: false
+      default: true
     },
     skinName: {
       type: DataTypes.STRING,
@@ -79,22 +79,22 @@ module.exports = (sequelize, DataTypes) => {
 
   Character.getNewId = async function () {
     const id = uuid()
-    let check = await Character.findOne({ where: { id } })
-    if (check !== null) {
-      return Character.getNewId()
-    }
+    // let check = await Character.findOne({ where: { id } })
+    // if (check !== null) {
+    //   return Character.getNewId()
+    // }
 
     return id
   }
 
   Character.generatePhone = async function () {
     let num = `${('000' + (Math.random() * 899) + 100).slice(-3)}-${('0000' + (Math.random() * 9999)).slice(-4)}`
-    let check = await Character.findOne({where: { phoneNumber: num }})
-    if (check !== null) {
-      return this.generatePhone()
-    }
+    // let check = await Character.findOne({where: { phoneNumber: num }})
+    // if (check !== null) {
+    //   return this.generatePhone()
+    // }
 
-    return this
+    return num
   }
 
   return Character

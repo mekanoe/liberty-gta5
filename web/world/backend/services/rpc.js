@@ -2,18 +2,44 @@ const log = new (require('../logger'))('services/rpc')
 const superagent = require('superagent')
 
 class RPC {
-  constructor (ctx) {
-    this.gameservers = (process.env.GAME_SERVERS || 'localhost:9000').split(',')
+  constructor (ctx, doCheck = true) {
+    this.gameservers = process.env.GAME_SERVERS.split(',') || ['localhost:9000']
     this.ctx = ctx
     this.clusterName = process.env.CLUSTER_NAME || 'unset'
     this.peers = {}
+
+    this.__heartbeatsWithoutPeers = 0
+
+    if (doCheck) {
+      this.checkGameServers()
+    }
   }
 
-  _checkGameServers () {
+  async checkGameServers (heartbeat = true) {
     log.debug(`Checking cluster.`)
     this.gameservers.forEach((server) => {
       this._checkGameServer(server)
     })
+
+    if (heartbeat) this._doHeartbeat()
+  }
+
+  _doHeartbeat () {
+    setTimeout(() => {
+      if (Object.keys(this.peers).length === 0) {
+        log.debug('I have no peers. Making an attempt to find one...')
+        this.__heartbeatsWithoutPeers += 1
+
+        if (this.__heartbeatsWithoutPeers < 10) {
+          this._doHeartbeat()
+        } else {
+          log.warn("I've given up on the search for game servers.")
+          return
+        }
+
+        this.checkGameServers(false)
+      }
+    }, 10000)
   }
 
   async _checkGameServer (addr) {
@@ -33,6 +59,8 @@ class RPC {
       }
     }
 
+    rsp.body = JSON.parse(rsp.text)
+
     if (rsp.body.status === 'bad_cluster') {
       log.warn(`Game server \`${addr}' rejected \`${this.clusterName}'`)
       return
@@ -44,7 +72,7 @@ class RPC {
       return
     }
 
-    log.error('Unsure of check response', rsp.body)
+    log.error('Unsure of check response', rsp)
   }
 
   callRpc (peer, c, m, ...args) {
