@@ -1,0 +1,5 @@
+{
+  "standard": {
+    "globals": [ "API", "resource", "Keys", "Point", "Vector3", "Size" ]
+  }
+}

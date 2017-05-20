@@ -1,6 +1,6 @@
 const log = new (require('./logger'))('World')
 const Sequelize = require('sequelize')
-const path = require('path')
+const fetchModels = require('./models')
 
 class World {
   constructor (router, io, ctx) {
@@ -18,7 +18,8 @@ class World {
   async _mountServices () {
     const sequelize = new Sequelize(process.env.DB_URL)
     this.ctx.sql = sequelize
-    sequelize.import(path.join(__dirname, 'models'))
+    this.M = fetchModels(sequelize)
+    this.ctx.M = this.M
     await sequelize.sync()
 
     this.ctx.rpc = new (require('./services/rpc'))(this.ctx)
@@ -26,7 +27,7 @@ class World {
   }
 
   sessionStore () {
-    const Session = this.sql.model('session')
+    const { Session } = this.M
     return {
       async get (id) {
         return Session.findById(id)

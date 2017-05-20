@@ -11,6 +11,11 @@ class Logger {
 
   fatal (text, ...data) {
     this.error(text, data)
+
+    if (typeof data[data.length - 1] === 'number') {
+      process.exit(data[data.length - 1])
+    }
+
     throw text
   }
 

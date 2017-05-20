@@ -5,7 +5,7 @@ const LocalStrategy = require('passport-local').Strategy
 class Auth {
   constructor (ctx) {
     this.ctx = ctx
-    this.User = ctx.sql.model('user')
+    this.User = ctx.M.User
     this.ctx.passport = passport
 
     passport.use(new LocalStrategy(this.strategy))

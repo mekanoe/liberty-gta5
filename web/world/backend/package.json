@@ -6,12 +6,15 @@
   "scripts": {
     "start": "standard && node index.js",
     "fix": "standard --fix",
-    "migrate": "migrate"
+    "create": "node util/create.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "bcryptjs-then": "^1.0.1",
+    "commander": "^2.9.0",
     "dotenv": "^4.0.0",
+    "glob": "^7.1.1",
+    "inquirer": "^3.0.6",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
     "koa-csrf": "^3.0.6",
@@ -23,11 +26,10 @@
     "pg": "^6.2.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.30.4",
+    "standard": "^10.0.2",
     "superagent": "^3.5.2",
     "uuid": "^3.0.1",
-    "uws": "^0.14.5"
-  },
-  "devDependencies": {
-    "standard": "^10.0.2"
+    "uws": "^0.14.5",
+    "yargs": "^8.0.1"
   }
 }
