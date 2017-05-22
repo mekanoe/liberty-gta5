@@ -18,6 +18,12 @@
 	<script src="npc-businesses/SPaletoBayBank.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SVinewoodBank.cs" lang="csharp" type="server" />
 
+	<script src="npc-businesses/CClothingShop.js" lang="javascript" type="client" />
+	<file src="img/ponsonbys.png" />
+	<file src="img/clothing-bottoms.png" />
+	<file src="img/clothing-bottoms-hover.png" />
+	<file src="img/clothing-hats.png" />
+	<file src="img/clothing-hats-hover.png" />
 	<script src="npc-businesses/ClothingShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SVinewoodClothes.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SPonsonbysPortola.cs" lang="csharp" type="server" />
@@ -44,7 +50,7 @@
 
 	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />
 	<!-- <script src="static-uis/CAdminAnnounce.js" lang="javascript" type="client" /> -->
-	<script src="static-uis/CContextWheel.js" lang="javascript" type="client" />
+	<!-- <script src="static-uis/CContextWheel.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CStreetLocation.js" lang="javascript" type="client" /> -->
 
 	<script src="world/SWorldController.cs" lang="csharp" type="server" />

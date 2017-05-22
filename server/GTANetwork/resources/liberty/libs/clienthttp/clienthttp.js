@@ -7,11 +7,12 @@
   all 10 will resolve in a timely manner.
 
   You **can** put clienthttp.cs in it's own resource, and make it async if you believe it will improve things.
-  I already do multithreading on it, so... good luck.
+  I already do async functions on it, so... good luck.
 
   See https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
 
   This only supports TEXT and JSON. If you do something else, this library cannot guarantee it'll work.
+  For special cases, use other tools with the TEXT output.
 
   A quick example
 
@@ -38,9 +39,9 @@
   -- Implementation details:
   Since client-side JS doesn't have access to any HTTP clients, we asynchronously tell the server to do so.
   Client generates a long random token
-  Client sends a serverEventTrigger("clienthttp:request", token, JSON Request), returns a Promise
+  Client sends a serverEventTrigger("clienthttp/request", token, JSON Request), returns a Promise
   Server recieves, does the request.
-  Server request finishes, sends serverEventTrigger("clienthttp:respose", token, JSON Response)
+  Server request finishes, sends serverEventTrigger("clienthttp/respose", token, JSON Response)
   Client recieves, resolves promise.
 */
 

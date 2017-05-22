@@ -53,6 +53,17 @@ module.exports = (sequelize, DataTypes) => {
     return bcrypt.compare(password, this.secret)
   }
 
+  User.prototype.presentable = function (ownUser = false) {
+    delete this.secret
+    if (!ownUser) {
+      delete this.email
+      delete this.characterLimit
+      delete this.isBanned
+      delete this.permissions
+    }
+    return this
+  }
+
   User.getNewId = async function () {
     const id = uuid()
     // let check = await User.findOne({ where: { id } })
@@ -63,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
     return id
   }
 
-  User.getByUsername = async function (username) {
+  User.getByUsername = function (username) {
     return User.findOne({ where: { username } })
   }
 

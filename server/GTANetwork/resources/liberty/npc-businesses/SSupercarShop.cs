@@ -68,6 +68,8 @@ namespace Liberty.npcBusinesses {
             blip.shortRange = true;
 
             ColShape chatBubble = API.createSphereColShape(npcPos, 40f);
+            // API.createMarker(28, npcPos, new Vector3(), new Vector3(),
+                // new Vector3(40f, 40f, 40f), 100, 255, 0, 0);
             chatBubble.onEntityEnterColShape += (shape, entity) => {
                 Client player;
                 if ((player = API.getPlayerFromHandle(entity)) != null) {

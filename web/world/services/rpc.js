@@ -24,7 +24,7 @@ class RPC {
     if (heartbeat) this._doHeartbeat()
   }
 
-  _doHeartbeat () {
+  _doHeartbeat (delay = 10000) {
     setTimeout(() => {
       if (Object.keys(this.peers).length === 0) {
         log.debug('I have no peers. Making an attempt to find one...')
@@ -38,8 +38,15 @@ class RPC {
         }
 
         this.checkGameServers(false)
+      } else {
+        if (this.__heartbeatsWithoutPeers !== 0) {
+          this.__heartbeatsWithoutPeers = 0
+        }
+
+        this._doHeartbeat(1000 * 300)
+        this.checkGameServers(false)
       }
-    }, 10000)
+    }, delay)
   }
 
   async _checkGameServer (addr) {
@@ -55,6 +62,7 @@ class RPC {
     } catch (e) {
       if (!e.status) {
         log.warn(`Game server \`${addr}' didn't respond`)
+        this._removePeer(addr)
         return
       }
     }
@@ -62,23 +70,47 @@ class RPC {
     rsp.body = JSON.parse(rsp.text)
 
     if (rsp.body.status === 'bad_cluster') {
+      this._removePeer(addr)
       log.warn(`Game server \`${addr}' rejected \`${this.clusterName}'`)
       return
     }
 
     if (rsp.body.status === 'ok') {
+      if (this.peers[rsp.body.identifier] === addr) {
+        log.debug(`${rsp.body.identifier} is still alive.`)
+        return
+      }
       this.peers[rsp.body.identifier] = addr
       log.info(`Added \`${addr}' as \`${rsp.body.identifier}' to game server peers`)
       return
     }
 
     log.error('Unsure of check response', rsp)
+    this._removePeer(addr)
+  }
+
+  _removePeer (addr) {
+    let peer = Object.keys(this.peers).filter(x => this.peers[x] === addr)[0]
+    if (peer === undefined) {
+      return
+    }
+
+    delete this.peers[peer]
+    log.warn(`Peer \`${peer}' removed`)
   }
 
   callRpc (peer, c, m, ...args) {
+    if (peer === null) {
+      if (Object.keys(this.peers).length !== 1) {
+        throw new TypeError('invariant: automatic selection of peering unavailable without only a single peer')
+      }
+
+      peer = Object.keys(this.peers)[0]
+    }
+
     log.debug(`RPC -> ${peer}: ${c}->${m}(${args.join(', ')})`)
     return superagent
-      .post(this.peers[peer])
+      .post('http://' + this.peers[peer])
       .send({ c, m, args })
       .accept('json')
   }

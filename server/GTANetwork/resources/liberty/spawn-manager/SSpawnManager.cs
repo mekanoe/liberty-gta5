@@ -57,7 +57,7 @@ namespace Liberty.SpawnManager {
             API.sendNativeToPlayer(player, Hash.RESURRECT_PED, player);
 
             API.sleep(250);
-            API.setPlayerHealth(player, 1);
+            API.setPlayerHealth(player, 0);
             API.setEntityInvincible(player, true);
             // API.setEntityPositionFrozen(player, true);
         }

@@ -1,14 +1,16 @@
 const log = new (require('./logger'))('World')
 const Sequelize = require('sequelize')
 const fetchModels = require('./models')
+const fetchApis = require('./api')
 
 class World {
-  constructor (router, io, ctx, serverless = false) {
+  constructor (router, io, app, serverless = false) {
     this.router = router
     this.io = io
-    this.ctx = ctx
+    this.ctx = app.context || {}
 
-    ctx.io = io
+    this.ctx.io = io
+    this.__app = app
 
     if (log.debugOn) log.warn('debug mode is on')
 
@@ -30,13 +32,18 @@ class World {
     this.ctx.auth = new (require('./services/auth'))(this.ctx)
   }
 
+  async mountRoutes () {
+    fetchApis(this.router)
+    this.__app.use(this.router.middleware())
+  }
+
   sessionStore () {
     const { Session } = this.M
     return {
-      async get (id) {
+      get (id) {
         return Session.findById(id)
       },
-      async set (id, data, maxAge) {
+      set (id, data, maxAge) {
         return Session.create({ id, data, maxAge })
       },
       async destroy (id) {

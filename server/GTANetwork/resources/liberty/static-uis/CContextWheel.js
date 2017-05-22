@@ -17,6 +17,10 @@ let boxCoords = {}
 let ready = false
 
 API.onResourceStart.connect(() => {
+  API.sendChatMessage(typeof API.rectWithBorder)
+  API.sendChatMessage(JSON.stringify(Object.keys(exported.liberty)/*.filter(x => !x.match(/^[A-Z]/))*/))
+  // API.sendChatMessage(JSON.stringify(Object.keys(exported)))
+
   UIKit = resource.uikit
 
   boxCoords.center = UIKit.rectCoordsFromCenter({ x: centerAnchor.x, y: centerAnchor.y, w: 200, h: 200 })
@@ -30,7 +34,7 @@ API.onResourceStart.connect(() => {
   boxCoords.lowerLeft = UIKit.rectCoordsFromCenter({ x: centerAnchor.x - boxOffsets.x, y: centerAnchor.y + boxOffsets.y, w: sideBox.w, h: sideBox.h })
   boxCoords.lowerRight = UIKit.rectCoordsFromCenter({ x: centerAnchor.x + boxOffsets.x, y: centerAnchor.y + boxOffsets.y, w: sideBox.w, h: sideBox.h })
 
-  ready = true
+  ready = false
 })
 
 API.onUpdate.connect(() => {

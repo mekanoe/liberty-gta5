@@ -8,7 +8,7 @@ class Auth {
     this.User = ctx.M.User
     this.ctx.passport = passport
 
-    passport.use(new LocalStrategy(this.strategy))
+    passport.use(new LocalStrategy({}, this.strategy.bind(this)))
 
     passport.serializeUser(async (user, done) => {
       done(null, user.id)
@@ -16,7 +16,9 @@ class Auth {
 
     passport.deserializeUser(async (id, done) => {
       try {
-        done(null, await this.User.findById(id))
+        let user = await this.User.findById(id)
+        user.presentable(true)
+        done(null, user)
       } catch (e) {
         done(e)
       }
@@ -24,9 +26,8 @@ class Auth {
   }
 
   async strategy (username, password, done) {
-    try {
-      let user = await this.User.findOne({ where: { username } })
-
+    log.debug('strategizing...', username)
+    this.User.getByUsername(username).then(user => {
       if (user === null) {
         return done(null, false)
       }
@@ -36,9 +37,11 @@ class Auth {
       }
 
       done(null, user)
-    } catch (e) {
+    })
+    .catch((e) => {
+      log.error('error doing local strategy', e)
       done(e)
-    }
+    })
   }
 }
 

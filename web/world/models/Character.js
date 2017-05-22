@@ -88,7 +88,7 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Character.generatePhone = async function () {
-    let num = `${('000' + (Math.random() * 899) + 100).slice(-3)}-${('0000' + (Math.random() * 9999)).slice(-4)}`
+    let num = `${('000' + ((Math.random() * 899) + 100)).slice(-3)}-${('0000' + (Math.random() * 9999)).slice(-4)}`
     // let check = await Character.findOne({where: { phoneNumber: num }})
     // if (check !== null) {
     //   return this.generatePhone()

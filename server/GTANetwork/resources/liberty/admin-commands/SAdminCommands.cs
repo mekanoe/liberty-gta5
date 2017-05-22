@@ -17,6 +17,16 @@ namespace Liberty.AdminCommands {
             API.setPlayerIntoVehicle(sender, veh, -1);  
         }
 
+        [Command("delveh")]
+        public void MCarDel(Client sender) {
+            var veh = API.getPlayerVehicle(sender);
+            if (API.getVehicleOccupants(veh).Length == 0) { // this will never pass but...
+                API.deleteEntity(veh);
+            } else {
+                API.sendChatMessageToPlayer(sender, "Vehicle isn't empty.");
+            }
+        }
+
         [Command("loc", Alias="pos,l,p")]
         public void MDebugPos(Client player) {
             Vector3 pos = API.getEntityPosition(player);
