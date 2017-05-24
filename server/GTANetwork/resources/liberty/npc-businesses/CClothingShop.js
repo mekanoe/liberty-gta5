@@ -1,5 +1,5 @@
 let triggerActive = false
-let allowTrigger = false
+let allowTrigger = true
 let shopName = 'Liberty Threads'
 let menuOpen = false
 let menuRects = []
@@ -7,9 +7,15 @@ let screenX
 let screenY
 let offsetX
 let centerAnchor
+let test
+let Rect
 
 API.onResourceStart.connect(() => {
+  let UIKit = exported.require.require.require('@/liberty/uikit')
+  Rect = UIKit.Rect
+  test = new Rect({ x: 0, y: 0, w: 100, h: 100 })
   const res = resource.uikit.getSafeResolution()
+
   screenY = res.screenY
   screenX = res.screenX
   offsetX = res.offsetX
@@ -41,6 +47,7 @@ API.onServerEventTrigger.connect((name, args) => {
 })
 
 API.onUpdate.connect(() => {
+  test.draw()
   if (menuRects.length === 0) {
     return
   }
@@ -64,34 +71,63 @@ API.onUpdate.connect(() => {
 })
 
 function createRects () {
-  const width = 720
-  let rootRect = resource.uikit.createRect({ fromCenter: false, x: ((offsetX * 2) + screenX) - width - 20, y: Math.round(345 / 2), h: 690, w: width, opacity: 100 })
+  const width = 640
+  let rootRect = new Rect({ fromCenter: false, x: ((offsetX * 2) + screenX) - width - 20, y: 173, h: 840, w: width, opacity: 100 })
   menuRects.push(rootRect)
 
   let gridWidths = {
-    wide: 2 * (width / 3) - 10, // 470
-    normal: (width / 3) - 10 // 230
+    wide: 410,
+    normal: 200 // 230
   }
 
   menuRects.push(
     rootRect.getInsetRect({ x: 0, y: 0, w: width, h: 200 }).image({ path: 'img/ponsonbys.png' }),
 
-    // bottoms
-    rootRect.getInsetRect({ x: 10, y: 370, w: gridWidths.normal, h: 310, opacity: 0 }).image({ path: 'img/clothing-bottoms-hover.png' })
+    // tops
+    rootRect.getInsetRect({ x: 10, y: 200 + 10, w: gridWidths.wide, h: 200, color: '#f00' }).image({ path: 'img/Tops-Dark.png' })
       .onHover((rect) => {
         rect
-          .image({ path: 'img/clothing-bottoms.png' })
+          .image({ path: 'img/Tops.png' })
           .border({ width: 5, opacity: 255, color: '#fff' })
       }, null, { reset: true }),
 
-    // rootRect.getInsetRect({ x: 10, y: 200 + 10, w: gridWidths.wide - 10, h: 150, color: '#0f0' })
-    //   .onHover((rect) => { rect.color('#afa') }, null, { reset: true })
-    //   .onClick((rect) => { API.sendChatMessage('clicked!') }),
-
-    rootRect.getInsetRect({ x: 10, y: 200 + 10, w: gridWidths.normal, h: 150, color: '#f00' }).image({ path: 'img/clothing-hats-hover.png' })
+    // bottoms
+    rootRect.getInsetRect({ x: 10, y: 200 + 10 + 200 + 10, w: gridWidths.normal, h: 410, opacity: 0 }).image({ path: 'img/Bottoms-Dark.png' })
       .onHover((rect) => {
         rect
-          .image({ path: 'img/clothing-hats.png' })
+          .image({ path: 'img/Bottoms.png' })
+          .border({ width: 5, opacity: 255, color: '#fff' })
+      }, null, { reset: true }),
+
+    // hats
+    rootRect.getInsetRect({ x: gridWidths.wide + 20, y: 200 + 10, w: gridWidths.normal, h: 200, color: '#f00' }).image({ path: 'img/Hats-Dark.png' })
+      .onHover((rect) => {
+        rect
+          .image({ path: 'img/Hats.png' })
+          .border({ width: 5, opacity: 255, color: '#fff' })
+      }, null, { reset: true }),
+
+    // Jackets
+    rootRect.getInsetRect({ x: gridWidths.normal + 20, y: 200 + gridWidths.normal + 20, w: gridWidths.wide, h: 200, color: '#f00' }).image({ path: 'img/Jackets-Dark.png' })
+      .onHover((rect) => {
+        rect
+          .image({ path: 'img/Jackets.png' })
+          .border({ width: 5, opacity: 255, color: '#fff' })
+      }, null, { reset: true }),
+
+    // shoes
+    rootRect.getInsetRect({ x: gridWidths.normal + 20, y: 630, w: gridWidths.normal, h: 200, color: '#f00' }).image({ path: 'img/Shoes-Dark.png' })
+      .onHover((rect) => {
+        rect
+          .image({ path: 'img/Shoes.png' })
+          .border({ width: 5, opacity: 255, color: '#fff' })
+      }, null, { reset: true }),
+
+    // bags
+    rootRect.getInsetRect({ x: gridWidths.wide + 20, y: 630, w: gridWidths.normal, h: 200, color: '#f00' }).image({ path: 'img/Bags-Dark.png' })
+      .onHover((rect) => {
+        rect
+          .image({ path: 'img/Bags.png' })
           .border({ width: 5, opacity: 255, color: '#fff' })
       }, null, { reset: true })
   )

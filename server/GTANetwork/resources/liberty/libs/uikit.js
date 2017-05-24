@@ -29,16 +29,6 @@ function hexToRgb (hex) {
   } : null
 }
 
-function debugSubtitle (obj) {
-  let vals = []
-
-  Object.keys(obj).forEach(v => {
-    vals.push(`~b~${v}:~w~ ${obj[v]}`)
-  })
-
-  API.displaySubtitle(vals.join(' '))
-}
-
 function createRect (obj) {
   return new Rect(obj)
 }
@@ -74,6 +64,7 @@ class Rect {
   }
 
   __getOriginals () {
+    API.sendChatMessage('get originals')
     return Object.assign(Object.create(this), this)
   }
 
@@ -179,10 +170,10 @@ class Rect {
   }
 
   getInsetRect (obj) {
-    return new Rect(Object.assign({}, obj, {
-      x: this.x + (obj.x || 0),
-      y: this.y + (obj.y || 0)
-    }))
+    API.sendChatMessage('inset rect')
+    obj.x = this.x + (obj.x || 0)
+    obj.y = this.y + (obj.y || 0)
+    return new Rect(obj)
   }
 
   debug () {
@@ -248,22 +239,9 @@ function rectCoordsFromCenter ({x, y, w, h}) {
   }
 }
 
-function rectWithBorder ({x, y, w, h, color, opacity, borderWidth = 10, borderColor = '#fff'}) {
-  const bw = borderWidth // shortcut
-  color = typeof color === 'string' ? hexToRgb(color) : color
-  borderColor = typeof borderColor === 'string' ? hexToRgb(borderColor) : borderColor
-  // draw main rect
-  // debugSubtitle({x, y, w, h})
-  API.drawRectangle(x, y, w, h, color.r, color.g, color.b, opacity)
-
-  // top
-  API.drawRectangle(x - bw, y - bw, w + (bw * 2), bw, borderColor.r, borderColor.g, borderColor.b, Math.min(255, opacity + 50))
-  // bottom
-  API.drawRectangle(x - bw, y + h, w + (bw * 2), bw, borderColor.r, borderColor.g, borderColor.b, Math.min(255, opacity + 50))
-  // left
-  API.drawRectangle(x - bw, y, bw, h, borderColor.r, borderColor.g, borderColor.b, Math.min(255, opacity + 50))
-  // right
-  API.drawRectangle(x + w, y, bw, h, borderColor.r, borderColor.g, borderColor.b, Math.min(255, opacity + 50))
+function __requireModuleClasses () {
+  return {
+    Rect
+  }
 }
-
-const exported = { rectWithBorder, rectCoordsFromCenter, hexToRgb, debugSubtitle, Rect, getSafeResolution, createRect } // eslint-disable-line
+const exported = { rectCoordsFromCenter, hexToRgb, Rect, getSafeResolution, createRect, __requireModuleClasses } // eslint-disable-line no-unused-vars

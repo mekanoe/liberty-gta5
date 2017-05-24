@@ -1,0 +1,9 @@
+<meta>
+	<info name="MessageChannel" author="Katalina" type="script" />
+
+	<script src="MessageChannel.cs" lang="csharp" type="server" />
+	<script src="index.js" lang="javascript" type="client" />
+
+	<export class="MessageChannel" function="Connect" />
+	<export class="MessageChannel" function="SendRequest" />
+</meta>

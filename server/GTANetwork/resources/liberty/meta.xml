@@ -20,10 +20,19 @@
 
 	<script src="npc-businesses/CClothingShop.js" lang="javascript" type="client" />
 	<file src="img/ponsonbys.png" />
-	<file src="img/clothing-bottoms.png" />
-	<file src="img/clothing-bottoms-hover.png" />
-	<file src="img/clothing-hats.png" />
-	<file src="img/clothing-hats-hover.png" />
+	<file src="img/Bags-Dark.png" />
+	<file src="img/Bags.png" />
+	<file src="img/Bottoms-Dark.png" />
+	<file src="img/Bottoms.png" />
+	<file src="img/Jackets-Dark.png" />
+	<file src="img/Jackets.png" />
+	<file src="img/Shoes-Dark.png" />
+	<file src="img/Shoes.png" />
+	<file src="img/Tops-Dark.png" />
+	<file src="img/Tops.png" />
+	<file src="img/Hats-Dark.png" />
+	<file src="img/Hats.png" />
+
 	<script src="npc-businesses/ClothingShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SVinewoodClothes.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SPonsonbysPortola.cs" lang="csharp" type="server" />
@@ -49,6 +58,7 @@
 	<script src="spawn-manager/CSpawn.js" lang="javascript" type="client" />
 
 	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />
+	<script src="static-uis/ScaleformTesting.js" lang="javascript" type="client" />
 	<!-- <script src="static-uis/CAdminAnnounce.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CContextWheel.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CStreetLocation.js" lang="javascript" type="client" /> -->

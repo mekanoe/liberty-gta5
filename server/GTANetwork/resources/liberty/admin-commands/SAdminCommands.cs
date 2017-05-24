@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using GTANetworkServer;
 using GTANetworkShared;
 
@@ -25,6 +26,17 @@ namespace Liberty.AdminCommands {
             } else {
                 API.sendChatMessageToPlayer(sender, "Vehicle isn't empty.");
             }
+        }
+
+        [Command("mc-cc")]
+        public async void GetClientCounter(Client player) {
+            API.consoleOutput("pre-await");
+            var task = API.exported.messagechannel.SendRequest(player, "client-counter" , null);
+            API.consoleOutput("task created");
+            task.Wait();
+            API.consoleOutput("post-await");
+            API.sendChatMessageToPlayer(player, "~b~client counter:~w~ " + (string)task.Result.args.counter);
+            API.consoleOutput("end");
         }
 
         [Command("loc", Alias="pos,l,p")]

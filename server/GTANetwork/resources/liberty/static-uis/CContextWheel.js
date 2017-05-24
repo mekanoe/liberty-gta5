@@ -18,7 +18,7 @@ let ready = false
 
 API.onResourceStart.connect(() => {
   API.sendChatMessage(typeof API.rectWithBorder)
-  API.sendChatMessage(JSON.stringify(Object.keys(exported.liberty)/*.filter(x => !x.match(/^[A-Z]/))*/))
+  API.sendChatMessage(JSON.stringify(Object.keys(exported.liberty)/* .filter(x => !x.match(/^[A-Z]/)) */))
   // API.sendChatMessage(JSON.stringify(Object.keys(exported)))
 
   UIKit = resource.uikit
