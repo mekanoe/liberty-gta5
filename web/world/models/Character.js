@@ -12,19 +12,19 @@ module.exports = (sequelize, DataTypes) => {
     },
     cash: {
       type: DataTypes.INTEGER,
-      default: 0
+      defaultValue: 0
     },
     bank: {
       type: DataTypes.INTEGER,
-      default: 500
+      defaultValue: 500
     },
     isJailed: {
       type: DataTypes.BOOLEAN,
-      default: false
+      defaultValue: false
     },
     jailTimeRemaining: {
       type: DataTypes.INTEGER,
-      default: 0
+      defaultValue: 0
     },
     cautionCodes: {
       type: DataTypes.ARRAY(DataTypes.TEXT)
@@ -47,15 +47,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     useSkin: {
       type: DataTypes.BOOLEAN,
-      default: true
+      defaultValue: true
     },
     skinName: {
       type: DataTypes.STRING,
-      default: 'Skater01AFY'
+      defaultValue: 'Skater01AFY'
     },
     isDead: {
       type: DataTypes.BOOLEAN,
-      default: false
+      defaultValue: false
     }
   }, {
     timestamps: true,

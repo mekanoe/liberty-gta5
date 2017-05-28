@@ -47,7 +47,7 @@ API.onServerEventTrigger.connect((name, args) => {
 })
 
 API.onUpdate.connect(() => {
-  test.draw()
+  // test.draw()
   if (menuRects.length === 0) {
     return
   }

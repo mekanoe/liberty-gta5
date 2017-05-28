@@ -25,14 +25,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     isBanned: {
       type: DataTypes.BOOLEAN,
-      default: false
+      defaultValue: false
     },
     permissions: {
       type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     characterLimit: {
       type: DataTypes.INTEGER,
-      default: 5
+      defaultValue: 5
     }
   }, {
     timestamps: true,
@@ -54,12 +54,12 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   User.prototype.presentable = function (ownUser = false) {
-    delete this.secret
+    this.secret = undefined
     if (!ownUser) {
-      delete this.email
-      delete this.characterLimit
-      delete this.isBanned
-      delete this.permissions
+      this.email = undefined
+      this.characterLimit = undefined
+      this.isBanned = undefined
+      this.permissions = undefined
     }
     return this
   }

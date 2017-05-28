@@ -23,6 +23,7 @@ async function start () {
   const session = require('koa-session')
   app.keys = ['7d91MFztQrxYWqwLHEN5bNjjbOqSb8fS']
   app.use(session({ store: W.sessionStore() }, app))
+  // app.use(session({}, app))
 
   const passport = require('koa-passport')
   app.use(passport.initialize())

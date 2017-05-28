@@ -18,6 +18,11 @@ const anchor = {
   y: screenY - 160
 }
 
+const turnSignals = {
+  left: false,
+  right: false
+}
+
 API.onUpdate.connect(() => {
   if (API.isControlPressed(23) || API.isControlPressed(177)) {
     localPlayer = API.getLocalPlayer()
@@ -32,15 +37,29 @@ API.onUpdate.connect(() => {
   }
 })
 
+API.onKeyDown.connect((sender, e) => {
+  if (localPlayer === null) {
+    return
+  }
+
+  if (!API.isPlayerInAnyVehicle(localPlayer)) {
+    return
+  }
+
+  if (API.getPlayerVehicleSeat(localPlayer) !== -1) {
+    return
+  }
+})
+
 API.onPlayerEnterVehicle(() => {
   localPlayer = API.getLocalPlayer()
 })
 
-API.onResourceStart.connect(() => {
-  localPlayer = API.getLocalPlayer()
-  // API.sendChatMessage(`SMR: X: ${screenX}, Y: ${screenY}, ORIGX: ${API.getScreenResolutionMantainRatio().Width}, OFF: ${offsetX}`)
-  // API.sendChatMessage(`SCR: X: ${API.getScreenResolution().Width}, Y: ${API.getScreenResolution().Height}`)
-})
+// API.onResourceStart.connect(() => {
+//   localPlayer = API.getLocalPlayer()
+//   // API.sendChatMessage(`SMR: X: ${screenX}, Y: ${screenY}, ORIGX: ${API.getScreenResolutionMantainRatio().Width}, OFF: ${offsetX}`)
+//   // API.sendChatMessage(`SCR: X: ${API.getScreenResolution().Width}, Y: ${API.getScreenResolution().Height}`)
+// })
 
 function drawSpeedo () {
   let veh = API.getPlayerVehicle(localPlayer)

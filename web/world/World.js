@@ -40,14 +40,22 @@ class World {
   sessionStore () {
     const { Session } = this.M
     return {
-      get (id) {
-        return Session.findById(id)
+      async get (id) {
+        return (await Session.findOne({ where: { id } })).data
       },
-      set (id, data, maxAge) {
-        return Session.create({ id, data, maxAge })
+      async set (id, data, maxAge) {
+        let session = await Session.findOne({ where: { id } })
+        if (session === null) {
+          session = Session.build({ id })
+        }
+
+        session.data = data
+        session.maxAge = maxAge
+
+        return session.save()
       },
       async destroy (id) {
-        return (await Session.findById(id)).destroy()
+        return (await Session.findOne({ where: { id } })).destroy()
       }
     }
   }

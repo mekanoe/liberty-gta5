@@ -2,10 +2,8 @@
 	<script src="SVersionSetter.cs" lang="csharp" type="server" />
 	<script src="libs/nativemenu/nativemenu.js" lang="javascript" type="client" />
 	<script src="libs/uikit.js" lang="javascript" type="client" />
+	<script src="libs/cefkit.js" lang="javascript" type="client" />
 <!-- 	<script src="libs/enums.js" lang="javascript" type="client" /> -->
-
-	<script src="libs/clienthttp/clienthttp.js" lang="javascript" type="client" />
-	<script src="libs/clienthttp/clienthttp.cs" lang="csharp" type="server" />
 
 	<script src="admin-commands/SAdminCommands.cs" lang="csharp" type="server" />
 
@@ -57,8 +55,11 @@
 	<script src="spawn-manager/SSpawnManager.cs" lang="csharp" type="server" />
 	<script src="spawn-manager/CSpawn.js" lang="javascript" type="client" />
 
+	<script src="user-manager/SUserManager.cs" lang="csharp" type="server" />
+	<script src="user-manager/CUserUI.js" lang="javascript" type="client" />
+
 	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />
-	<script src="static-uis/ScaleformTesting.js" lang="javascript" type="client" />
+	<!-- <script src="static-uis/ScaleformTesting.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CAdminAnnounce.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CContextWheel.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CStreetLocation.js" lang="javascript" type="client" /> -->
@@ -79,6 +80,11 @@
 			name="cluster_name"
 			description="This prevents the game server and the world servers from clustering with the wrong cluster."
 			value="dev"
+		/>
+		<setting
+			name="world_ui_url"
+			description="World UI URL"
+			value="http://localhost:8080"
 		/>
 	</settings>
 </meta>

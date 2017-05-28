@@ -7,8 +7,8 @@ services:
         container_name: libertyrp-pg
         ports:
             - "5432:5432"
-        volumes:
-            - ".data/pg:/var/lib/postgresql/data"
+        # volumes:
+        #     - ".data/pg:/var/lib/postgresql/data"
         environment:
             POSTGRES_PASSWORD: 19216801
             POSTGRES_DB: libertyrp

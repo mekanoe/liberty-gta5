@@ -1,3 +1,13 @@
+let CEFKit
+
+API.onResourceStart.connect(() => {
+  try {
+    CEFKit = exported.require.require.require('@/liberty/cefkit')
+  } catch (e) {
+    API.sendNotification('~r~~h~Caught require failure. lol.')
+  }
+})
+
 function getSafeResolution () {
   let offsetX = 0
   let screenX = API.getScreenResolutionMantainRatio().Width
@@ -29,10 +39,6 @@ function hexToRgb (hex) {
   } : null
 }
 
-function createRect (obj) {
-  return new Rect(obj)
-}
-
 class Rect {
   constructor ({x, y, w, h, color = '#000', opacity = 255, fromCenter = false}) {
     this.x = x
@@ -42,6 +48,8 @@ class Rect {
     this.opacity = opacity
     this._border = null
     this._image = null
+    this._cef = null
+    this._renderMainRect = true
     this._onHover = null
     this._onHoverEnd = null
     this._onClick = null
@@ -87,6 +95,21 @@ class Rect {
 
   color (color) {
     this._color = typeof color === 'string' ? hexToRgb(color) : color
+    return this
+  }
+
+  renderBackground (state) {
+    this._renderMainRect = state
+    return this
+  }
+
+  cef (obj) {
+    this._cef = new CEFKit.ExclusiveWindow(Object.assign({}, { x: this.x, y: this.y, w: this.w, h: this.h }, obj))
+    return this
+  }
+
+  getCef () {
+    return this._cef
   }
 
   __checkHover (point) {
@@ -170,7 +193,7 @@ class Rect {
   }
 
   getInsetRect (obj) {
-    API.sendChatMessage('inset rect')
+    // API.sendChatMessage('inset rect')
     obj.x = this.x + (obj.x || 0)
     obj.y = this.y + (obj.y || 0)
     return new Rect(obj)
@@ -207,7 +230,9 @@ class Rect {
       this._onClick()
     }
 
-    API.drawRectangle(this.x, this.y, this.w, this.h, this._color.r, this._color.g, this._color.b, this.opacity)
+    if (this._renderMainRect) {
+      API.drawRectangle(this.x, this.y, this.w, this.h, this._color.r, this._color.g, this._color.b, this.opacity)
+    }
 
     if (this._border !== null) {
       const bw = this._border.width
@@ -224,6 +249,10 @@ class Rect {
 
     if (this._image !== null) {
       API.dxDrawTexture(this._image.path, this._image.pos, this._image.size, this._image.rot)
+    }
+
+    if (this._cef !== null && !this._cef.active) {
+      this._cef.activate()
     }
   }
 }
@@ -244,4 +273,5 @@ function __requireModuleClasses () {
     Rect
   }
 }
-const exported = { rectCoordsFromCenter, hexToRgb, Rect, getSafeResolution, createRect, __requireModuleClasses } // eslint-disable-line no-unused-vars
+
+const ___exported = { rectCoordsFromCenter, hexToRgb, Rect, getSafeResolution, __requireModuleClasses } // eslint-disable-line no-unused-vars

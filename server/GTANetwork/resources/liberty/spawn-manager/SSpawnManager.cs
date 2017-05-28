@@ -34,6 +34,8 @@ namespace Liberty.SpawnManager {
                 API.sendChatMessageToPlayer(player, "~b~Welcome!~w~");
                 showLoginCamera(player);
             }
+
+            API.triggerClientEvent(player, "cef:baseUrl", API.getSetting<string>("world_ui_url"));
         }
 
         private void onPlayerConnected(Client player) {
@@ -93,7 +95,7 @@ namespace Liberty.SpawnManager {
             API.setEntityRotation(player, _defaultSpawnRot);
             API.setEntityPositionFrozen(player, false);
             API.setEntityData(player, "VPlayerSpawned", true);
-            API.setPlayerSkin(player, API.pedNameToModel("Skater01AFY"));
+            API.setPlayerSkin(player, PedHash.BoatStaff01F);
             API.setPlayerNametagVisible(player, false);
             API.setEntityInvincible(player, false);
             API.setPlayerHealth(player, 100);

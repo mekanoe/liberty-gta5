@@ -1,9 +1,5 @@
 let cameraActive = false
 
-// API.onResourceStart.connect(() => {
-//   freeCamera()
-// })
-
 API.onServerEventTrigger.connect((name, args) => {
   switch (name) {
     case 'spawn:camstart':

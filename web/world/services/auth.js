@@ -20,6 +20,7 @@ class Auth {
         user.presentable(true)
         done(null, user)
       } catch (e) {
+        log.error('deserialize error', e)
         done(e)
       }
     })

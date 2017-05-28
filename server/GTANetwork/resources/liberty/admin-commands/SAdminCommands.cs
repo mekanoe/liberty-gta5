@@ -18,6 +18,11 @@ namespace Liberty.AdminCommands {
             API.setPlayerIntoVehicle(sender, veh, -1);  
         }
 
+        [Command("skin")]
+        public void MSkinChange(Client sender, string skin) {
+            API.setPlayerSkin(sender, API.pedNameToModel(skin));
+        }
+
         [Command("delveh")]
         public void MCarDel(Client sender) {
             var veh = API.getPlayerVehicle(sender);
