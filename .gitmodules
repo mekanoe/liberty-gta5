@@ -1,0 +1,6 @@
+[submodule "server/GTANetwork/resources/clienthttp"]
+	path = server/GTANetwork/resources/clienthttp
+	url = https://github.com/kayteh/clienthttp.git
+[submodule "server/GTANetwork/resources/require"]
+	path = server/GTANetwork/resources/require
+	url = https://github.com/kayteh/require
