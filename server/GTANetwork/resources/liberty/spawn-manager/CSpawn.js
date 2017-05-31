@@ -3,6 +3,10 @@ let cameraActive = false
 API.onServerEventTrigger.connect((name, args) => {
   switch (name) {
     case 'spawn:camstart':
+      if (cameraActive) {
+        freeCamera()
+      }
+
       createCamera(args)
       cameraActive = true
       break

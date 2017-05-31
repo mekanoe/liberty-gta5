@@ -33,6 +33,11 @@ namespace Liberty.AdminCommands {
             }
         }
 
+        [Command("tp")]
+        public void MTp(Client player, float x, float y, float z) {
+            API.setEntityPosition(player, new Vector3(x, y, z));
+        }
+
         [Command("mc-cc")]
         public async void GetClientCounter(Client player) {
             API.consoleOutput("pre-await");

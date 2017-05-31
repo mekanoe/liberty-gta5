@@ -1,16 +1,19 @@
 let CEFKit
 
 API.onResourceStart.connect(() => {
+  // console.chat().info('hello world!')
   try {
-    CEFKit = exported.require.require.require('@/liberty/cefkit')
+    // CEFKit = require('@/uikit-sandbox/CEFKit')
   } catch (e) {
     API.sendNotification('~r~~h~Caught require failure. lol.')
+    // console.error(e)
   }
 })
 
 function getSafeResolution () {
   let offsetX = 0
-  const screen = API.getScreenResolutionMantainRatio()
+  const screen = API.getScreenResolutionMaintainRatio()
+  // const screen = API.getScreenResolution()
   let screenX = screen.Width
   const screenY = screen.Height
   if (screenX / screenY > 1.7777) {
@@ -26,7 +29,7 @@ function getSafeResolution () {
 }
 
 function scaleCoordsToReal (point) {
-  const ratioScreen = API.getScreenResolutionMantainRatio()
+  const ratioScreen = API.getScreenResolutionMaintainRatio()
   const realScreen = API.getScreenResolution()
 
   const widthDivisor = realScreen.Width / ratioScreen.Width
@@ -144,6 +147,7 @@ class Rect {
     this._image = null
     this._cef = null
     this._text = null
+    this._offset = { x: 0, y: 0 }
     this._renderMainRect = true
     this._onHover = null
     this._onHoverEnd = null
@@ -269,6 +273,15 @@ class Rect {
     return this._cef
   }
 
+  offset ({ x = 0, y = 0 } = {}) {
+    this._offset = { x, y }
+    return this
+  }
+
+  __getRealPosition () {
+    return { x: this._offset.x + this.x, y: this._offset.y + this.y }
+  }
+
   __checkHover (point) {
     return point.X > this.x && point.X < (this.x + this.w) && point.Y > this.y && point.Y < (this.y + this.h)
   }
@@ -362,46 +375,48 @@ class Rect {
   }
 
   draw () {
-    const cursor = API.getCursorPositionMantainRatio()
+    // const cursor = API.getCursorPositionMantainRatio()
 
-    // if (this.__debug) debugSubtitle({ Cx: cursor.x, Cy: cursor.y })
+    // // if (this.__debug) debugSubtitle({ Cx: cursor.x, Cy: cursor.y })
 
-    this.__lastDrawHovered = this.__hovered
+    // this.__lastDrawHovered = this.__hovered
 
-    if (this._onHover !== null && this.__checkHover(cursor)) {
-      this.__hovered = true
-      this._onHover()
-    } else {
-      this.__hovered = false
-    }
+    // if (this._onHover !== null && this.__checkHover(cursor)) {
+    //   this.__hovered = true
+    //   this._onHover()
+    // } else {
+    //   this.__hovered = false
+    // }
 
-    if (this._onHoverEnd !== null && this.__lastDrawHovered && !this.__hovered) {
-      try {
-        this._onHoverEnd()
-      } catch (e) {
-        API.sendChatMessage(e.stack)
-      }
-    }
+    // if (this._onHoverEnd !== null && this.__lastDrawHovered && !this.__hovered) {
+    //   try {
+    //     this._onHoverEnd()
+    //   } catch (e) {
+    //     API.sendChatMessage(e.stack)
+    //   }
+    // }
 
-    if (this._onClick !== null && this.__checkClick(cursor)) {
-      this._onClick()
-    }
+    // if (this._onClick !== null && this.__checkClick(cursor)) {
+    //   this._onClick()
+    // }
+
+    let real = this.__getRealPosition()
 
     if (this._renderMainRect) {
-      API.drawRectangle(this.x, this.y, this.w, this.h, this._color.r, this._color.g, this._color.b, this.opacity)
+      API.drawRectangle(real.x, real.y, this.w, this.h, this._color.r, this._color.g, this._color.b, this.opacity)
     }
 
     if (this._border !== null) {
       const bw = this._border.width
       const bc = this._border.color
       // top
-      API.drawRectangle(this.x - bw, this.y - bw, this.w + (bw * 2), bw, bc.r, bc.g, bc.b, this._border.opacity)
+      API.drawRectangle(real.x - bw, real.y - bw, this.w + (bw * 2), bw, bc.r, bc.g, bc.b, this._border.opacity)
       // bottom
-      API.drawRectangle(this.x - bw, this.y + this.h, this.w + (bw * 2), bw, bc.r, bc.g, bc.b, this._border.opacity)
+      API.drawRectangle(real.x - bw, real.y + this.h, this.w + (bw * 2), bw, bc.r, bc.g, bc.b, this._border.opacity)
       // left
-      API.drawRectangle(this.x - bw, this.y, bw, this.h, bc.r, bc.g, bc.b, this._border.opacity)
+      API.drawRectangle(real.x - bw, real.y, bw, this.h, bc.r, bc.g, bc.b, this._border.opacity)
       // right
-      API.drawRectangle(this.x + this.w, this.y, bw, this.h, bc.r, bc.g, bc.b, this._border.opacity)
+      API.drawRectangle(real.x + this.w, real.y, bw, this.h, bc.r, bc.g, bc.b, this._border.opacity)
     }
 
     if (this._image !== null) {
@@ -435,6 +450,7 @@ function rectCoordsToCenter ({x, y, w, h}) {
     _oy: y
   }
 }
+
 
 function __requireModuleClasses () {
   return {

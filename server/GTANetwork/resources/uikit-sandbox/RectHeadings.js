@@ -1,3 +1,56 @@
+// let UIKit
+// let Rect
+// let rects = new Set()
+// let headingRects = new Set()
+// let screen
+// let ready = false
+// let anchor
+// let player
+
+// API.onResourceStart.connect(() => {
+//   UIKit = resource.UIKit
+//   Rect = UIKit.__requireModuleClasses().Rect
+
+//   screen = UIKit.getSafeResolution()
+//   anchor = {
+//     x: screen.offsetX + (screen.screenX * 0.5),
+//     y: screen.screenY - 50
+//   }
+
+//   player = API.getLocalPlayer()
+
+//   createRects()
+// })
+
+// API.onUpdate.connect(() => {
+//   if (ready) drawRects()
+// })
+
+// function createRects () {
+//   const mainRect = new Rect({ fromCenter: true, x: anchor.x, y: anchor.y, w: (8 * 90) + 30, h: 40, opacity: 100, color: '#600' })
+//   rects.add(mainRect)
+
+//   for (let i = 0; i <= 16; i++) {
+//     let r = mainRect.getInsetRect({ x: (i * 90), y: 20, w: 5, h: 10, color: '#fff', fromCenter: true })//.border({ width: 2, color: '#000' })
+//     rects.add(r)
+//     headingRects.add(r)
+//   }
+
+//   ready = true
+// }
+
+// function drawRects () {
+//   const rot = Math.floor(API.getGameplayCamRot().Z)
+
+//   for (let rect of headingRects) {
+//     rect.offset({ x: rot * 4 })
+//   }
+
+//   for (let rect of rects) {
+//     rect.draw()
+//   }
+// }
+
 let offsetX = 0
 let screenX = API.getScreenResolutionMantainRatio().Width
 const screenY = API.getScreenResolutionMantainRatio().Height

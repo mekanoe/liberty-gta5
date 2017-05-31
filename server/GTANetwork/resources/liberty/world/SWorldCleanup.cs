@@ -4,7 +4,7 @@ using GTANetworkServer;
 using GTANetworkShared;
 
 namespace Liberty.world {
-    class SWorldCleanup {
+    class SWorldCleanup : Script {
         private List<CleanupItem> trashbinItems = new List<CleanupItem>();
 
         public SWorldCleanup() {

@@ -17,29 +17,29 @@ export default {
 
 $dark: #080c00
 
-$rgba-primary-0: rgba(220,203, 14,1); // Main Primary color */
-$rgba-primary-1: rgba(255,242,101,1);
-$rgba-primary-2: rgba(242,227, 57,1);
-$rgba-primary-3: rgba(177,162,  2,1);
-$rgba-primary-4: rgba(137,125,  0,1);
+$rgba-primary-0: rgba(220,203, 14,1) // Main Primary color */
+$rgba-primary-1: rgba(255,242,101,1)
+$rgba-primary-2: rgba(242,227, 57,1)
+$rgba-primary-3: rgba(177,162,  2,1)
+$rgba-primary-4: rgba(137,125,  0,1)
 
-$rgba-secondary-1-0: rgba( 42,184, 12,1); // Main Secondary color (1) */
-$rgba-secondary-1-1: rgba(108,217, 86,1);
-$rgba-secondary-1-2: rgba( 75,202, 48,1);
-$rgba-secondary-1-3: rgba( 27,148,  2,1);
-$rgba-secondary-1-4: rgba( 20,114,  0,1);
+$rgba-secondary-1-0: rgba( 42,184, 12,1) // Main Secondary color (1) */
+$rgba-secondary-1-1: rgba(108,217, 86,1)
+$rgba-secondary-1-2: rgba( 75,202, 48,1)
+$rgba-secondary-1-3: rgba( 27,148,  2,1)
+$rgba-secondary-1-4: rgba( 20,114,  0,1)
 
-$rgba-secondary-2-0: rgba(213, 14, 33,1); // Main Secondary color (2) */
-$rgba-secondary-2-1: rgba(247, 98,112,1);
-$rgba-secondary-2-2: rgba(234, 56, 73,1);
-$rgba-secondary-2-3: rgba(171,  2, 18,1);
-$rgba-secondary-2-4: rgba(132,  0, 13,1);
+$rgba-secondary-2-0: rgba(213, 14, 33,1) // Main Secondary color (2) */
+$rgba-secondary-2-1: rgba(247, 98,112,1)
+$rgba-secondary-2-2: rgba(234, 56, 73,1)
+$rgba-secondary-2-3: rgba(171,  2, 18,1)
+$rgba-secondary-2-4: rgba(132,  0, 13,1)
 
-$rgba-complement-0: rgba( 78, 21,149,1);  // Main Complement color */
-$rgba-complement-1: rgba(124, 80,180,1);
-$rgba-complement-2: rgba(100, 49,164,1);
-$rgba-complement-3: rgba( 59, 11,120,1);
-$rgba-complement-4: rgba( 44,  6, 93,1);
+$rgba-complement-0: rgba( 78, 21,149,1)  // Main Complement color */
+$rgba-complement-1: rgba(124, 80,180,1)
+$rgba-complement-2: rgba(100, 49,164,1)
+$rgba-complement-3: rgba( 59, 11,120,1)
+$rgba-complement-4: rgba( 44,  6, 93,1)
 
 $trim-color-classes: true
 $color-primary: "220,203,14"
@@ -49,8 +49,8 @@ $color-primary-contrast: "0,0,0"
 $color-accent-contrast: "10,24,38"
 $grid-desktop-breakpoint: 960px
 $grid-tablet-breakpoint: 722px
-$button-primary-color-disabled: unquote("rgba(#{242,227, 57}, 0.12)") !default;
-$button-secondary-color-disabled: unquote("rgba(#{200,200,200}, 0.56)") !default;
+$button-primary-color-disabled: unquote("rgba(#{242,227, 57}, 0.12)") !default
+$button-secondary-color-disabled: unquote("rgba(#{200,200,200}, 0.56)") !default
 
 @import "../node_modules/material-design-lite/src/material-design-lite.scss"
 

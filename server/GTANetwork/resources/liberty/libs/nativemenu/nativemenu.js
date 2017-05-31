@@ -1793,4 +1793,4 @@ API.onKeyDown.connect(function (sender, e) {
   }
 })
 
-const exported = {createMenu, createNotification, createPlayerTextNotification, createProgressBar, reset} // eslint-disable-line no-unused-vars
+const __exported = {createMenu, createNotification, createPlayerTextNotification, createProgressBar, reset} // eslint-disable-line no-unused-vars

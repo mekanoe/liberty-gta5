@@ -10,7 +10,7 @@ const World = require('./World')
 
 // Create the server and socket.io server
 const server = http.createServer(app.callback())
-const io = _io(server, { transports: ['websocket'], wsEngine: 'uws' })
+const io = _io(server, { transports: ['websocket'], path: '/api/socket.io', wsEngine: 'uws' })
 
 const W = new World(router, io, app) // eslint-disable-line no-unused-vars
 

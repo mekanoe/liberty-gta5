@@ -5,7 +5,7 @@ using GTANetworkShared;
 
 namespace Liberty.SpawnManager {
     class SSpawnManager : Script {
-        private static Random random = new Random((int)DateTimeOffset.Now.ToUnixTimeSeconds());
+        private static readonly Random random = new Random((int)DateTimeOffset.Now.ToUnixTimeSeconds());
         private readonly Vector3 _defaultSpawnLoc = new Vector3(-1314.202f, -936.27f, 9.73f); 
         private readonly Vector3 _defaultSpawnRot = new Vector3(0f, 0f, 30f);
         private ColShape _defaultSpawnCol;
@@ -16,6 +16,9 @@ namespace Liberty.SpawnManager {
             new LoginCameraBackdrop(new Vector3(-3139.136f, 1546.344f, 30f), new Vector3(-10f, 0f, -105f)),
             new LoginCameraBackdrop(new Vector3(-2411.382f, 2386.854f, 100f), new Vector3(3f, 0f, -81f)),
         };
+
+        private readonly Vector3 charSelectPedPos = new Vector3(402.8972f, -996.8927f, -99f);
+        private readonly Vector3 charSelectCamPos = new Vector3(402.8972f, -999.8927f, -99f);
 
         public SSpawnManager() {
             API.onPlayerFinishedDownload += onPlayerDownload;
@@ -39,8 +42,12 @@ namespace Liberty.SpawnManager {
         }
 
         private void onPlayerConnected(Client player) {
+            player.dimension = 1;
             API.setEntityData(player, "VPlayerSpawned", false);
-            API.setEntityData(player, "VPlayerLoggedIn", false);
+
+            if (API.getEntityData(player, "VPlayerLoggedIn") != true) {
+                API.setEntityData(player, "VPlayerLoggedIn", false);
+            }
         }
 
         private void onPlayerDeath(Client player, NetHandle killer, int something) {
@@ -88,6 +95,7 @@ namespace Liberty.SpawnManager {
 
         [Command("spawn")]
         public void spawnPlayer(Client player) {
+            player.dimension = 1;
             API.setEntityTransparency(player, 255);
             API.setEntityCollisionless(player, false);
             API.setEntityData(player, "VPlayerServerCam", false);
@@ -95,7 +103,7 @@ namespace Liberty.SpawnManager {
             API.setEntityRotation(player, _defaultSpawnRot);
             API.setEntityPositionFrozen(player, false);
             API.setEntityData(player, "VPlayerSpawned", true);
-            API.setPlayerSkin(player, PedHash.BoatStaff01F);
+            API.setPlayerSkin(player, PedHash.Skater01AFY);
             API.setPlayerNametagVisible(player, false);
             API.setEntityInvincible(player, false);
             API.setPlayerHealth(player, 100);
@@ -105,7 +113,7 @@ namespace Liberty.SpawnManager {
         [Command("ssc")]
         public void showLoginCamera(Client player) {
             LoginCameraBackdrop backdrop = backdrops[random.Next(backdrops.Count)];
-
+            player.dimension = player.getData("VOwnDimension");
             API.setPlayerNametagVisible(player, false);
             API.setEntityPosition(player, backdrop.Position);
             API.setEntityTransparency(player, 0);
@@ -113,6 +121,18 @@ namespace Liberty.SpawnManager {
             API.setEntityPositionFrozen(player, true);
             API.triggerClientEvent(player, "spawn:camstart", backdrop.Position, backdrop.Rotation);
             API.setEntityData(player, "VPlayerServerCam", true);
+        }
+
+        [Command("scs")]
+        public void showCharSelect(Client player) {
+            player.dimension = player.getData("VOwnDimension");
+            player.position = charSelectCamPos;
+            API.triggerClientEvent(player, "spawn:camstart", charSelectCamPos, new Vector3(0f, 0f, 0f));
+            API.sleep(1);
+            API.triggerClientEvent(player, "spawn:charselect", charSelectPedPos);
+            API.setEntityData(player, "VPlayerServerCam", true);
+
+            // NetHandle ped = API.createPed();
         }
     }
 

@@ -142,20 +142,19 @@ label .icon-text
       }
     },
     methods: {
-      submitLogin () {
+      async submitLogin () {
         this.loggingIn = true
-        api.loginPost(this.login).then((resp) => {
+
+        try {
+          let resp = await api.loginPost(this.login)
           this.loggingIn = false
 
           if (resp.body.status !== 'ok') {
             throw new TypeError(resp.body)
           }
 
-          api.rpcAfterLogin().then(() => {
-            // i'll never reach this!
-          })
-        })
-        .catch((err) => {
+          await api.rpcAfterLogin()
+        } catch (err) {
           console.log(err)
           this.loggingIn = false
           if (err.status === 403) {
@@ -163,7 +162,7 @@ label .icon-text
           } else {
             this.failed = translateErr()
           }
-        })
+        }
       }
     },
     data () {
@@ -195,10 +194,15 @@ label .icon-text
         failed = translateErr(sp.failed)
       }
 
-      if (sp.token === undefined) {
-        failed = translateErr('no_token')
+      if (sp.token === undefined || sp.token === 'null') { // this string null is on purpose
+        token = sessionStorage.getItem('userToken')
+
+        if (token === null) {
+          failed = translateErr('no_token')
+        }
       } else {
         token = sp.token
+        sessionStorage.setItem('userToken', token)
       }
 
       return {
@@ -209,7 +213,7 @@ label .icon-text
         success: false,
         q: sp,
         login: {
-          email: '',
+          username: '',
           password: '',
           token
         }

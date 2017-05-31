@@ -56,6 +56,7 @@
 	<script src="spawn-manager/CSpawn.js" lang="javascript" type="client" />
 
 	<script src="user-manager/SUserManager.cs" lang="csharp" type="server" />
+	<script src="user-manager/CRC32.cs" lang="csharp" type="server" />
 	<script src="user-manager/CUserUI.js" lang="javascript" type="client" />
 
 	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />

@@ -1,5 +1,6 @@
 const log = new (require('../logger'))('services/auth')
 const passport = require('koa-passport')
+const { isEmail, isAlphanumeric } = require('validator')
 const LocalStrategy = require('passport-local').Strategy
 
 class Auth {
@@ -24,6 +25,22 @@ class Auth {
         done(e)
       }
     })
+  }
+
+  validateUser ({ username, password, email }) {
+    if (!isAlphanumeric(username)) {
+      throw new TypeError('invalid_username')
+    }
+
+    if (!isEmail(password)) {
+      throw new TypeError('invalid_email')
+    }
+
+    if (password.length < 8) {
+      throw new TypeError('invalid_password')
+    }
+
+    return true
   }
 
   async strategy (username, password, done) {
