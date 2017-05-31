@@ -1,0 +1,130 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D6B1B75-9A06-4D52-95F0-FEE33BF5B516}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Liberty</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Liberty</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GTANetworkServer">
+      <HintPath>..\..\GTANetworkServer.exe</HintPath>
+    </Reference>
+    <Reference Include="GTANetworkShared">
+      <HintPath>..\..\GTANetworkShared.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include=".eslintrc.json" />
+    <None Include="npc-businesses\carshops.json" />
+    <None Include="package.json" />
+    <None Include="rpc\README.md" />
+    <None Include="spawn-manager\skins.json" />
+    <None Include="world\weather.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\Bags-Dark.png" />
+    <Content Include="img\Bags.png" />
+    <Content Include="img\Bottoms-Dark.png" />
+    <Content Include="img\Bottoms.png" />
+    <Content Include="img\Hats-Dark.png" />
+    <Content Include="img\Hats.png" />
+    <Content Include="img\Jackets-Dark.png" />
+    <Content Include="img\Jackets.png" />
+    <Content Include="img\ponsonbys.png" />
+    <Content Include="img\Shoes-Dark.png" />
+    <Content Include="img\Shoes.png" />
+    <Content Include="img\Tops-Dark.png" />
+    <Content Include="img\Tops.png" />
+    <Content Include="libs\cefkit.js" />
+    <Content Include="libs\enums.js" />
+    <Content Include="libs\nativemenu\nativemenu.js" />
+    <Content Include="libs\uikit.js" />
+    <Content Include="meta.xml" />
+    <Content Include="npc-businesses\CBank.js" />
+    <Content Include="npc-businesses\CCarShop.js" />
+    <Content Include="npc-businesses\CClothingShop.js" />
+    <Content Include="spawn-manager\CSpawn.js" />
+    <Content Include="static-uis\CAdminAnnounce.js" />
+    <Content Include="static-uis\CContextWheel.js" />
+    <Content Include="static-uis\CStreetLocation.js" />
+    <Content Include="static-uis\CVehicleHUD.js" />
+    <Content Include="static-uis\ScaleformTesting.js" />
+    <Content Include="static-uis\uiconstants.js" />
+    <Content Include="user-manager\CUserUI.js" />
+    <Content Include="world\CWorldSync.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin-commands\SAdminCommands.cs" />
+    <Compile Include="jobs\Airline.cs" />
+    <Compile Include="npc-businesses\Bank.cs" />
+    <Compile Include="npc-businesses\BarberShop.cs" />
+    <Compile Include="npc-businesses\ClothingShop.cs" />
+    <Compile Include="npc-businesses\GunShop.cs" />
+    <Compile Include="npc-businesses\SChumashBank.cs" />
+    <Compile Include="npc-businesses\SMissionRowClothes.cs" />
+    <Compile Include="npc-businesses\SMotoShop.cs" />
+    <Compile Include="npc-businesses\SPaletoBayBank.cs" />
+    <Compile Include="npc-businesses\SPillboxBank.cs" />
+    <Compile Include="npc-businesses\SPillboxGuns.cs" />
+    <Compile Include="npc-businesses\SPonsonbysPortola.cs" />
+    <Compile Include="npc-businesses\SRegularCarShop.cs" />
+    <Compile Include="npc-businesses\SRockfordClothes.cs" />
+    <Compile Include="npc-businesses\SShopUtil.cs" />
+    <Compile Include="npc-businesses\SSupercarShop.cs" />
+    <Compile Include="npc-businesses\STruckShop.cs" />
+    <Compile Include="npc-businesses\SVinewoodBank.cs" />
+    <Compile Include="npc-businesses\SVinewoodClothes.cs" />
+    <Compile Include="npc-businesses\SVinewoodHair.cs" />
+    <Compile Include="rpc\SRpc.cs" />
+    <Compile Include="rpc\WebServer.cs" />
+    <Compile Include="spawn-manager\SSpawnManager.cs" />
+    <Compile Include="SVersionSetter.cs" />
+    <Compile Include="user-manager\CRC32.cs" />
+    <Compile Include="user-manager\SUserManager.cs" />
+    <Compile Include="world\SWorldCleanup.cs" />
+    <Compile Include="world\SWorldController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="effects\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
