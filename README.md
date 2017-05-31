@@ -51,7 +51,7 @@ these are in bash, so.. possibly correct them for me for windows!
 
 - Starting up: (this doesn't have to be in order, just preferrably in this)
 ```bash
-    (cd web/world && npm run dev)
+    (cd web/world && docker-compose up -d && npm run dev:backend && npm run dev:frontend)
     (cd server/GTANetwork && mono --runtime=4.6 GTANetworkServer.exe) # don't use mono for windows, obviously.
 ```
 
