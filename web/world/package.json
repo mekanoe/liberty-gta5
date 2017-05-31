@@ -2,11 +2,14 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
   "scripts": {
     "start": "standard && node index.js",
     "fix": "standard --fix",
-    "create": "node util/create.js"
+    "create": "node util/create.js",
+    "dev": "npm run dev:backend; npm run dev:frontend",
+    "dev:backend": "pm2 start index.js --watch --ignore-watch=frontend",
+    "dev:frontend": "(cd frontend && npm run dev)",
+    "pm2": "pm2"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -28,6 +31,7 @@
     "passport-local": "^1.0.0",
     "pg": "^6.2.2",
     "pg-hstore": "^2.3.2",
+    "pm2": "^2.4.6",
     "sequelize": "4.0.0-2",
     "socket.io": "^2.0.1",
     "standard": "^10.0.2",
