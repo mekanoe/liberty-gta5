@@ -39,10 +39,10 @@ Hello developer! These directions for specifically for LibertyRP. If you're here
 these are in bash, so.. possibly correct them for me for windows! 
 
 - Node Dependencies:
-  + ```bash
+```bash
     cd web/world && yarn
     cd frontend && yarn
-    ```
+```
 
 - Setting up:
   + if you used a different postgres install, see `web/world/.env` and set it up
@@ -50,10 +50,10 @@ these are in bash, so.. possibly correct them for me for windows!
   + look in `server/GTANetwork/liberty/meta.xml`, change your server identifier to something unique.
 
 - Starting up: (this doesn't have to be in order, just preferrably in this)
-  + ```bash
+```bash
     (cd web/world && npm run dev)
     (cd server/GTANetwork && mono --runtime=4.6 GTANetworkServer.exe) # don't use mono for windows, obviously.
-    ```
+```
 
 ## Where to begin
 
