@@ -21,6 +21,7 @@
   <resource src="admin" />
   <resource src="doormanager" />
   <resource src="liberty" />
+  <!-- <resource src="test" /> -->
   <resource src="messagechannel" />
   <announce_lan>true</announce_lan>
   <upnp>false</upnp>

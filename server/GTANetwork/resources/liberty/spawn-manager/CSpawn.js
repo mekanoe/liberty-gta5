@@ -1,24 +1,24 @@
 let cameraActive = false
 
 API.onServerEventTrigger.connect((name, args) => {
-  switch (name) {
-    case 'spawn:camstart':
-      if (cameraActive) {
-        freeCamera()
-      }
+  // switch (name) {
+  //   case 'spawn:camstart':
+  //     if (cameraActive) {
+  //       freeCamera()
+  //     }
 
-      createCamera(args)
-      cameraActive = true
-      break
-    case 'spawn:camend':
-      freeCamera()
-      break
-  }
+  //     createCamera(args)
+  //     cameraActive = true
+  //     break
+  //   case 'spawn:camend':
+  //     freeCamera()
+  //     break
+  // }
 })
 
 API.onUpdate.connect(() => {
   if (cameraActive) {
-    API.disableAllControlsThisFrame()
+    // API.disableAllControlsThisFrame()
   }
 })
 

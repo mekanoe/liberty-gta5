@@ -71,7 +71,14 @@ namespace Liberty.SpawnManager {
             // API.setEntityPositionFrozen(player, true);
         }
 
+<<<<<<< Updated upstream
         private void onResourceStart() {
+=======
+        private void onResourceStart()
+        {
+            API.createMarker(1, _defaultSpawnLoc, new Vector3(), new Vector3(),
+                new Vector3(1f, 1f, 1f), 255, 0, 0, 255);
+>>>>>>> Stashed changes
             // _defaultSpawnCol = API.createCylinderColShape(_defaultSpawnLoc, 3f, 3f);
 
             // _defaultSpawnCol.onEntityEnterColShape += (shape, entity) => {

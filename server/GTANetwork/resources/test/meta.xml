@@ -1,3 +1,4 @@
 <meta>
 	<script src="test.js" type="client" lang="javascript" />
+	<script src="test.cs" type="server" lang="csharp" />
 </meta>

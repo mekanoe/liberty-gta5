@@ -32,7 +32,7 @@ API.onServerEventTrigger.connect((name, args) => {
 
 function createLogin () {
   API.showCursor(true)
-  API.setChatVisible(false)
+  // API.setChatVisible(false)
   CEFKit.awaitSetup().then(() => {
     let userToken = API.getEntitySyncedData(API.getLocalPlayer(), 'VToken')
     CEFKit.loadGlobal(`/auth/login?token=${userToken}`)
