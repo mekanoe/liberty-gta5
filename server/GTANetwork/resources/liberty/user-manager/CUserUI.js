@@ -4,6 +4,7 @@ let safe
 let cefRect = null
 
 API.onResourceStart.connect(() => {
+  API.setCefDrawState(true)
   let require = exported.require.require.require
   CEFKit = require('@/liberty/cefkit')
   UIKit = require('@/liberty/uikit')
