@@ -8,7 +8,7 @@
     "create": "node util/create.js",
     "dev": "npm run dev:backend; npm run dev:frontend",
     "dev:backend": "pm2 start index.js --watch --ignore-watch=frontend",
-    "dev:frontend": "(cd frontend && npm run dev)",
+    "dev:frontend": "(cd frontend && pm2 start build/dev-server.js)",
     "pm2": "pm2"
   },
   "dependencies": {

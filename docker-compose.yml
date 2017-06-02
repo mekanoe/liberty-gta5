@@ -1,0 +1,43 @@
+
+version: '2.1'
+services:
+
+    pg:
+        image: postgres:9.6
+        container_name: libertyrp-pg
+        ports:
+            - 5432
+        environment:
+            POSTGRES_PASSWORD: 19216801
+            POSTGRES_DB: libertyrp
+            POSTGRES_USER: libertyrp
+            POSTGRES_INITDB_ARGS: -A trust
+
+    gtan:
+        image: mono:5.0
+        container_name: libertyrp-gtan
+        command: bash -c "(cd /srv; mono --runtime=4.6 GTANetworkServer.exe)"
+        ports:
+            - "${LIBRP_GAME:-4499}:4499/udp"
+            - 9000
+        volumes:
+            - "./server/GTANetwork:/srv/"
+    
+    world:
+        image: node:8.0-alpine
+        container_name: libertyrp-world
+        command: ash -c "(cd /srv; npm i && npm run pm2 -- --no-daemon start index.js --watch --ignore-watch frontend)"
+        ports:
+            - "${LIBRP_API:-6769}:6769"
+        environment:
+            - DB_URL=postgres://libertyrp:19216801@pg:5432/libertyrp
+            - GAME_SERVERS=gtan:9000
+            - DEBUG=true
+        volumes:
+            - "./web/world:/srv/"
+        links:
+            - pg
+            - gtan
+
+
+

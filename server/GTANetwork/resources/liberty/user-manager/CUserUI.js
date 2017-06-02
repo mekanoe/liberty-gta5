@@ -31,15 +31,12 @@ API.onServerEventTrigger.connect((name, args) => {
   }
 })
 
-function createLogin () {
+async function createLogin () {
   API.showCursor(true)
   // API.setChatVisible(false)
-  CEFKit.awaitSetup().then(() => {
-    let userToken = API.getEntitySyncedData(API.getLocalPlayer(), 'VToken')
-    CEFKit.loadGlobal(`/auth/login?token=${userToken}`)
-  }).catch((err) => {
-    API.sendChatMessage(err.stack)
-  })
+  await resource.cefkit.awaitSetup()
+  let userToken = API.getEntitySyncedData(API.getLocalPlayer(), 'VToken')
+  CEFKit.loadGlobal(`/auth/login?token=${userToken}`)
 }
 
 function freeCEF () {

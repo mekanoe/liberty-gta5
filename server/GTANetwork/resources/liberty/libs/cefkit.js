@@ -4,15 +4,11 @@ let config = {
   baseUrl: undefined
 }
 let setupResolve
-let setupPromise
+let setupPromise = new Promise((resolve, reject) => {
+  setupResolve = resolve
+})
 
 let cefWindows = new Set()
-
-API.onResourceStart.connect(() => {
-  setupPromise = new Promise((resolve, reject) => {
-    setupResolve = resolve
-  })
-})
 
 // BUGGY: v8 doesn't like to touch disposed objects
 // API.onResourceStop.connect(() => {

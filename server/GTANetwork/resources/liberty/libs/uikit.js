@@ -182,7 +182,7 @@ class Rect {
 
   image ({path, padding = 0, rot = 0.0}) {
     this._image = {
-      pos: new Point(this.x + padding, this.y + padding),
+      pos: new Point(Math.round(this.x + padding), Math.round(this.y + padding)),
       size: new Size(this.w - padding, this.h - padding),
       rot,
       path
