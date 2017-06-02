@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using GTANetworkServer;
 using GTANetworkShared;
 
-namespace Liberty.SpawnManager {
-    class SSpawnManager : Script {
+namespace Liberty.SpawnManager
+{
+    class SSpawnManager : Script
+    {
         private static readonly Random random = new Random((int)DateTimeOffset.Now.ToUnixTimeSeconds());
-        private readonly Vector3 _defaultSpawnLoc = new Vector3(-1314.202f, -936.27f, 9.73f); 
+        private readonly Vector3 _defaultSpawnLoc = new Vector3(-1314.202f, -936.27f, 9.73f);
         private readonly Vector3 _defaultSpawnRot = new Vector3(0f, 0f, 30f);
         private ColShape _defaultSpawnCol;
 
@@ -20,7 +22,8 @@ namespace Liberty.SpawnManager {
         private readonly Vector3 charSelectPedPos = new Vector3(402.8972f, -996.8927f, -99f);
         private readonly Vector3 charSelectCamPos = new Vector3(402.8972f, -999.8927f, -99f);
 
-        public SSpawnManager() {
+        public SSpawnManager()
+        {
             API.onPlayerFinishedDownload += onPlayerDownload;
             API.onPlayerConnected += onPlayerConnected;
             API.onResourceStart += onResourceStart;
@@ -32,8 +35,10 @@ namespace Liberty.SpawnManager {
         // Events //
         ///////////
 
-        private void onPlayerDownload(Client player) {
-            if (API.getEntityData(player, "VPlayerSpawned") == false) {
+        private void onPlayerDownload(Client player)
+        {
+            if (API.getEntityData(player, "VPlayerSpawned") == false)
+            {
                 API.sendChatMessageToPlayer(player, "~b~Welcome!~w~");
                 showLoginCamera(player);
             }
@@ -41,16 +46,19 @@ namespace Liberty.SpawnManager {
             API.triggerClientEvent(player, "cef:baseUrl", API.getSetting<string>("world_ui_url"));
         }
 
-        private void onPlayerConnected(Client player) {
+        private void onPlayerConnected(Client player)
+        {
             player.dimension = 1;
             API.setEntityData(player, "VPlayerSpawned", false);
 
-            if (API.getEntityData(player, "VPlayerLoggedIn") != true) {
+            if (API.getEntityData(player, "VPlayerLoggedIn") != true)
+            {
                 API.setEntityData(player, "VPlayerLoggedIn", false);
             }
         }
 
-        private void onPlayerDeath(Client player, NetHandle killer, int something) {
+        private void onPlayerDeath(Client player, NetHandle killer, int something)
+        {
             API.sendNativeToPlayer(player, Hash._RESET_LOCALPLAYER_STATE, player);
             API.sendNativeToPlayer(player, Hash.RESET_PLAYER_ARREST_STATE, player);
 
@@ -71,14 +79,10 @@ namespace Liberty.SpawnManager {
             // API.setEntityPositionFrozen(player, true);
         }
 
-<<<<<<< Updated upstream
-        private void onResourceStart() {
-=======
         private void onResourceStart()
         {
             API.createMarker(1, _defaultSpawnLoc, new Vector3(), new Vector3(),
                 new Vector3(1f, 1f, 1f), 255, 0, 0, 255);
->>>>>>> Stashed changes
             // _defaultSpawnCol = API.createCylinderColShape(_defaultSpawnLoc, 3f, 3f);
 
             // _defaultSpawnCol.onEntityEnterColShape += (shape, entity) => {
@@ -101,7 +105,8 @@ namespace Liberty.SpawnManager {
         ////////////////////
 
         [Command("spawn")]
-        public void spawnPlayer(Client player) {
+        public void spawnPlayer(Client player)
+        {
             player.dimension = 1;
             API.setEntityTransparency(player, 255);
             API.setEntityCollisionless(player, false);
@@ -118,7 +123,8 @@ namespace Liberty.SpawnManager {
         }
 
         [Command("ssc")]
-        public void showLoginCamera(Client player) {
+        public void showLoginCamera(Client player)
+        {
             LoginCameraBackdrop backdrop = backdrops[random.Next(backdrops.Count)];
             player.dimension = player.getData("VOwnDimension");
             API.setPlayerNametagVisible(player, false);
@@ -131,7 +137,8 @@ namespace Liberty.SpawnManager {
         }
 
         [Command("scs")]
-        public void showCharSelect(Client player) {
+        public void showCharSelect(Client player)
+        {
             player.dimension = player.getData("VOwnDimension");
             player.position = charSelectCamPos;
             API.triggerClientEvent(player, "spawn:camstart", charSelectCamPos, new Vector3(0f, 0f, 0f));
@@ -143,10 +150,12 @@ namespace Liberty.SpawnManager {
         }
     }
 
-    class LoginCameraBackdrop {
+    class LoginCameraBackdrop
+    {
         public Vector3 Position;
         public Vector3 Rotation;
-        public LoginCameraBackdrop(Vector3 pos, Vector3 rot) {
+        public LoginCameraBackdrop(Vector3 pos, Vector3 rot)
+        {
             Position = pos;
             Rotation = rot;
         }
