@@ -21,12 +21,14 @@ API.onServerEventTrigger.connect((name, args) => {
       createLogin()
       break
     case 'user:loginEnd':
-    case 'user:charselectEnd':
       freeCEF()
       break
     case 'user:charselectStart':
     case 'spawn:charselect':
       createCharSelect()
+      break
+    case 'user:charselectEnd':
+      endCharSelect()
       break
   }
 })
@@ -50,6 +52,11 @@ function createCharSelect () {
   cefRect = new UIKit.Rect({ x: 200, y: 100, w: 700, h: 600, color: '#f00' })
   const cef = cefRect.cef({ url: '/auth/login' }).getCef()
   cef.activate()
+}
+
+function endCharSelect () {
+  cefRect.getCef().destroy()
+  cefRect = null
 }
 
 API.onUpdate.connect(() => {

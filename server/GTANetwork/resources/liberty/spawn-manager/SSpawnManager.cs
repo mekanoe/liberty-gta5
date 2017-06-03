@@ -120,6 +120,7 @@ namespace Liberty.SpawnManager
             API.setEntityInvincible(player, false);
             API.setPlayerHealth(player, 100);
             API.triggerClientEvent(player, "spawn:camend", false);
+            API.triggerClientEvent(player, "user:charselectEnd", false);
         }
 
         [Command("ssc")]
