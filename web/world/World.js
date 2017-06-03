@@ -41,7 +41,13 @@ class World {
     const { Session } = this.M
     return {
       async get (id) {
-        return (await Session.findOne({ where: { id } })).data
+        const user = await Session.findOne({ where: { id } })
+
+        if (user === null) {
+          return null
+        }
+
+        return user.data
       },
       async set (id, data, maxAge) {
         let session = await Session.findOne({ where: { id } })
