@@ -2,13 +2,13 @@ let CEFKit
 let UIKit
 let safe
 let cefRect = null
+API.setCefDrawState(true)
 
 API.onResourceStart.connect(() => {
-  API.setCefDrawState(true)
-  let require = exported.require.require.require
-  CEFKit = require('@/liberty/cefkit')
-  UIKit = require('@/liberty/uikit')
-  safe = UIKit.getSafeResolution()
+  // let require = exported.require.require.require
+  CEFKit = resource.cefkit
+  UIKit = resource.uikit.__requireModuleClasses()
+  safe = resource.uikit.getSafeResolution()
 })
 
 API.onResourceStop.connect(() => {
@@ -31,10 +31,9 @@ API.onServerEventTrigger.connect((name, args) => {
   }
 })
 
-async function createLogin () {
+function createLogin () {
   API.showCursor(true)
-  // API.setChatVisible(false)
-  await resource.cefkit.awaitSetup()
+  API.setChatVisible(false)
   let userToken = API.getEntitySyncedData(API.getLocalPlayer(), 'VToken')
   CEFKit.loadGlobal(`/auth/login?token=${userToken}`)
 }
@@ -46,6 +45,8 @@ function freeCEF () {
 }
 
 function createCharSelect () {
+  API.showCursor(true)
+  API.setChatVisible(true)
   cefRect = new UIKit.Rect({ x: 200, y: 100, w: 700, h: 600, color: '#f00' })
   const cef = cefRect.cef({ url: '/auth/login' }).getCef()
   cef.activate()

@@ -1,11 +1,7 @@
 let CEFKit
 
 API.onResourceStart.connect(() => {
-  try {
-    CEFKit = exported.require.require.require('@/liberty/cefkit')
-  } catch (e) {
-    API.sendNotification('~r~~h~Caught require failure. lol.')
-  }
+  CEFKit = Object.assign(resource.cefkit, resource.cefkit.__requireModuleClasses())
 })
 
 function getSafeResolution () {

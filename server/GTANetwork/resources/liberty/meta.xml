@@ -1,5 +1,6 @@
 <meta>
-	<script src="SVersionSetter.cs" lang="csharp" type="server" />
+  <info type="gamemode" async="true" />
+  <script src="SVersionSetter.cs" lang="csharp" type="server" />
 	<script src="libs/nativemenu/nativemenu.js" lang="javascript" type="client" />
 	<script src="libs/uikit.js" lang="javascript" type="client" />
 	<script src="libs/cefkit.js" lang="javascript" type="client" />

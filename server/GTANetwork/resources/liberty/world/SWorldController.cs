@@ -140,8 +140,8 @@ namespace Liberty.world {
 
         private void weatherSync() {
             currentWeather = currentWeatherCycle.cycle[currentWeatherIndex];
-            API.setWorldSyncedData("VWeather", currentWeather);
-            API.setWeather(currentWeather);
+            API.shared.setWorldSyncedData("VWeather", currentWeather);
+            API.shared.setWeather(currentWeather);
         }
 
         private string gameTimeToHuman() {

@@ -3,38 +3,40 @@ let screenSize
 let config = {
   baseUrl: undefined
 }
-let setupResolve
+
 let setupPromise = new Promise((resolve, reject) => {
-  setupResolve = resolve
+  API.onServerEventTrigger.connect((name, args) => {
+    if (name === 'cef:baseUrl') {
+      config.baseUrl = args[0]
+      resolve(true)
+      // API.onServerEventTrigger.disconnect(handler)
+      setupPromise = true
+    }
+  })
 })
 
 let cefWindows = new Set()
 
 // BUGGY: v8 doesn't like to touch disposed objects
 // API.onResourceStop.connect(() => {
-//   cefWindows.forEach((v) => {
+//   for (let v of cefWindows) {
 //     if (!v.IsDisposed) {
 //       API.destroyCefBrowser(v)
 //     }
-//   })
+//   }
 // })
-
-API.onServerEventTrigger.connect((name, args) => {
-  if (name === 'cef:baseUrl') {
-    config.baseUrl = args[0]
-    setupResolve(true)
-  }
-})
 
 function awaitSetup () {
   return setupPromise
 }
 
-function loadGlobal (url, useBase = true) {
+async function loadGlobal (url, useBase = true) {
+  await awaitSetup()
   if (globalCefWindow === null) {
     screenSize = API.getScreenResolution()
     globalCefWindow = API.createCefBrowser(0, 0, false)
     API.waitUntilCefBrowserInit(globalCefWindow)
+    API.setCefFramerate(globalCefWindow, 60)
     API.setCefBrowserSize(globalCefWindow, screenSize.Width, screenSize.Height)
     cefWindows = cefWindows.add(globalCefWindow)
     // headlessGlobal(true)
@@ -100,6 +102,7 @@ class ExclusiveWindow {
     this._cefWindow = API.createCefBrowser(this.x, this.y, this.local)
     API.waitUntilCefBrowserInit(this._cefWindow)
 
+    API.setCefFramerate(this._cefWindow, 60)
     API.setCefBrowserSize(this._cefWindow, this.w, this.h)
     API.setCefBrowserPosition(this._cefWindow, this.x, this.y)
     API.loadPageCefBrowser(this._cefWindow, this.url)

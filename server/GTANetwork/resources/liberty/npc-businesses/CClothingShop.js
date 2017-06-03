@@ -11,7 +11,7 @@ let test
 let Rect
 
 API.onResourceStart.connect(() => {
-  let UIKit = exported.require.require.require('@/liberty/uikit')
+  let UIKit = Object.assign(resource.uikit, resource.uikit.__requireModuleClasses())
   Rect = UIKit.Rect
   test = new Rect({ x: 0, y: 0, w: 100, h: 100 })
   const res = resource.uikit.getSafeResolution()

@@ -41,7 +41,7 @@ namespace Liberty.userManager {
             }
 
             if (player.getData("VPlayerLoggedIn") == true && player.getData("VPlayerSpawned") == false) {
-                // API.call("SSpawnManager", "spawnPlayer", player);
+                // API.call("SSpawnManager", "showCharSelect", player);
             }
         } 
 
@@ -50,7 +50,7 @@ namespace Liberty.userManager {
             player.setData("VUser", userId);
             player.setData("VPlayerLoggedIn", true);
             API.triggerClientEvent(player, "user:loginEnd", false);
-            API.triggerClientEvent(player, "user:charselectStart", false);
+            API.call("SSpawnManager", "showCharSelect", player);
         }
 
     }
