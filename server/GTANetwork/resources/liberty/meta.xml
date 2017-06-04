@@ -43,6 +43,8 @@
 	<script src="npc-businesses/SStrawberryClothes.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SBeachStandClothes.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SChumashClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SChaparralClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SHarmonyClothes.cs" lang="csharp" type="server" />
 
 	<script src="npc-businesses/BarberShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SVinewoodHair.cs" lang="csharp" type="server" />
