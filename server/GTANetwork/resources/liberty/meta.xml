@@ -34,9 +34,15 @@
 
 	<script src="npc-businesses/ClothingShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SVinewoodClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SPonsonbysPortola.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SPortolaClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SMorningwoodClothes.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SRockfordClothes.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SMissionRowClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SDelPerroClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SVespucciClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SStrawberryClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SBeachStandClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/SChumashClothes.cs" lang="csharp" type="server" />
 
 	<script src="npc-businesses/BarberShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/SVinewoodHair.cs" lang="csharp" type="server" />
@@ -76,7 +82,7 @@
 			name="server_identifier" 
 			description="What the server reports itself as to the world servers. 
 			  This is important for RPC, otherwise the world server doesn't know what to do."
-			value="libertyrp-dev-katie" 
+			value="libertyrp-dev-divino" 
 		/>
 		<setting
 			name="cluster_name"

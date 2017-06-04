@@ -3,8 +3,8 @@ using GTANetworkServer;
 using GTANetworkShared;
 
 namespace Liberty.npcBusinesses {
-    class SPonsonbysPortola : ClothingShop {
-        public SPonsonbysPortola() : base() {
+    class SPortolaClothes : ClothingShop {
+        public SPortolaClothes() : base() {
             // debug = true;
 
             shopName = "Ponsonby's";

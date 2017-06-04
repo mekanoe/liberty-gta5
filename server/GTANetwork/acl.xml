@@ -12,6 +12,7 @@
     <acl name="Moderator" />
     <acl name="Admin" />
     <object name="user.kayteh" password="" />
+    <object name="user.divinoob" password="" />
   </group>
   <acl name="Default">
     <right name="command.kick" access="false" />
