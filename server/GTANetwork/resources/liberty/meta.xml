@@ -10,14 +10,14 @@
 
 	<!-- <script src="npc-businesses/SShopUtil.cs" lang="csharp" type="server" /> -->
 
-	<script src="npc-businesses/Bank.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/CBank.js" lang="javascript" type="client" />
-	<script src="npc-businesses/SPillboxBank.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SChumashBank.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SPaletoBayBank.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SVinewoodBank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/bank/Bank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/bank/CBank.js" lang="javascript" type="client" />
+	<script src="npc-businesses/bank/SPillboxBank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/bank/SChumashBank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/bank/SPaletoBayBank.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/bank/SVinewoodBank.cs" lang="csharp" type="server" />
 
-	<script src="npc-businesses/CClothingShop.js" lang="javascript" type="client" />
+
 	<file src="img/ponsonbys.png" />
 	<file src="img/Bags-Dark.png" />
 	<file src="img/Bags.png" />
@@ -31,32 +31,35 @@
 	<file src="img/Tops.png" />
 	<file src="img/Hats-Dark.png" />
 	<file src="img/Hats.png" />
+	<script src="npc-businesses/clothes/CClothingShop.js" lang="javascript" type="client" />
+	<script src="npc-businesses/clothes/ClothingShop.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SVinewoodClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SPortolaClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SMorningwoodClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SRockfordClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SMissionRowClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SDelPerroClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SVespucciClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SStrawberryClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SBeachStandClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SChumashClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SChaparralClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SHarmonyClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SSenoraClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SGrapeseedClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/clothes/SPaletoBayClothes.cs" lang="csharp" type="server" />
 
-	<script src="npc-businesses/ClothingShop.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SVinewoodClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SPortolaClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SMorningwoodClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SRockfordClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SMissionRowClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SDelPerroClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SVespucciClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SStrawberryClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SBeachStandClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SChumashClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SChaparralClothes.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SHarmonyClothes.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/barber/BarberShop.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/barber/SVinewoodHair.cs" lang="csharp" type="server" />
 
-	<script src="npc-businesses/BarberShop.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SVinewoodHair.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/GunShop.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SPillboxGuns.cs" lang="csharp" type="server" />
 
-	<script src="npc-businesses/GunShop.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SPillboxGuns.cs" lang="csharp" type="server" />
-
-	<script src="npc-businesses/CCarShop.js" lang="javascript" type="client" />
-	<script src="npc-businesses/SMotoShop.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SSupercarShop.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/STruckShop.cs" lang="csharp" type="server" />
-	<script src="npc-businesses/SRegularCarShop.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/vehicles/CCarShop.js" lang="javascript" type="client" />
+	<script src="npc-businesses/vehicles/SMotoShop.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/vehicles/SSupercarShop.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/vehicles/STruckShop.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/vehicles/SRegularCarShop.cs" lang="csharp" type="server" />
 
 	<script src="rpc/SRpc.cs" lang="csharp" type="server" />
 	<script src="rpc/WebServer.cs" lang="csharp" type="server" />
