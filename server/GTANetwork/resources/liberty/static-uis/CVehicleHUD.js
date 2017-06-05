@@ -51,7 +51,7 @@ API.onKeyDown.connect((sender, e) => {
   }
 })
 
-API.onPlayerEnterVehicle(() => {
+API.onPlayerEnterVehicle.connect(() => {
   localPlayer = API.getLocalPlayer()
 })
 
