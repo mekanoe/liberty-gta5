@@ -17,7 +17,6 @@
 	<script src="npc-businesses/bank/SPaletoBayBank.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/bank/SVinewoodBank.cs" lang="csharp" type="server" />
 
-
 	<file src="img/ponsonbys.png" />
 	<file src="img/Bags-Dark.png" />
 	<file src="img/Bags.png" />
@@ -54,6 +53,7 @@
 
 	<script src="npc-businesses/guns/GunShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/guns/SPillboxGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SLittleSeoulGuns.cs" lang="csharp" type="server" />
 
 	<script src="npc-businesses/vehicles/CCarShop.js" lang="javascript" type="client" />
 	<script src="npc-businesses/vehicles/SMotoShop.cs" lang="csharp" type="server" />

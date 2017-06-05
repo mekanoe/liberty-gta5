@@ -22,8 +22,8 @@ namespace Liberty.npcBusinesses {
         }
 
         private void triggerDoors() {    
-            int d1 = API.exported.doormanager.registerDoor(-353187150, new Vector3(-111.0f, 6464.0f, 32.0f));
-            int d2 = API.exported.doormanager.registerDoor(-1666470363, new Vector3(-110.0f, 6462.0f, 32.0f));
+            int d1 = API.exported.doormanager.registerDoor(-353187150, new Vector3(-111.0, 6464.0, 32.0));
+            int d2 = API.exported.doormanager.registerDoor(-1666470363, new Vector3(-110.0, 6462.0, 32.0));
 
             API.exported.doormanager.refreshDoorState(d1);
             API.exported.doormanager.refreshDoorState(d2);
