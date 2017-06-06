@@ -16,5 +16,10 @@ export default {
   rpcAfterLogin () {
     const url = '/api/rpc/login'
     return superagent.post(url)
+  },
+
+  rpcAfterCharSelect () {
+    const url = '/api/rpc/char-select'
+    return superagent.post(url)
   }
 }

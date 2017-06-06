@@ -19,8 +19,7 @@ namespace Liberty.SpawnManager
             new LoginCameraBackdrop(new Vector3(-2411.382f, 2386.854f, 100f), new Vector3(3f, 0f, -81f)),
         };
 
-        private readonly Vector3 charSelectPedPos = new Vector3(402.8972f, -996.8927f, -99f);
-        private readonly Vector3 charSelectCamPos = new Vector3(402.8972f, -999.8927f, -99f);
+        private readonly Vector3 charSelectCamPos = new Vector3(184.54f, -966.73f, 30f);
 
         public SSpawnManager()
         {
@@ -123,6 +122,12 @@ namespace Liberty.SpawnManager
             API.triggerClientEvent(player, "user:charselectEnd", false);
         }
 
+        [Command("tped")]
+        public void tped(Client player)
+        {
+            player.triggerEvent("test:pedcharselect", false);
+        }
+
         [Command("ssc")]
         public void showLoginCamera(Client player)
         {
@@ -142,9 +147,9 @@ namespace Liberty.SpawnManager
         {
             player.dimension = player.getData("VOwnDimension");
             player.position = charSelectCamPos;
-            API.triggerClientEvent(player, "spawn:camstart", charSelectCamPos, new Vector3(0f, 0f, 0f));
+            API.triggerClientEvent(player, "spawn:camstart", charSelectCamPos, new Vector3(0f, 0f, 0f), true);
             API.sleep(1);
-            API.triggerClientEvent(player, "spawn:charselect", charSelectPedPos);
+            API.triggerClientEvent(player, "spawn:charselect", false);
             API.setEntityData(player, "VPlayerServerCam", true);
 
             // NetHandle ped = API.createPed();

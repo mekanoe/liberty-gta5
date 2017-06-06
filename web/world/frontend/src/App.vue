@@ -15,7 +15,7 @@ export default {
   font-family: 'DIN'
   src: url('./assets/DIN Condensed Bold.ttf') format('truetype')
 
-$dark: #080c00
+$dark: rgb(23, 15, 34)
 
 $rgba-primary-0: rgba(220,203, 14,1) // Main Primary color */
 $rgba-primary-1: rgba(255,242,101,1)
@@ -42,7 +42,7 @@ $rgba-complement-3: rgba( 59, 11,120,1)
 $rgba-complement-4: rgba( 44,  6, 93,1)
 
 $trim-color-classes: true
-$color-primary: "220,203,14"
+$color-primary: "	235, 99, 46"
 $color-primary-dark: "177,162,2"
 $color-accent: "78,21,149"
 $color-primary-contrast: "0,0,0"
@@ -60,8 +60,11 @@ $button-secondary-color-disabled: unquote("rgba(#{200,200,200}, 0.56)") !default
   -moz-osx-font-smoothing: grayscale
   text-align: center
   color: #efefef
-  margin-top: 60px
+  // margin-top: 60px
 
+
+.font-din
+  font-family: 'DIN'
 
 .lib-hidden
   max-height: 0
