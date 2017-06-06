@@ -20,10 +20,10 @@ let createCamera = function ([ pos, rot, terp = false ]) {
   }
 
   if (terp) {
-    API.sendChatMessage('terping')
+    // API.sendChatMessage('terping')
     switchCamera(cam, newCam, rot)
   } else {
-    API.sendChatMessage('not terping')
+    // API.sendChatMessage('not terping')
     API.setActiveCamera(newCam)
   }
   cam = newCam

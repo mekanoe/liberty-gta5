@@ -58,7 +58,7 @@ class CamRig {
         reset
       } = this.defaults(move)
 
-      API.sendChatMessage('hit')
+      // API.sendChatMessage('hit')
 
 
       // nope!
@@ -82,12 +82,12 @@ class CamRig {
       currentCamera = newCam
 
       // Wait for the world to end, do it again.
-      API.sendChatMessage(`waiting for ${duration}ms with ${pauseDelta}ms added`)
+      // API.sendChatMessage(`waiting for ${duration}ms with ${pauseDelta}ms added`)
       await this.wait(duration + pauseDelta)
 
       // Are we resetting?
       if (reset) {
-        API.sendChatMessage('STOP')
+        // API.sendChatMessage('STOP')
         active = false
         API.callNative('_STOP_ALL_SCREEN_EFFECTS')
         return null
@@ -103,7 +103,7 @@ class CamRig {
     return new Promise((resolve, reject) => {
       const time = Date.now() + duration
 
-      API.sendChatMessage(`currently ${+Date.now()}, waiting for ${time} (${duration})`)
+      // API.sendChatMessage(`currently ${+Date.now()}, waiting for ${time} (${duration})`)
 
       nextStep = {
         time,
@@ -126,17 +126,18 @@ function presetSimpleSkyZoom (initialCam, endCamera) { // eslint-disable-line no
       pos: new Vector3(icPos.X, icPos.Y, 3000),
       rot: new Vector3(-90, 0, icRot),
       effect: 'SwitchSceneNeutral',
-      duration: 7000,
-      pauseDelta: +1500
+      duration: 5000,
+      pauseDelta: +1000
     },
     { pos: new Vector3(ecPos.X, ecPos.Y, 3000),
       rot: new Vector3(-90, 0, icRot),
       effect: 'SwitchSceneNeutral',
-      duration: 7000
+      duration: 1500
     },
     {
       camera: endCamera,
       effect: 'CamPushInNeutral',
+      duration: 5000,      
       pauseDelta: +1500,      
       reset: true
     }

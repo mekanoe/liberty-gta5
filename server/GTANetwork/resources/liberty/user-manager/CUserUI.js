@@ -92,6 +92,7 @@ function createCharSelect () {
 }
 
 function endCharSelect () {
+  API.showCursor(false)
   cefRect.getCef().destroy()
   cefRect = null
 }
