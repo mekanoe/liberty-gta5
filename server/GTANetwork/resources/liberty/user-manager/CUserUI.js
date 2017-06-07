@@ -38,7 +38,6 @@ API.onResourceStart.connect(() => {
 
       new: [ new Vector3(150.35, -975.4669, 30), -75 ]
     }
-
   } catch (e) {
     API.sendChatMessage(e.stack || e.trace)
   }

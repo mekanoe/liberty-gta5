@@ -24,6 +24,10 @@ namespace Liberty.npcBusinesses {
         public float cashierRot;
         public string cashierModel;
 
+        public string cashierAnimDict;
+        public string cashierAnimName;
+
+
         public Vector3 shopBoxStart;
         public Vector3 shopBoxEnd;
 
@@ -46,6 +50,9 @@ namespace Liberty.npcBusinesses {
 
         private void createNpcs() {
             cashierNpc = API.createPed(API.pedNameToModel(cashierModel), cashierPos, cashierRot);
+            if (cashierAnimDict != "") {
+                API.playPedAnimation(cashierNpc, true, cashierAnimDict, cashierAnimName);
+            }
         }
 
         private void createInteriorBox() {

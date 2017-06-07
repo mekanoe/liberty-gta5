@@ -10,6 +10,11 @@ namespace Liberty.npcBusinesses {
             tellerPos = new Vector3(-112.2346f, 6471.284f, 31.62673f); 
             tellerRot = 148f;
             tellerModel = "Business01AFY";
+            tellerAnimDict = "";
+            tellerAnimName = "";
+            tellerAnimDict = "";
+            tellerAnimName = "";
+
 
             bankBoxStart = new Vector3(-118.8712f, 6469.483f, 30.75f);
             bankBoxEnd = new Vector3(-87.83f, 6466.21f, 35f);

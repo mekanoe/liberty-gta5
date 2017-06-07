@@ -13,6 +13,9 @@ namespace Liberty.npcBusinesses {
             barberRot = -63.31284f;
             barberModel = "DownTown01AMY";
             chatName = "Barber";
+            barberAnimDict = "";
+            barberAnimName = "";
+
 
             shopBoxStart = new Vector3(-29.64401f, -148.738f, 56f);
             shopBoxEnd = new Vector3(-37f, -155.55f, 59f);

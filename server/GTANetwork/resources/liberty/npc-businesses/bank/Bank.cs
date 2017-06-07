@@ -14,6 +14,9 @@ namespace Liberty.npcBusinesses {
         public float tellerRot;
         public string tellerModel;
 
+        public string tellerAnimDict;
+        public string tellerAnimName;
+
         // public ColShape bankInteriorCol;
         public Vector3 bankBoxStart;
         public Vector3 bankBoxEnd;

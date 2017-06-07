@@ -14,6 +14,9 @@ namespace Liberty.npcBusinesses {
         public float barberRot;
         public string barberModel;
 
+        public string barberAnimDict;
+        public string barberAnimName;
+
         public Vector3 shopBoxStart;
         public Vector3 shopBoxEnd;
 

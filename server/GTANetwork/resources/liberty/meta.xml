@@ -55,6 +55,14 @@
 	<script src="npc-businesses/guns/GunShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/guns/SPillboxGuns.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/guns/SLittleSeoulGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SLaMesaGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SCypressGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SHawickGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SMorningwoodGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SChumashGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SSandyShoresGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SPaletoBayGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/STataviamGuns.cs" lang="csharp" type="server" />
 
 	<script src="npc-businesses/vehicles/CCarShop.js" lang="javascript" type="client" />
 	<script src="npc-businesses/vehicles/SMotoShop.cs" lang="csharp" type="server" />

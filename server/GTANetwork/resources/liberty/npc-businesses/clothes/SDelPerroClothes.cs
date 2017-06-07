@@ -12,6 +12,8 @@ namespace Liberty.npcBusinesses {
             cashierPos = new Vector3(-1193.882f, -766.8334f, 17.31606f); 
             cashierRot = -147.7782f;
             cashierModel = "ShopLowSFY";
+            cashierAnimDict = "";
+            cashierAnimName = "";
 
             shopBoxStart = new Vector3(-1206.704f, -775.3963f, 18f);
             shopBoxEnd = new Vector3(-1182.983f, -769.5685f, 18f);

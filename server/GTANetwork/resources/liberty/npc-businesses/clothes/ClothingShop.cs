@@ -12,6 +12,9 @@ namespace Liberty.npcBusinesses {
         public Vector3 cashierPos; 
         public float cashierRot;
         public string cashierModel;
+        
+        public string cashierAnimDict;
+        public string cashierAnimName;
 
         public Vector3 shopBoxStart;
         public Vector3 shopBoxEnd;
