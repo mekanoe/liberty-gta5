@@ -51,6 +51,8 @@
 
 	<script src="npc-businesses/barber/BarberShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/barber/SVinewoodHair.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/barber/SVespucciHair.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/barber/SDavisHair.cs" lang="csharp" type="server" />
 
 	<script src="npc-businesses/guns/GunShop.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/guns/SPillboxGuns.cs" lang="csharp" type="server" />

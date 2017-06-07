@@ -39,6 +39,9 @@ namespace Liberty.npcBusinesses {
 
         private void createNpcs() {
             barberNpc = API.createPed(API.pedNameToModel(barberModel), barberPos, barberRot);
+            if (barberAnimDict != "") {
+                API.playPedAnimation(barberNpc, true, barberAnimDict, barberAnimName);
+            }
         }
 
         private void createInteriorBox() {
