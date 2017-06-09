@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using GTANetworkServer;
 using GTANetworkShared;
 
-namespace Liberty.world {
-    class SWorldController : Script {
+namespace Liberty.world
+{
+    class SWorldController : Script
+    {
 
         private Random randomCls = new Random();
 
@@ -37,31 +39,41 @@ namespace Liberty.world {
 
         private DateTime lastSync;
 
-        public SWorldController() {
+        public SWorldController()
+        {
             API.onUpdate += doTick;
             API.onResourceStart += onStart;
         }
 
-        private void onStart() {
-            if (API.hasWorldSyncedData("VTime")) {
+        private void onStart()
+        {
+            if (API.hasWorldSyncedData("VTime"))
+            {
                 gameTime = API.getWorldSyncedData("VTime");
             }
 
-            if (API.hasWorldData("VWxLastStep")) {
+            if (API.hasWorldData("VWxLastStep"))
+            {
                 lastWeatherStep = API.getWorldData("VWxLastStep");
-            } else {
+            }
+            else
+            {
                 lastWeatherStep = gameTime;
             }
 
             fetchWeather();
 
-            if (API.hasWorldData("VWxCycle")) {
+            if (API.hasWorldData("VWxCycle"))
+            {
                 currentWeatherCycle = weatherCycles[API.getWorldData("VWxCycle")];
-            } else {
+            }
+            else
+            {
                 setRandomCycle();
             }
 
-            if (API.hasWorldData("VWxIndex")) {
+            if (API.hasWorldData("VWxIndex"))
+            {
                 currentWeatherIndex = (int)API.getWorldData("VWxIndex");
             }
 
@@ -70,9 +82,11 @@ namespace Liberty.world {
             lastSync = DateTime.Now;
         }
 
-        private void doTick() {
+        private void doTick()
+        {
             TimeSpan sinceSync = DateTime.Now.Subtract(lastSync);
-            if (sinceSync.TotalSeconds > tickRate) {
+            if (sinceSync.TotalSeconds > tickRate)
+            {
                 timeTick();
                 timeSync();
 
@@ -83,44 +97,54 @@ namespace Liberty.world {
             }
         }
 
-        private void timeTick() {
+        private void timeTick()
+        {
             int hours = gameTime / 100 % 24;
             int minutes = gameTime % 100 % 60;
 
             int newHours = hours;
             int newMinutes = (minutes + timeStep) % 60;
-            if (newMinutes < minutes) {
+            if (newMinutes < minutes)
+            {
                 newHours = hours + 1 % 24;
             }
 
             gameTime = (newHours * 100) + newMinutes;
         }
 
-        private void timeSync() {
+        private void timeSync()
+        {
             int hours = gameTime / 100 % 24;
             int minutes = gameTime % 100 % 60;
             API.setTime(hours, minutes);
-            API.setWorldSyncedData("VTime", gameTime);
+            API.setWorldData("VTime", gameTime);
         }
 
-        private void fetchWeather() {
-            string weatherText = File.ReadAllText(API.getResourceFolder()+"/world/weather.json", Encoding.UTF8);
+        private void fetchWeather()
+        {
+            string weatherText = File.ReadAllText(API.getResourceFolder() + "/world/weather.json", Encoding.UTF8);
             weatherCycles = API.fromJson(weatherText).weather.ToObject<object>();
         }
 
-        private void setRandomCycle() {
+        private void setRandomCycle()
+        {
             int patternIdx = randomCls.Next(weatherCycles.Count);
             currentWeatherCycle = weatherCycles[patternIdx];
             API.setWorldData("VWxCycle", patternIdx);
-            API.sendChatMessageToAll("wx cycle changed to "+currentWeatherCycle.report);
+            API.sendChatMessageToAll("wx cycle changed to " + currentWeatherCycle.report);
         }
 
-        private void weatherTick() {
-            if (gameTime % weatherRate == 0) {
-                if (currentWeatherIndex >= currentWeatherCycle.cycle.Count - 1) {
+        private void weatherTick()
+        {
+            if (gameTime % weatherRate == 0)
+            {
+                if (currentWeatherIndex >= currentWeatherCycle.cycle.Count - 1)
+                {
                     setRandomCycle();
                     currentWeatherIndex = 0;
-                } else {
+                }
+                else
+                {
                     currentWeatherIndex += 1;
                     // API.sendChatMessageToAll("wx state changed to "+currentWeatherCycle.cycle[currentWeatherIndex]);
                 }
@@ -134,34 +158,46 @@ namespace Liberty.world {
         }
 
         [Command("weather")]
-        public void MWeather(Client sender) {
-            sender.sendChatMessage("~g~-- Weather report for "+gameTimeToHuman()+"~w~\nForecast: ~b~"+currentWeatherCycle.report+"~w~\nCurrently ~g~"+weatherToHuman());
+        public void MWeather(Client sender)
+        {
+            sender.sendChatMessage("~g~-- Weather report for " + gameTimeToHuman() + "~w~\nForecast: ~b~" + currentWeatherCycle.report + "~w~\nCurrently ~g~" + weatherToHuman());
         }
 
-        private void weatherSync() {
+        private void weatherSync()
+        {
+            if (currentWeatherCycle == null) 
+            {
+                return;
+            }
+
             currentWeather = currentWeatherCycle.cycle[currentWeatherIndex];
-            API.shared.setWorldSyncedData("VWeather", currentWeather);
-            API.shared.setWeather(currentWeather);
+            API.setWorldData("VWeather", currentWeather);
+            API.setWeather(currentWeather);
         }
 
-        private string gameTimeToHuman() {
+        private string gameTimeToHuman()
+        {
             int hours = gameTime / 100 % 24;
             int minutes = gameTime % 100 % 60;
             string ampm = (hours < 12) ? "AM" : "PM";
-            
-            if (hours == 0) {
+
+            if (hours == 0)
+            {
                 hours = 12;
             }
 
-            if (hours > 12) {
+            if (hours > 12)
+            {
                 hours = hours - 12;
             }
 
-            return ""+hours+":"+minutes.ToString("D2")+" "+ampm;
+            return "" + hours + ":" + minutes.ToString("D2") + " " + ampm;
         }
 
-        private string weatherToHuman() {
-            switch (currentWeather) {
+        private string weatherToHuman()
+        {
+            switch (currentWeather)
+            {
                 case 0: return "sunny";
                 case 1: return "clear skies";
                 case 2: return "partly cloudy";

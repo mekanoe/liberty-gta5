@@ -68,6 +68,7 @@
 	<script src="npc-businesses/guns/SSandyShoresGuns.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/guns/SPaletoBayGuns.cs" lang="csharp" type="server" />
 	<script src="npc-businesses/guns/STataviamGuns.cs" lang="csharp" type="server" />
+	<script src="npc-businesses/guns/SChaparralGuns.cs" lang="csharp" type="server" />
 
 	<script src="npc-businesses/vehicles/CCarShop.js" lang="javascript" type="client" />
 	<script src="npc-businesses/vehicles/SMotoShop.cs" lang="csharp" type="server" />

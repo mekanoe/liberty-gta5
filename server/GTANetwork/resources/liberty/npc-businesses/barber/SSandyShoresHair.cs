@@ -20,7 +20,7 @@ namespace Liberty.npcBusinesses {
             shopBoxStart = new Vector3(1936.939f, 3726.637f, 33f);
             shopBoxEnd = new Vector3(1928.115f, 3732.933f, 33f);
 
-            shopTriggerPos = new Vector3(1932.669f, 3729.009f, 33f);
+            shopTriggerPos = new Vector3(1932.669f, 3729.009f, 31.84446f);
 
             API.onResourceStart += onStart;
             API.onResourceStart += doors;

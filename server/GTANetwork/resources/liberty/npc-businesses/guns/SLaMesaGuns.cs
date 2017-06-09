@@ -18,7 +18,7 @@ namespace Liberty.npcBusinesses {
             shopBoxStart = new Vector3(839.9761f, -1025.615f, 29f);
             shopBoxEnd = new Vector3(846.6099f, -1035.927f, 29f);
 
-            shopTriggerPos = new Vector3(842.1465f, -1033.942f, 29f);
+            shopTriggerPos = new Vector3(842.1465f, -1033.942f, 27.19486f);
 
             API.onResourceStart += onStart;
             // The doors for this ammunition are openable by default

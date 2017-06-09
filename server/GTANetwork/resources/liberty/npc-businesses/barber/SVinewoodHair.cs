@@ -17,10 +17,10 @@ namespace Liberty.npcBusinesses {
             barberAnimName = "";
 
 
-            shopBoxStart = new Vector3(-29.64401f, -148.738f, 56f);
-            shopBoxEnd = new Vector3(-37f, -155.55f, 59f);
+            shopBoxStart = new Vector3(-29.64401f, -148.738f, 57f);
+            shopBoxEnd = new Vector3(-37f, -155.55f, 57f);
 
-            shopTriggerPos = new Vector3(-33.17f, -151.7346f, 56f);
+            shopTriggerPos = new Vector3(-33.17f, -151.7346f, 56.08652f);
 
             API.onResourceStart += onStart;
             API.onResourceStart += doors;

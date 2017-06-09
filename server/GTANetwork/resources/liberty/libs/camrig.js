@@ -21,15 +21,18 @@ class CamRig {
   }
 
   add (move) {
-    this.moveset.add(move)
+    this.moveset = this.moveset.add(move)
     return this
   }
 
   defaults (move) {
-    return Object.assign(__exampleMove, move)
+    return Object.assign({}, __exampleMove, move)
   }
 
   async run (currentCamera = null) {
+
+    this.moveset.forEach(x => API.sendChatMessage(API.toJson(x)))
+
     if (locked) {
       return false
     }
@@ -39,6 +42,7 @@ class CamRig {
     }
 
     if (currentCamera === null) {
+      API.sendChatMessage('currentCam === null')
       currentCamera = API.getActiveCamera()
     }
 
@@ -58,20 +62,20 @@ class CamRig {
         reset
       } = this.defaults(move)
 
-      // API.sendChatMessage('hit')
+      API.sendChatMessage('hit')
 
-
-      // nope!
       let newCam
       if (camera !== null) {
         // did this move provide a camera?
         newCam = camera
       } else {
+        API.sendChatMessage(API.toJson({ pos, rot }))
         // nope! let's make one instead.
         newCam = API.createCamera(pos, rot)
       }
 
       // Let's lerp!
+      API.sendChatMessage(API.toJson({currentCamera, newCam: newCam+'', duration, ease}))
       API.interpolateCameras(currentCamera, newCam, duration, ease, ease)
 
       // And do screen effect stuff I guess.
@@ -82,12 +86,12 @@ class CamRig {
       currentCamera = newCam
 
       // Wait for the world to end, do it again.
-      // API.sendChatMessage(`waiting for ${duration}ms with ${pauseDelta}ms added`)
+      API.sendChatMessage(`waiting for ${duration}ms with ${pauseDelta}ms added`)
       await this.wait(duration + pauseDelta)
 
       // Are we resetting?
       if (reset) {
-        // API.sendChatMessage('STOP')
+        API.sendChatMessage('STOP')
         active = false
         API.callNative('_STOP_ALL_SCREEN_EFFECTS')
         return null
@@ -103,7 +107,7 @@ class CamRig {
     return new Promise((resolve, reject) => {
       const time = Date.now() + duration
 
-      // API.sendChatMessage(`currently ${+Date.now()}, waiting for ${time} (${duration})`)
+      API.sendChatMessage(`currently ${+Date.now()}, waiting for ${time} (${duration})`)
 
       nextStep = {
         time,

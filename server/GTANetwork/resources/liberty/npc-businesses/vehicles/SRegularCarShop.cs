@@ -71,7 +71,10 @@ namespace Liberty.npcBusinesses {
             blip.color = 5;
             blip.shortRange = true;
 
+            var shopTriggerPos = new Vector3(-143.4823f, -1172.609f, 24.20414f);
             ColShape shopBubble = API.createSphereColShape(npcPos, 3f);
+            API.createMarker(1, shopTriggerPos, new Vector3(), new Vector3(),
+                new Vector3(1f, 1f, 1f), 255, 100, 108, 24);
             shopBubble.onEntityEnterColShape += (shape, entity) => {
                 Client player;
                 if ((player = API.getPlayerFromHandle(entity)) != null) {

@@ -12,11 +12,17 @@ namespace Liberty.SpawnManager
         private readonly Vector3 _defaultSpawnRot = new Vector3(0f, 0f, 30f);
         private ColShape _defaultSpawnCol;
 
-        private List<LoginCameraBackdrop> backdrops = new List<LoginCameraBackdrop>{
-            new LoginCameraBackdrop(new Vector3(-140.693f, -853.6935f, 299.662f), new Vector3(-10f, 0f, 0f)),
-            new LoginCameraBackdrop(new Vector3(-1744.68f, -1072f, 40f), new Vector3(10f, 0f, -128f)),
-            new LoginCameraBackdrop(new Vector3(-3139.136f, 1546.344f, 30f), new Vector3(-10f, 0f, -105f)),
-            new LoginCameraBackdrop(new Vector3(-2411.382f, 2386.854f, 100f), new Vector3(3f, 0f, -81f)),
+        private readonly List<PositionRotation> backdrops = new List<PositionRotation>{
+            new PositionRotation(new Vector3(-140.693f, -853.6935f, 299.662f), new Vector3(-10f, 0f, 0f)),
+            new PositionRotation(new Vector3(-1744.68f, -1072f, 40f), new Vector3(10f, 0f, -128f)),
+            new PositionRotation(new Vector3(-3139.136f, 1546.344f, 30f), new Vector3(-10f, 0f, -105f)),
+            new PositionRotation(new Vector3(-2411.382f, 2386.854f, 100f), new Vector3(3f, 0f, -81f)),
+        };
+
+        private readonly List<PositionRotation> unsetSpawns = new List<PositionRotation>(){
+            new PositionRotation(new Vector3(-1314.202f, -936.27f, 9.73f), 30f),
+            new PositionRotation(new Vector3(-339.85f, 30.1f, 47.647f), 75f),
+            new PositionRotation(new Vector3(191.85f, -974.1f, 30.047f), 30f),
         };
 
         private readonly Vector3 charSelectCamPos = new Vector3(184.54f, -966.73f, 30f);
@@ -28,7 +34,6 @@ namespace Liberty.SpawnManager
             API.onResourceStart += onResourceStart;
             API.onPlayerDeath += onPlayerDeath;
         }
-
 
         /////////////
         // Events //
@@ -106,12 +111,13 @@ namespace Liberty.SpawnManager
         [Command("spawn")]
         public void spawnPlayer(Client player)
         {
+            PositionRotation startPos = unsetSpawns[random.Next(unsetSpawns.Count)];
             player.dimension = 1;
             API.setEntityTransparency(player, 255);
             API.setEntityCollisionless(player, false);
             API.setEntityData(player, "VPlayerServerCam", false);
-            API.setEntityPosition(player, _defaultSpawnLoc);
-            API.setEntityRotation(player, _defaultSpawnRot);
+            API.setEntityPosition(player, startPos.Position);
+            API.setEntityRotation(player, startPos.Rotation);
             API.setEntityPositionFrozen(player, false);
             API.setEntityData(player, "VPlayerSpawned", true);
             API.setPlayerSkin(player, PedHash.Skater01AFY);
@@ -128,10 +134,27 @@ namespace Liberty.SpawnManager
             player.triggerEvent("test:pedcharselect", false);
         }
 
+        [Command("killped")]
+        public void killped(Client player)
+        {
+            player.triggerEvent("test:pedcharselectEnd", false);
+        }
+        [Command("rotped")]
+        public void rotped(Client player, int which, int angle)
+        {
+            player.triggerEvent("test:pedcharselectTurn", which, angle);
+        }
+
+        [Command("camped")]
+        public void camped(Client player)
+        {
+            player.triggerEvent("test:pedcharselectCam");
+        }
+
         [Command("ssc")]
         public void showLoginCamera(Client player)
         {
-            LoginCameraBackdrop backdrop = backdrops[random.Next(backdrops.Count)];
+            PositionRotation backdrop = backdrops[random.Next(backdrops.Count)];
             player.dimension = player.getData("VOwnDimension");
             API.setPlayerNametagVisible(player, false);
             API.setEntityPosition(player, backdrop.Position);
@@ -156,14 +179,20 @@ namespace Liberty.SpawnManager
         }
     }
 
-    class LoginCameraBackdrop
+    class PositionRotation
     {
         public Vector3 Position;
         public Vector3 Rotation;
-        public LoginCameraBackdrop(Vector3 pos, Vector3 rot)
+        public PositionRotation(Vector3 pos, Vector3 rot)
         {
             Position = pos;
             Rotation = rot;
+        }
+
+        public PositionRotation(Vector3 pos, float rot)
+        {
+            Position = pos;
+            Rotation = new Vector3(0f, 0f, rot);
         }
     }
 }

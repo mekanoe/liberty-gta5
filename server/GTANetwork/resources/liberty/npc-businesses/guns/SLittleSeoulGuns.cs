@@ -5,7 +5,7 @@ using GTANetworkShared;
 namespace Liberty.npcBusinesses {
     class SLittleSeoulGuns : GunShop {
         public SLittleSeoulGuns() : base() {
-            debug = true;
+            // debug = true;
 
             shopName = "Little Seoul Gun Club";
 
@@ -18,7 +18,7 @@ namespace Liberty.npcBusinesses {
             shopBoxStart = new Vector3(-659.849f, -943.2538f, 22f);
             shopBoxEnd = new Vector3(-666.4834f, -932.9359f, 22f);
 
-            shopTriggerPos = new Vector3(-662.7239f, -934.9276f, 22f);
+            shopTriggerPos = new Vector3(-662.7239f, -934.9276f, 20.82924f);
 
             API.onResourceStart += onStart;
             API.onResourceStart += doors;

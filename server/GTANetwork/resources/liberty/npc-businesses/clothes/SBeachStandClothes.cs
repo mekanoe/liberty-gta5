@@ -19,7 +19,7 @@ namespace Liberty.npcBusinesses {
                                                                     // make it bigger if necessary.
             shopBoxEnd = new Vector3(-1334.79f, -1280.196f, 5f);
 
-            shopTriggerPos = new Vector3(-1336.364f, -1279.035f, 5f);
+            shopTriggerPos = new Vector3(-1337.016f, -1279.257f, 3.889314f);
 
             API.onResourceStart += onStart;
         }
