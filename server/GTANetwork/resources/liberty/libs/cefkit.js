@@ -87,7 +87,7 @@ class ExclusiveWindow {
     this._cefWindow = null
     this._cursor = false
 
-    API.sendChatMessage(`created exclusive window at ${JSON.stringify({ x, y, w, h })}`)
+    // API.sendChatMessage(`created exclusive window at ${JSON.stringify({ x, y, w, h })}`)
   }
 
   activate (enableOpts) {

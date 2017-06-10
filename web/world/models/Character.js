@@ -39,15 +39,16 @@ module.exports = (sequelize, DataTypes) => {
     gender: {
       type: DataTypes.ENUM('male', 'female')
     },
-    gang: {
-      type: DataTypes.ENUM('none', 'families', 'ballas', 'triad', 'lost', 'mexican')
+    faction: {
+      type: DataTypes.ENUM('none', 'bcsd', 'lspd', 'sasp', 'military', 'families', 'ballas', 'triad', 'lost', 'mexican'),
+      defaultValue: 'none'
     },
     freemodeFeatures: {
       type: DataTypes.JSONB
     },
     useSkin: {
       type: DataTypes.BOOLEAN,
-      defaultValue: true
+      defaultValue: false
     },
     skinName: {
       type: DataTypes.STRING,

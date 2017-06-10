@@ -38,7 +38,7 @@ function freeCamera () {
 
 async function switchCamera (oldCam, newCam, finalRot) {
   try {
-    let val = await presetSimpleSkyZoom(oldCam, newCam)
+    await presetSimpleSkyZoom(oldCam, newCam)
     resource.CUserUI.createCharSelect()
   } catch (e) {
     API.sendChatMessage(`ERR: ${e.trace || e.stack}`)

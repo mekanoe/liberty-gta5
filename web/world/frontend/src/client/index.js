@@ -21,5 +21,15 @@ export default {
   rpcAfterCharSelect () {
     const url = '/api/rpc/char-select'
     return superagent.post(url)
+  },
+
+  rpcMoveCharSelect (idx) {
+    const url = '/api/rpc/char-select-move'
+    return superagent.post(url).send({idx})
+  },
+
+  getCharacters () {
+    const url = '/api/me/chars'
+    return superagent.get(url)
   }
 }

@@ -77,11 +77,17 @@ API.onServerEventTrigger.connect((name, args) => {
       freeCEF()
       break
     case 'user:charselectStart':
-    case 'spawn:charselect':
-      // createCharSelect()
+      createCharSelect()
       break
     case 'user:charselectEnd':
       endCharSelect()
+      break
+
+    case 'charSelectSetup':
+      setupCharSelect(args[0])
+      break
+    case 'charSelectMove':
+      moveCharSelect(args[0])
       break
 
     case 'test:pedcharselect':
@@ -118,6 +124,7 @@ function createCharSelect () {
   cefRect = new UIKit.Rect({ x: safe.offsetX + 200 + 25, y: (safe.screenY * 0.5) + 100, w: 400, h: 600, fromCenter: true, color: '#f00', opacity: 100 })
   const cef = cefRect.cef({ url: '/me/char-select' }).getCef()
   cef.activate()
+  moveCharSelect(0)
 }
 
 function endCharSelect () {
@@ -126,24 +133,90 @@ function endCharSelect () {
   cefRect = null
 }
 
-function testPed () {
-  try {
-    for (let p of pedPositions.created) {
-      const [ pos, rot ] = p
-      const ped = API.createPed(API.pedNameToModel('Skater01AFY'), pos, new Vector3(0.0, 0.0, rot + 0.0))
+function setupCharSelect (data) {
+  // API.sendChatMessage(data)
+  data = JSON.parse(data)
 
-      managedPeds.push(ped)
+  data.forEach((char, k) => {
+    let pedModel
+    if (char.useSkin) {
+      pedModel = char.skinName
+    } else {
+      pedModel = (char.gender === 'male') ? 'FreeModeMale01' : 'FreemodeFemale01'
     }
-  } catch (e) {
-    API.sendChatMessage(e.stack || e.trace)
-  }
+
+    pedModel = API.pedNameToModel(pedModel)
+
+    const [ pos, rot ] = pedPositions.created[k]
+    const ped = API.createPed(pedModel, pos, new Vector3(0, 0, rot))
+    managedPeds.push(ped)
+
+    for (let slot in char.freemodeFeatures) {
+      let { drawable, texture } = char.freemodeFeatures[slot]
+      setPedComponent(ped, slot, drawable, texture)
+    }
+  })
+}
+
+function moveCharSelect (idx) {
+  API.sendChatMessage('moving to ' + idx)
+
+  const { pos, rot } = pedPositions.cameras[idx]
+  const cam = API.createCamera(pos, rot)
+  API.interpolateCameras(API.getActiveCamera(), cam, 500, true, true)
+}
+
+function setPedComponent (ped, slot, drawable, texture) {
+  API.callNative('SET_PED_COMPONENT_VARIATION', ped, slot, drawable, texture, 0)
+}
+
+//
+// TEST FUNCS
+//
+function testPed () {
+  setupCharSelect(JSON.stringify([
+    {
+      gender: 'female',
+      useSkin: false,
+      freemodeFeatures: {
+
+      }
+    },
+    {
+      gender: 'female',
+      useSkin: false,
+      freemodeFeatures: {
+
+      }
+    },
+    {
+      gender: 'female',
+      useSkin: false,
+      freemodeFeatures: {
+
+      }
+    },
+    {
+      gender: 'female',
+      useSkin: false,
+      freemodeFeatures: {
+
+      }
+    },
+    {
+      gender: 'female',
+      useSkin: false,
+      freemodeFeatures: {
+
+      }
+    },
+  ]))
 }
 
 function testPedTurn ([which, angle]) {
   API.sendChatMessage('~~~~~~' + JSON.stringify(managedPeds))
   API.setEntityRotation(managedPeds[which], new Vector3(0, 0, angle))
 }
-
 function testPedKill () {
   for (let ped of managedPeds) {
     API.deleteEntity(ped)
@@ -170,17 +243,20 @@ async function testPedCamera () {
     }
 
     await rig.run(origCam)
-    API.setActiveCamera(origCam)
+    API.setActiveCamera(null)
   } catch (e) {
     API.sendChatMessage('~r~ERR~w~: ' + (e.stack || e.trace))
   }
 }
 
+//
+// Utils
+//
+
 function polarToCartesianDistance (inVec, inAng, distance) {
   inAng = inAng - 90
   const x = inVec.X - (Math.cos(inAng * (Math.PI / 180)) * distance)
   const y = inVec.Y - (Math.sin(inAng * (Math.PI / 180)) * distance)
-  API.sendChatMessage('angulo: ' + inAng)
 
   return new Vector3(x, y, inVec.Z)
 }

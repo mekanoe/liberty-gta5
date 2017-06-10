@@ -35,7 +35,6 @@ namespace Liberty.userManager
             player.setData("VOwnDimension", dimension);
         }
 
-
         [Command("tlogin")]
         public void onPlayerDownload(Client player)
         {
@@ -54,6 +53,18 @@ namespace Liberty.userManager
             {
                 // API.call("SSpawnManager", "showCharSelect", player);
             }
+        }
+
+        public void charSelectMove(string userToken, Int64 index)
+        {
+            Client player = userHash[userToken];
+            player.triggerEvent("charSelectMove", (int)index);
+        }
+
+        public void charSelectSetup(string userToken, string data)
+        {
+            Client player = userHash[userToken];
+            player.triggerEvent("charSelectSetup", data);
         }
 
         public void onLogin(string userToken, string userId)
