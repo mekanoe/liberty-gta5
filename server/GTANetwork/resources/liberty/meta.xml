@@ -8,6 +8,7 @@
 <!-- 	<script src="libs/enums.js" lang="javascript" type="client" /> -->
 
 	<script src="admin-commands/SAdminCommands.cs" lang="csharp" type="server" />
+	<script src="admin-commands/SClothesPresets.cs" lang="csharp" type="server" />
 
 	<!-- <script src="npc-businesses/SShopUtil.cs" lang="csharp" type="server" /> -->
 
