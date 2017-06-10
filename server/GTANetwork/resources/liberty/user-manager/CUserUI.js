@@ -54,6 +54,7 @@ API.onResourceStart.connect(() => {
       hdg = 360 - hdg
 
       return { pos: polarToCartesianDistance(x[0], hdg, 2), rot: new Vector3(0, 0, (x[1] + 180) % 360) }
+
     })
 
     pedPositions.cameras = cameras
