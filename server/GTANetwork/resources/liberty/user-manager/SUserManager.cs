@@ -67,6 +67,7 @@ namespace Liberty.userManager
             player.triggerEvent("charSelectSetup", data);
         }
 
+        [Command("scs")]
         public void onLogin(string userToken, string userId)
         {
             Client player = userHash[userToken];
@@ -80,6 +81,12 @@ namespace Liberty.userManager
         {
             Client player = userHash[userToken];
             API.call("SSpawnManager", "spawnPlayer", player);
+        }
+
+        public void charCreationPreset(string userToken, Int64 idx) 
+        {
+            Client player = userHash[userToken];
+            player.triggerEvent("charCreationPreset", (int)idx);
         }
 
     }

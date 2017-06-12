@@ -61,6 +61,15 @@ namespace Liberty.AdminCommands {
             API.sendChatMessageToPlayer(player, "~b~Rotation:~w~ ~g~X:~w~ "+pos.X+" ~g~Y:~w~ "+pos.Y+" ~g~Z:~w~ "+pos.Z);
         }
 
+        [Command("sl", GreedyArg = true)]
+        public void PrintLoc(Client sender, string desc = "sl")
+        {
+            Vector3 pos = sender.position;
+            float rot = sender.rotation.Z;
+            sender.sendChatMessage($"~g~Location: ~b~X:~w~ {pos.X} ~b~Y:~w~ {pos.Y} ~b~X:~w~ {pos.Z} ~b~A:~w~ {rot}");
+            API.consoleOutput($"POSITION HELPER:\n=> {desc}\n===> Position: new Vector3({pos.X}f, {pos.Y}f, {pos.Z}f)\n===> Rotation: new Vector3(0f, 0f, {rot}f)");
+        }
+
         [Command("f")]
         public void FreezeVehicle(Client player, bool val) {
             var v = API.getPlayerVehicle(player);

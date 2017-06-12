@@ -14,14 +14,15 @@ services:
             POSTGRES_INITDB_ARGS: -A trust
 
     gtan:
-        image: mono:5.0
+        image: katie/gtan
         container_name: libertyrp-gtan
-        command: bash -c "(cd /srv; mono --runtime=4.6 GTANetworkServer.exe)"
         ports:
             - "${LIBRP_GAME:-4499}:4499/udp"
             - 9000
         volumes:
-            - "./server/GTANetwork:/srv/"
+            - "./server/GTANetwork/resources:/srv/resources"
+            - "./server/GTANetwork/settings.xml:/srv/settings.xml"
+            - "./server/GTANetwork/acl.xml:/srv/acl.xml"
     
     world:
         image: node:8.0-alpine

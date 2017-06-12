@@ -45,7 +45,7 @@ $trim-color-classes: true
 $color-primary: "	235, 99, 46"
 $color-primary-dark: "177,162,2"
 $color-accent: "78,21,149"
-$color-primary-contrast: "0,0,0"
+$color-primary-contrast: "23, 15, 34"
 $color-accent-contrast: "10,24,38"
 $grid-desktop-breakpoint: 960px
 $grid-tablet-breakpoint: 722px
@@ -94,6 +94,8 @@ $button-secondary-color-disabled: unquote("rgba(#{200,200,200}, 0.56)") !default
 .lib-bg-dark
   background-color: $dark
 
+.lib-bg-accent
+  background: unquote("rgb(#{$color-accent})")
 
 .lib-logo
   padding: 2em 0

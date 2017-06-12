@@ -22,7 +22,7 @@
           </div>
       </div>
       </div>
-      <div class="item new-char" v-if="charSlotsLeft !== 0">
+      <div class="item new-char" @click="charCreation" v-if="charSlotsLeft !== 0">
         <div class="info">
           <div class="name">New Character</div>
           <div class="data">Start a new character ({{charSlotsLeft}} left)</div>
@@ -40,7 +40,7 @@
   </div>
 </template>
 
-<style lang="sass" scoped>
+<style lang="sass" scope>
   .bg
     position: absolute
     top: 0
@@ -112,10 +112,10 @@
 
 
     &.new-char
-      border-color: rgb( 75,202, 48)
+      border-color: rgb(	235, 99, 46)
 
       .arrow
-        color: rgb( 75,202, 48)
+        color: rgb(	235, 99, 46)
         i
           font-size: 30px
 
@@ -124,10 +124,10 @@
       color: #888
 
     &.item-selected
-      background-color: rgb(20,114,  0)
+      background-color: rgb(	235, 99, 46)
       color: #000
-      border-color: rgb(20,114,  0) - #222
-      box-shadow: 0 0 7px rgb(20,114,  0) + #222
+      border-color: rgb(	235, 99, 46) - #222
+      box-shadow: 0 0 7px rgb(	235, 99, 46) + #222
 
       .arrow
         display: none
@@ -195,6 +195,11 @@
       this.loading = false
     },
     methods: {
+      charCreation () {
+        location.href = '/me/char-creation'
+        this.inspectChar(5)
+      },
+
       inspectOrSelectChar (idx) {
         return (idx === this.selectedChar) ? this.selectChar(idx) : this.inspectChar(idx)
       },

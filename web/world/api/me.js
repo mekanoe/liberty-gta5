@@ -9,4 +9,28 @@ module.exports = R => {
 
     ctx.body = { status: 'ok', characters }
   })
+
+  R.post('/api/me/chars', async (ctx, next) => {
+    try {
+      const Character = ctx.M.Character
+
+      const { name, gender, preset, start } = ctx.request.body
+
+      const char = await Character.build({
+        id: await Character.getNewId(),
+        phoneNumber: await Character.generatePhone(),
+        name,
+        gender,
+        spawnName: start
+      })
+
+      char.setClothesPreset(preset)
+      await char.save()
+
+      ctx.body = { status: 'ok', character: char }
+    } catch (e) {
+      log.error(e)
+      ctx.body = { status: 'err', err: e }
+    }
+  })
 }

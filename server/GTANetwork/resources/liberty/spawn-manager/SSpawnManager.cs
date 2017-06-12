@@ -164,8 +164,7 @@ namespace Liberty.SpawnManager
             API.triggerClientEvent(player, "spawn:camstart", backdrop.Position, backdrop.Rotation);
             API.setEntityData(player, "VPlayerServerCam", true);
         }
-
-        [Command("scs")]
+        
         public void showCharSelect(Client player)
         {
             player.dimension = player.getData("VOwnDimension");
