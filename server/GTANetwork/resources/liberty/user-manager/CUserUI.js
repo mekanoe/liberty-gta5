@@ -55,7 +55,7 @@ API.onResourceStart.connect(() => {
 
       hdg = 360 - hdg
 
-      return { pos: polarToCartesianDistance(x[0], hdg, 2), rot: new Vector3(0, 0, (x[1] + 180) % 360) }
+      return { pos: polarToCartesianDistance(x[0], hdg, 2.5), rot: new Vector3(0, 0, (x[1] + 180) % 360) }
     })
 
     pedPositions.cameras = cameras
@@ -125,7 +125,7 @@ function freeCEF () {
 
 function createCharSelect () {
   API.showCursor(true)
-  API.setChatVisible(true)
+  API.setChatVisible(false)
   cefRect = new UIKit.Rect({ x: safe.offsetX + 200 + 25, y: (safe.screenY * 0.5) + 100, w: 400, h: 600, fromCenter: true, color: '#f00', opacity: 100 })
   const cef = cefRect.cef({ url: '/me/char-select' }).getCef()
   cef.activate()
@@ -134,8 +134,9 @@ function createCharSelect () {
 
 function endCharSelect () {
   API.showCursor(false)
+  API.setChatVisible(true)
   testPedKill()
-  cefRect.getCef().destroy()
+  cefRect.getCef().destroy(true)
   cefRect = null
 }
 

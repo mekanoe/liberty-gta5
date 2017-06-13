@@ -18,6 +18,11 @@ module.exports = R => {
     })(ctx, next)
   })
 
+  R.post('/api/auth/token', (ctx, next) => {
+    ctx.session.token = ctx.request.body.token
+    ctx.body = { status: 'ok' }
+  })
+
   R.get('/api/auth', (ctx, next) => {
     if (ctx.isAuthenticated()) {
       console.log('authed')

@@ -77,10 +77,10 @@ namespace Liberty.userManager
             API.call("SSpawnManager", "showCharSelect", player);
         }
 
-        public void onCharSelect(string userToken, string userId)
+        public void onCharSelect(string userToken, string userId, string charData)
         {
             Client player = userHash[userToken];
-            API.call("SSpawnManager", "spawnPlayer", player);
+            API.call("SSpawnManager", "spawnPlayer", player, charData);
         }
 
         public void charCreationPreset(string userToken, Int64 idx) 

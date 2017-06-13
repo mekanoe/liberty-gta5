@@ -12,17 +12,27 @@ namespace Liberty.SpawnManager
         private readonly Vector3 _defaultSpawnRot = new Vector3(0f, 0f, 30f);
         private ColShape _defaultSpawnCol;
 
-        private readonly List<PositionRotation> backdrops = new List<PositionRotation>{
+        private readonly List<PositionRotation> backdrops = new List<PositionRotation>
+        {
             new PositionRotation(new Vector3(-140.693f, -853.6935f, 299.662f), new Vector3(-10f, 0f, 0f)),
             new PositionRotation(new Vector3(-1744.68f, -1072f, 40f), new Vector3(10f, 0f, -128f)),
             new PositionRotation(new Vector3(-3139.136f, 1546.344f, 30f), new Vector3(-10f, 0f, -105f)),
             new PositionRotation(new Vector3(-2411.382f, 2386.854f, 100f), new Vector3(3f, 0f, -81f)),
         };
 
-        private readonly List<PositionRotation> unsetSpawns = new List<PositionRotation>(){
+        private readonly List<PositionRotation> unsetSpawns = new List<PositionRotation>()
+        {
             new PositionRotation(new Vector3(-1314.202f, -936.27f, 9.73f), 30f),
-            new PositionRotation(new Vector3(-339.85f, 30.1f, 47.647f), 75f),
-            new PositionRotation(new Vector3(191.85f, -974.1f, 30.047f), 30f),
+                new PositionRotation(new Vector3(-339.85f, 30.1f, 47.647f), 75f),
+                new PositionRotation(new Vector3(191.85f, -974.1f, 30.047f), 30f),
+        };
+
+        private readonly Dictionary<string, PositionRotation> spawns = new Dictionary<string, PositionRotation>()
+        {
+            { "paleto", new PositionRotation(new Vector3(-173.289f, 6436.256f, 31.9159f), 70f) },
+            { "vespucci", new PositionRotation(new Vector3(-1314.202f, -936.27f, 9.73f), 30f) },
+            { "vinewood", new PositionRotation(new Vector3(-339.85f, 30.1f, 47.647f), 75f) },
+            { "sandy", new PositionRotation(new Vector3(1578.378f, 3837.642f, 31.56994f), -153f) },
         };
 
         private readonly Vector3 charSelectCamPos = new Vector3(184.54f, -966.73f, 30f);
@@ -85,8 +95,6 @@ namespace Liberty.SpawnManager
 
         private void onResourceStart()
         {
-            API.createMarker(1, _defaultSpawnLoc, new Vector3(), new Vector3(),
-                new Vector3(1f, 1f, 1f), 255, 0, 0, 255);
             // _defaultSpawnCol = API.createCylinderColShape(_defaultSpawnLoc, 3f, 3f);
 
             // _defaultSpawnCol.onEntityEnterColShape += (shape, entity) => {
@@ -109,9 +117,18 @@ namespace Liberty.SpawnManager
         ////////////////////
 
         [Command("spawn")]
-        public void spawnPlayer(Client player)
+        public void spawnPlayer(Client player, string charData)
         {
-            PositionRotation startPos = unsetSpawns[random.Next(unsetSpawns.Count)];
+            PositionRotation startPos;
+            var data = API.fromJson(charData);
+            if (spawns.ContainsKey((string)data.spawnName))
+            {
+                startPos = spawns[(string)data.spawnName];
+            } 
+            else 
+            {
+                startPos = unsetSpawns[random.Next(unsetSpawns.Count)];
+            }
             player.dimension = 1;
             API.setEntityTransparency(player, 255);
             API.setEntityCollisionless(player, false);
@@ -120,12 +137,18 @@ namespace Liberty.SpawnManager
             API.setEntityRotation(player, startPos.Rotation);
             API.setEntityPositionFrozen(player, false);
             API.setEntityData(player, "VPlayerSpawned", true);
-            API.setPlayerSkin(player, PedHash.Skater01AFY);
             API.setPlayerNametagVisible(player, false);
             API.setEntityInvincible(player, false);
             API.setPlayerHealth(player, 100);
             API.triggerClientEvent(player, "spawn:camend", false);
             API.triggerClientEvent(player, "user:charselectEnd", false);
+            API.setEntitySyncedData(player, "ICharacterData", charData);
+
+            API.setPlayerSkin(player, ((string)data.gender == "male") ? PedHash.FreemodeMale01 : PedHash.FreemodeFemale01);
+            foreach (var entry in data.freemodeFeatures)
+            {
+                API.setPlayerClothes(player, (int)entry.slot, (int)entry.drawable, (int)entry.texture);
+            }
         }
 
         [Command("tped")]
@@ -164,7 +187,7 @@ namespace Liberty.SpawnManager
             API.triggerClientEvent(player, "spawn:camstart", backdrop.Position, backdrop.Rotation);
             API.setEntityData(player, "VPlayerServerCam", true);
         }
-        
+
         public void showCharSelect(Client player)
         {
             player.dimension = player.getData("VOwnDimension");

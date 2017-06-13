@@ -182,7 +182,7 @@ export default {
           preset: (+this.preset) + ((this.gender === 'female') ? 5 : 0)
         })
 
-        await api.rpcAfterCharCreation(id)
+        await api.rpcAfterCharSelect(id)
       } catch (e) {
         this.inProgress = false
         console.error(e)

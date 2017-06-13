@@ -10,7 +10,7 @@
     </div>
 
     <div class="item-container" v-else>
-      <div class="item" v-for="(char, k) in characters" @click="inspectOrSelectChar(k)" :class="(selectedChar === k) ? 'item-selected' : ''" >
+      <div class="item" v-for="(char, k) in characters" @click="inspectOrSelectChar(k, char.id)" :class="(selectedChar === k) ? 'item-selected' : ''" >
         <div class="info">
           <div class="name">{{char.name}}</div>
           <div class="data">Paleto Bay - ${{humanizeMoney(char.cash+char.bank)}} - {{ factionToHuman(char.faction) }}</div>
@@ -200,13 +200,13 @@
         this.inspectChar(5)
       },
 
-      inspectOrSelectChar (idx) {
-        return (idx === this.selectedChar) ? this.selectChar(idx) : this.inspectChar(idx)
+      inspectOrSelectChar (idx, id = null) {
+        return (idx === this.selectedChar) ? this.selectChar(id) : this.inspectChar(idx)
       },
 
-      async selectChar (idx) {
+      async selectChar (id) {
         if (this.playDebounceDone) {
-          await api.rpcAfterCharSelect(idx)
+          await api.rpcAfterCharSelect(id)
           this.windowHide = true
           setTimeout(() => {
             location.href = '/internal/closer'

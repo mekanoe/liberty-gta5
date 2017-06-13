@@ -135,9 +135,13 @@ class ExclusiveWindow {
     }
   }
 
-  destroy () {
+  destroy (chat = false) {
     this.disable()
     this.active = false
+
+    if (chat) {
+      API.setChatVisible(true)
+    }
 
     cefWindows = cefWindows.delete(this._cefWindow)
     API.destroyCefBrowser(this._cefWindow)

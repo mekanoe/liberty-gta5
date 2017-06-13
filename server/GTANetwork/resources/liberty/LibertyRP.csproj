@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GTANetworkServer">
-      <HintPath>..\..\GTANetworkServer.exe</HintPath>
+      <HintPath>..\..\~refs\GTANetworkServer.exe</HintPath>
     </Reference>
     <Reference Include="GTANetworkShared">
-      <HintPath>..\..\GTANetworkShared.dll</HintPath>
+      <HintPath>..\..\~refs\GTANetworkShared.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />

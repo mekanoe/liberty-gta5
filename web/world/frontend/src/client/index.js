@@ -1,6 +1,12 @@
 const superagent = require('superagent')
 
 export default {
+  async isLoggedIn () {
+    const url = '/api/auth'
+    let { body: { user } } = await superagent.get(url)
+    return user !== null
+  },
+
   loginPost (data) {
     const url = '/api/auth/login'
 
@@ -13,6 +19,11 @@ export default {
     return superagent.post(url).send(data)
   },
 
+  postToken (token) {
+    const url = '/api/auth/token'
+    return superagent.post(url).send({token})
+  },
+
   charCreationPost (data) {
     const url = '/api/me/chars'
     return superagent.post(url).send(data)
@@ -23,13 +34,8 @@ export default {
     return superagent.post(url)
   },
 
-  rpcAfterCharSelect () {
+  rpcAfterCharSelect (id) {
     const url = '/api/rpc/char-select'
-    return superagent.post(url)
-  },
-
-  rpcAfterCharCreation (id) {
-    const url = '/api/rpc/char-created'
     return superagent.post(url).send({id})
   },
 

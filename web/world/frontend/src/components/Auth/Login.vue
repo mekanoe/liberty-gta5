@@ -13,7 +13,7 @@
         <div :class="`slider-box ${(failed !== null)?'':'lib-hidden'}`">
           <p class="failed" v-html="failed"></p>
         </div>
-        <form action="#" id="login" @submit.stop.prevent="submitLogin()">
+        <form action="#" id="login" @submit.stop.prevent="submitLogin()" :style="(waiting) ? 'opacity: 0.3' : ''">
           <div  class="login-section">
             <label for="username"><i class="material-icons">person</i> <span class="icon-text">Username</span></label>
             <input type="text" id="username" v-model="login.username" :placeholder="placeholderName" />
@@ -58,6 +58,8 @@
   border-radius: 5px
   margin: 0 auto
   width: 720px
+  opacity: 1
+  transition: opacity 0.5s ease-out
 
 .header-text
   display: flex
@@ -133,12 +135,25 @@ label .icon-text
   }
 
   export default {
-    mounted () {
+    async mounted () {
       /* globals componentHandler */
       try {
         componentHandler.upgradeElement(this.$el)
       } catch (e) {
         setTimeout(() => { componentHandler.upgradeElement(this.$el) }, 250)
+      }
+
+      const token = sessionStorage.getItem('userToken')
+      if (token !== null) {
+        await api.postToken(token)
+      }
+
+      setTimeout(() => { this.waiting = false }, 1250)
+
+      if (await api.isLoggedIn()) {
+        await api.rpcAfterLogin()
+      } else {
+        this.waiting = false
       }
     },
     methods: {
@@ -211,6 +226,7 @@ label .icon-text
         captcha,
         loggingIn: false,
         success: false,
+        waiting: true,
         q: sp,
         login: {
           username: '',
