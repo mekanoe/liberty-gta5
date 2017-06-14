@@ -23,11 +23,12 @@ services:
             - "./server/GTANetwork/resources:/srv/resources"
             - "./server/GTANetwork/settings.xml:/srv/settings.xml"
             - "./server/GTANetwork/acl.xml:/srv/acl.xml"
+            - "./server/GTANetwork/GTANetworkServer.exe:/srv/GTANetworkServer.exe"
     
     world:
         image: node:8.0-alpine
         container_name: libertyrp-world
-        command: ash -c "(cd /srv; npm i && npm run pm2 -- --no-daemon start index.js --watch --ignore-watch frontend)"
+        command: ash -c "(cd /srv; npm i && npm run pm2 -- --no-daemon start index.js)"
         ports:
             - "${LIBRP_API:-6769}:6769"
         environment:

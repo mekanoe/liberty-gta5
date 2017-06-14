@@ -4,3 +4,5 @@
 [submodule "server/GTANetwork/resources/require"]
 	path = server/GTANetwork/resources/require
 	url = https://github.com/kayteh/require
+[submodule "server/GTANetwork/resources/camrig"]
+	url = https://github.com/kayteh/camrig.git
