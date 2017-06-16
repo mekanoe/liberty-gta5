@@ -9,6 +9,8 @@ import Blank from '@/components/Blank'
 import CharSelect from '@/components/Me/CharSelect'
 import CharCreation from '@/components/Me/CharCreation'
 
+import Bank from '@/components/Me/Bank'
+
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +35,11 @@ export default new Router({
       path: '/me/char-creation',
       name: 'CharCreation',
       component: CharCreation
+    },
+    {
+      path: '/me/bank',
+      name: 'Bank',
+      component: Bank
     },
     {
       path: '*',

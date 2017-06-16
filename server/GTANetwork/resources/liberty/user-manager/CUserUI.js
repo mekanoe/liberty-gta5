@@ -3,6 +3,7 @@ let UIKit
 let safe
 let cefRect = null
 let CamRig
+let cef
 
 /*
 # Already made characters
@@ -127,7 +128,7 @@ function createCharSelect () {
   API.showCursor(true)
   API.setChatVisible(false)
   cefRect = new UIKit.Rect({ x: safe.offsetX + 200 + 25, y: (safe.screenY * 0.5) + 100, w: 400, h: 600, fromCenter: true, color: '#f00', opacity: 100 })
-  const cef = cefRect.cef({ url: '/me/char-select' }).getCef()
+  cef = cefRect.cef({ url: '/me/char-select' }).getCef()
   cef.activate()
   moveCharSelect(0)
 }
@@ -184,7 +185,7 @@ function setPedComponent (ped, slot, drawable, texture) {
 }
 
 function updateCCPed (idx, init = false) {
-  API.sendChatMessage('cc ped index '+idx)
+  API.sendChatMessage('cc ped index ' + idx)
   let preset = defaultCreationPeds[idx].slice()
   let { skin } = preset.shift()
 

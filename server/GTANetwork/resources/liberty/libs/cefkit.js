@@ -143,11 +143,11 @@ class ExclusiveWindow {
       API.setChatVisible(true)
     }
 
-    cefWindows = cefWindows.delete(this._cefWindow)
     API.destroyCefBrowser(this._cefWindow)
     this._cefWindow = null
 
     this.disabled = true
+    cefWindows = cefWindows.delete(this._cefWindow)
   }
 }
 
