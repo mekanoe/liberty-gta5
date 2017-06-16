@@ -3,6 +3,7 @@ let UIKit
 let safe
 let cefRect = null
 let CamRig
+let cef
 
 /*
 # Already made characters
@@ -184,7 +185,7 @@ function setPedComponent (ped, slot, drawable, texture) {
 }
 
 function updateCCPed (idx, init = false) {
-  API.sendChatMessage('cc ped index '+idx)
+  API.sendChatMessage('cc ped index ' + idx)
   let preset = defaultCreationPeds[idx].slice()
   let { skin } = preset.shift()
 

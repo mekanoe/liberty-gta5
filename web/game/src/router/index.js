@@ -10,6 +10,8 @@ import CharSelect from '@/components/Me/CharSelect'
 import CharCreation from '@/components/Me/CharCreation'
 import PhoneMini from '@/components/Me/PhoneMini'
 
+import Bank from '@/components/Me/Bank'
+
 Vue.use(Router)
 
 export default new Router({
