@@ -11,9 +11,9 @@ export default {
 </script>
 
 <style lang="sass">
-@font-face
-  font-family: 'DIN'
-  src: url('./assets/DIN Condensed Bold.ttf') format('truetype')
+// @font-face
+//   font-family: 'DIN'
+//   src: url('./assets/DIN.ttf')
 
 $dark: rgb(23, 15, 34)
 
@@ -64,7 +64,7 @@ $button-secondary-color-disabled: unquote("rgba(#{200,200,200}, 0.56)") !default
 
 
 .font-din
-  font-family: 'DIN'
+  font-family: din-condensed
 
 .lib-hidden
   max-height: 0
