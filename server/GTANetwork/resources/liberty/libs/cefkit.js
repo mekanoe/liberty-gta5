@@ -1,5 +1,7 @@
 let globalCefWindow = null
 let screenSize
+const purgeInterval = 30000
+let nextPurge = Date.now() + purgeInterval
 let config = {
   baseUrl: undefined
 }
@@ -15,7 +17,7 @@ let setupPromise = new Promise((resolve, reject) => {
   })
 })
 
-let cefWindows = new Set()
+let cefWindows = []
 
 // BUGGY: v8 doesn't like to touch disposed objects
 // API.onResourceStop.connect(() => {
@@ -30,6 +32,48 @@ function awaitSetup () {
   return setupPromise
 }
 
+API.onUpdate.connect(() => {
+  purge()
+})
+
+async function purge () {
+  try {
+    if (nextPurge > Date.now()) {
+      return
+    }
+
+    // API.sendChatMessage(`purging: ${JSON.stringify(cefWindows.map(x => '' + x))}`)
+    if (cefWindows.length === 0) {
+      // API.sendChatMessage('empty purge')
+      nextPurge = Date.now() + purgeInterval
+      return
+    }
+
+    // API.sendChatMessage('good to go')
+    const newCefs = []
+
+    for (let cef of cefWindows) {
+      if (cef === null) {
+        return
+      }
+
+      if (cef.GetMainFrame().Url === '/internal/closer') {
+        // API.sendChatMessage('purging one')
+        API.destroyCefBrowser(cef)
+      } else {
+        // API.sendChatMessage('not purging')
+        // API.sendChatMessage(`at: ${cef.GetMainFrame().Url}`)
+        newCefs.push(cef)
+      }
+    }
+
+    cefWindows = newCefs
+    nextPurge = Date.now() + purgeInterval
+  } catch (e) {
+    API.sendChatMessage(`err! ${e.trace || e.stack}`)
+  }
+}
+
 async function loadGlobal (url, useBase = true) {
   await awaitSetup()
   if (globalCefWindow === null) {
@@ -38,7 +82,7 @@ async function loadGlobal (url, useBase = true) {
     API.waitUntilCefBrowserInit(globalCefWindow)
     API.setCefFramerate(globalCefWindow, 60)
     API.setCefBrowserSize(globalCefWindow, screenSize.Width, screenSize.Height)
-    cefWindows = cefWindows.add(globalCefWindow)
+    cefWindows.push(globalCefWindow)
     // headlessGlobal(true)
 
     // API.setCefBrowserSize(globalCefWindow, 0, 0)
@@ -67,7 +111,7 @@ function destroyGlobal () {
   }
 
   API.destroyCefBrowser(globalCefWindow)
-  cefWindows = cefWindows.delete(globalCefWindow)
+  cefWindows = cefWindows.filter(w => w !== globalCefWindow)
   globalCefWindow = null
 }
 
@@ -109,7 +153,7 @@ class ExclusiveWindow {
 
     this.enable(enableOpts)
     this.active = true
-    cefWindows = cefWindows.add(this._cefWindow)
+    cefWindows.push(this._cefWindow)
   }
 
   enable ({cursor = true}) {
@@ -143,8 +187,9 @@ class ExclusiveWindow {
       API.setChatVisible(true)
     }
 
-    cefWindows = cefWindows.delete(this._cefWindow)
+    // cefWindows.delete(this._cefWindow)
     API.destroyCefBrowser(this._cefWindow)
+    cefWindows = cefWindows.filter(w => w !== this._cefWindow)
     this._cefWindow = null
 
     this.disabled = true
