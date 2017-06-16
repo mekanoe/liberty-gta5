@@ -23,7 +23,8 @@ services:
             - "./server/GTANetwork/resources:/srv/resources"
             - "./server/GTANetwork/settings.xml:/srv/settings.xml"
             - "./server/GTANetwork/acl.xml:/srv/acl.xml"
-            - "./server/GTANetwork/GTANetworkServer.exe:/srv/GTANetworkServer.exe"
+            - "./server/GTANetwork/~refs/GTANetworkServer.exe:/srv/GTANetworkServer.exe"
+            - "./server/GTANetwork/~refs/GTANetworkShared.dll:/srv/GTANetworkShared.dll"
     
     world:
         image: node:8.0-alpine
