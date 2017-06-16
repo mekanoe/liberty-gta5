@@ -202,6 +202,7 @@ class ExclusiveWindow {
     this._cefWindow = null
 
     this.disabled = true
+    cefWindows = cefWindows.delete(this._cefWindow)
   }
 
   static async waitForReady () {

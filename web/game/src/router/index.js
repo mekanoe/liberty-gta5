@@ -11,6 +11,8 @@ import CharCreation from '@/components/Me/CharCreation'
 import PhoneMini from '@/components/Phone/PhoneMini'
 import PhoneFull from '@/components/Phone/PhoneFull'
 
+import Bank from '@/components/Me/Bank'
+
 Vue.use(Router)
 
 export default new Router({
