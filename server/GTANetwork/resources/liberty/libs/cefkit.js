@@ -53,7 +53,7 @@ async function purge () {
     const newCefs = []
 
     for (let cef of cefWindows) {
-      if (cef === null) {
+      if (cef === null || cef.GetMainFrame === undefined) {
         return
       }
 
@@ -71,6 +71,7 @@ async function purge () {
     nextPurge = Date.now() + purgeInterval
   } catch (e) {
     API.sendChatMessage(`err! ${e.trace || e.stack}`)
+    nextPurge = Date.now() + purgeInterval
   }
 }
 

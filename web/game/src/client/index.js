@@ -7,6 +7,11 @@ export default {
     return user !== null
   },
 
+  getCurrentChar () {
+    const url = '/api/me/current-char'
+    return superagent.get(url)
+  },
+
   loginPost (data) {
     const url = '/api/auth/login'
 
