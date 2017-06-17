@@ -7,9 +7,10 @@ module.exports = R => {
   })
 
   R.post('/api/rpc/char-select', async (ctx, next) => {
-    const character = await ctx.M.Character.findOne({ where: { id: ctx.request.body.id, userId: ctx.session.user.id } })
+    const character = await ctx.M.Character.findOne({ where: { id: ctx.request.body.id } })
     if (character === null) {
       ctx.body = { status: 'err' }
+      return
     }
 
     let rsp = await ctx.rpc.callRpc(null, 'SUserManager', 'onCharSelect', ctx.session.token, ctx.state.user.id, JSON.stringify(character))
