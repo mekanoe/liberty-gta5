@@ -1,7 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Collections.Generic;
 using GTANetworkServer;
 using GTANetworkShared;
 
@@ -97,6 +97,14 @@ namespace Liberty.world
             }
         }
 
+        public Dictionary<string, object> RGetWorldData()
+        {
+            return new Dictionary<string, object>() {
+                { "time", gameTime },
+                { "weather", weatherToHuman() },
+            };
+        }
+
         private void timeTick()
         {
             int hours = gameTime / 100 % 24;
@@ -165,7 +173,7 @@ namespace Liberty.world
 
         private void weatherSync()
         {
-            if (currentWeatherCycle == null) 
+            if (currentWeatherCycle == null)
             {
                 return;
             }
@@ -198,19 +206,32 @@ namespace Liberty.world
         {
             switch (currentWeather)
             {
-                case 0: return "sunny";
-                case 1: return "clear skies";
-                case 2: return "partly cloudy";
-                case 3: return "smoggy";
-                case 4: return "foggy";
-                case 5: return "cloudy skies";
-                case 6: return "rain showers";
-                case 7: return "thunderstorms";
-                case 8: return "light showers";
-                case 10: return "light snow";
-                case 11: return "snow";
-                case 12: return "snowstorms";
-                default: return "unknown";
+                case 0:
+                    return "sunny";
+                case 1:
+                    return "clear skies";
+                case 2:
+                    return "partly cloudy";
+                case 3:
+                    return "smoggy";
+                case 4:
+                    return "foggy";
+                case 5:
+                    return "cloudy skies";
+                case 6:
+                    return "rain showers";
+                case 7:
+                    return "thunderstorms";
+                case 8:
+                    return "light showers";
+                case 10:
+                    return "light snow";
+                case 11:
+                    return "snow";
+                case 12:
+                    return "snowstorms";
+                default:
+                    return "unknown";
             }
         }
 

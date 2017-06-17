@@ -158,19 +158,12 @@
 import api from '@/client'
 
 export default {
-  async mounted () {
+  mounted () {
     setInterval(() => {
       this.timeTick()
     }, 10000)
 
-    let { body: { world } } = await api.rpcGetWorldData()
-    this.world = world
-
-    let { body: { character, status } } = await api.getCurrentChar()
-    if (status !== 'ok') {
-      return
-    }
-    this.character = character
+    this.startSyncTimer()
   },
   data () {
     return {
@@ -240,6 +233,21 @@ export default {
     }
   },
   methods: {
+    async startSyncTimer () {
+      let rsp = await api.rpcGetWorldData()
+      console.log(rsp)
+      this.world = rsp.body.return
+
+      rsp = await api.getCurrentChar()
+      if (rsp.body.status !== 'ok') {
+        console.error('oh nooooo', rsp)
+        return
+      }
+      this.character = rsp.body.character
+
+      setTimeout(this.startSyncTimer, 1000 * 60 * 5)
+    },
+
     getTemp () {
       let tempCache = localStorage.getItem('phone:temp')
       if (tempCache !== null) {

@@ -10,8 +10,12 @@ let UIKit
 let anchor
 
 API.onServerEventTrigger.connect((name) => {
-  if (name === 'user:charselectEnd') {
+  if (name === 'user:charselectEnd' || name === 'phone:enable') {
+    // API.sendChatMessage(`phone enabled via ${name}`)
     loggedIn = true
+    createMiniCef()
+
+    
   }
 })
 
@@ -55,7 +59,7 @@ API.onResourceStart.connect(async () => {
     y: screenY - 300
   }
 
-  createMiniCef()
+  // createMiniCef()
   ready = true
 })
 
