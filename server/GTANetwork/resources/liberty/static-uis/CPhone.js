@@ -14,8 +14,6 @@ API.onServerEventTrigger.connect((name) => {
     // API.sendChatMessage(`phone enabled via ${name}`)
     loggedIn = true
     createMiniCef()
-
-    
   }
 })
 
