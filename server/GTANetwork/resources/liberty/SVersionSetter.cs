@@ -19,18 +19,25 @@ namespace Liberty
 
         private void onResourceStart()
         {
-            worldUiUrl = API.getSetting<string>("world_ui_url");
-            string version = File.ReadAllText(API.getResourceFolder() + "/VERSION", Encoding.UTF8);
-            API.setGamemodeName("~g~LibertyRP~w~/" + version);
+            string version = Environment.GetEnvironmentVariable("RELEASE_NAME");
+            if (version == "") 
+            {
+                version = File.ReadAllText(API.getResourceFolder() + "/VERSION", Encoding.UTF8);
+            }
             // API.sendChatMessageToAll("LibertyRP version "+version+" loaded.");
             API.sendChatMessageToAll("~p~~h~[SERVER]~h~ LibertyRP was restarted.~w~");
+
+            API.setServerName(Environment.GetEnvironmentVariable("SERVER_NAME"));
+            API.setServerPassword(Environment.GetEnvironmentVariable("SERVER_PASSWORD"));
+            API.setGamemodeName("LibertyRP~w~/~g~" + version + "~w~");
         }
 
         private void onResourceEnd()
         {
-            API.shared.exported.doormanager.removeAllDoors();
             API.shared.sendChatMessageToAll("~p~~h~[SERVER]~h~ LibertyRP is being restarted. Big hitch incoming.~w~");
+            worldUiUrl = Environment.GetEnvironmentVariable("WORLD_UI_URL");
             client.PostAsync(worldUiUrl + "/api/internals/restart", new StringContent("", Encoding.UTF8));
+            API.shared.exported.doormanager.removeAllDoors();
         }
     }
 }

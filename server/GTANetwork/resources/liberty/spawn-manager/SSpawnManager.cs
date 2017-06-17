@@ -57,7 +57,7 @@ namespace Liberty.SpawnManager
                 showLoginCamera(player);
             }
 
-            API.triggerClientEvent(player, "cef:baseUrl", API.getSetting<string>("world_ui_url"));
+            API.triggerClientEvent(player, "cef:baseUrl", Environment.GetEnvironmentVariable("WORLD_UI_URL"));
         }
 
         private void onPlayerConnected(Client player)

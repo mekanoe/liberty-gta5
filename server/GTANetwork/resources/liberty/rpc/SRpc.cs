@@ -53,8 +53,8 @@ namespace Liberty.rpc
 
             if (request.RawUrl == "/~check")
             {
-                string clusterName = API.getSetting<string>("cluster_name");
-                string ident = API.getSetting<string>("server_identifier");
+                string clusterName = Environment.GetEnvironmentVariable("CLUSTER_NAME");
+                string ident = Environment.GetEnvironmentVariable("SERVER_IDENTIFIER");
                 if (request.Headers.Get("Cluster-Name") == clusterName)
                 {
                     return "{\"status\": \"ok\", \"identifier\": \"" + ident + "\"}";
