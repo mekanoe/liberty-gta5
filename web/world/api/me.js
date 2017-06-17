@@ -2,7 +2,13 @@ const log = new (require('../logger'))('api/me')
 
 module.exports = R => {
   R.get('/api/me/current-char', async (ctx, next) => {
-    ctx.body = { character: ctx.session.character }
+    let character = await ctx.M.Character.findOne({ where: { id: ctx.session.character } })
+    if (character === null) {
+      ctx.body = { status: 'err', character: null }
+      return
+    }
+
+    ctx.body = { status: 'ok', character: character }
   })
 
   R.get('/api/me/chars', async (ctx, next) => {
