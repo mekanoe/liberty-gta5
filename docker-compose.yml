@@ -23,7 +23,8 @@ services:
             - "./server/GTANetwork/resources:/srv/resources"
             - "./server/GTANetwork/settings.xml:/srv/settings.xml"
             - "./server/GTANetwork/acl.xml:/srv/acl.xml"
-        env_file: ./server/GTANetwork/.env
+        env_file: 
+            - ./server/GTANetwork/.env
 
     world:
         image: node:8.0-alpine
