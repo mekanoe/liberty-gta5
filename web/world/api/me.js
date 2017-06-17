@@ -1,6 +1,10 @@
 const log = new (require('../logger'))('api/me')
 
 module.exports = R => {
+  R.get('/api/me/current-char', async (ctx, next) => {
+    ctx.body = { character: ctx.session.character }
+  })
+
   R.get('/api/me/chars', async (ctx, next) => {
     // let characters = await ctx.state.user.getCharacters({ plain: true })
     let characters = await ctx.M.Character.findAll({ userId: ctx.state.user.id }, { plain: true })

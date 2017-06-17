@@ -249,7 +249,8 @@ class Rect {
     return this
   }
 
-  cef (obj) {
+  async cef (obj) {
+    await CEFKit.ExclusiveWindow.waitForReady()
     const realCoords = scaleCoordsToReal({ X: this.x, Y: this.y })
     const realSize = scaleCoordsToReal({ X: this.w, Y: this.h })
     this._cef = new CEFKit.ExclusiveWindow(Object.assign({}, { x: realCoords.X, y: realCoords.Y, w: realSize.X, h: realSize.Y }, obj))

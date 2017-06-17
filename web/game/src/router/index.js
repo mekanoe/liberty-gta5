@@ -8,6 +8,7 @@ import Blank from '@/components/Blank'
 
 import CharSelect from '@/components/Me/CharSelect'
 import CharCreation from '@/components/Me/CharCreation'
+import PhoneMini from '@/components/Me/PhoneMini'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
       path: '/me/char-creation',
       name: 'CharCreation',
       component: CharCreation
+    },
+    {
+      path: '/me/phone/mini',
+      name: 'PhoneMini',
+      component: PhoneMini
     },
     {
       path: '*',

@@ -1,10 +1,6 @@
 <meta>
   <info type="gamemode" async="true" />
   <script src="SVersionSetter.cs" lang="csharp" type="server" />
-	<script src="libs/nativemenu/nativemenu.js" lang="javascript" type="client" />
-	<script src="libs/uikit.js" lang="javascript" type="client" />
-	<script src="libs/cefkit.js" lang="javascript" type="client" />
-	<script src="libs/camrig.js" lang="javascript" type="client" />
 <!-- 	<script src="libs/enums.js" lang="javascript" type="client" /> -->
 
 	<script src="admin-commands/SAdminCommands.cs" lang="csharp" type="server" />
@@ -88,6 +84,7 @@
 	<script src="user-manager/CUserUI.js" lang="javascript" type="client" />
 
 	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />
+	<!--<script src="static-uis/CPhone.js" lang="javascript" type="client" />-->
 	<!-- <script src="static-uis/ScaleformTesting.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CAdminAnnounce.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CContextWheel.js" lang="javascript" type="client" /> -->
@@ -95,6 +92,11 @@
 
 	<script src="world/SWorldController.cs" lang="csharp" type="server" />
 	<script src="world/CWorldSync.js" lang="javascript" type="client" />
+
+	<script src="libs/nativemenu/nativemenu.js" lang="javascript" type="client" />
+	<script src="libs/uikit.js" lang="javascript" type="client" />
+	<script src="libs/cefkit.js" lang="javascript" type="client" />
+	<script src="libs/camrig.js" lang="javascript" type="client" />
 
 	<assembly ref="System.Net.Http.dll" />
 </meta>

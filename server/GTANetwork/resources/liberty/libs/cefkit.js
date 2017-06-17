@@ -134,6 +134,10 @@ class ExclusiveWindow {
     // API.sendChatMessage(`created exclusive window at ${JSON.stringify({ x, y, w, h })}`)
   }
 
+  getBaseUrl () {
+    return config.baseUrl
+  }
+
   activate (enableOpts) {
     if (this.destroyed) {
       throw new TypeError('Cannot activate a destroyed ExclusiveWindow')
@@ -151,12 +155,14 @@ class ExclusiveWindow {
     API.setCefBrowserPosition(this._cefWindow, this.x, this.y)
     API.loadPageCefBrowser(this._cefWindow, this.url)
 
+    this.active = true
     this.enable(enableOpts)
     this.active = true
     cefWindows.push(this._cefWindow)
   }
 
-  enable ({cursor = true}) {
+  enable ({cursor = true} = {}) {
+    API.sendChatMessage('enable')
     if (!this.active) {
       throw new TypeError('Cannot enable an unactivated ExclusiveWindow')
     }
@@ -171,11 +177,13 @@ class ExclusiveWindow {
   }
 
   disable () {
+    API.sendChatMessage('disable')    
     API.setCefBrowserHeadless(this._cefWindow, true)
     this.enabled = false
 
     if (this._cursor) {
       API.showCursor(false)
+      this._cursor = false
     }
   }
 
@@ -193,6 +201,10 @@ class ExclusiveWindow {
     this._cefWindow = null
 
     this.disabled = true
+  }
+
+  static async waitForReady () {
+    await setupPromise
   }
 }
 
