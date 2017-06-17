@@ -28,11 +28,7 @@ namespace Liberty.SpawnManager
         };
 
         private readonly Dictionary<string, PositionRotation> spawns = new Dictionary<string, PositionRotation>()
-        {
-            { "paleto", new PositionRotation(new Vector3(-173.289f, 6436.256f, 31.9159f), 70f) },
-            { "vespucci", new PositionRotation(new Vector3(-1314.202f, -936.27f, 9.73f), 30f) },
-            { "vinewood", new PositionRotation(new Vector3(-339.85f, 30.1f, 47.647f), 75f) },
-            { "sandy", new PositionRotation(new Vector3(1578.378f, 3837.642f, 31.56994f), -153f) },
+        { { "paleto", new PositionRotation(new Vector3(-173.289f, 6436.256f, 31.9159f), 70f) }, { "vespucci", new PositionRotation(new Vector3(-1314.202f, -936.27f, 9.73f), 30f) }, { "vinewood", new PositionRotation(new Vector3(-339.85f, 30.1f, 47.647f), 75f) }, { "sandy", new PositionRotation(new Vector3(1578.378f, 3837.642f, 31.56994f), -153f) },
         };
 
         private readonly Vector3 charSelectCamPos = new Vector3(184.54f, -966.73f, 30f);
@@ -55,6 +51,10 @@ namespace Liberty.SpawnManager
             {
                 API.sendChatMessageToPlayer(player, "~b~Welcome!~w~");
                 showLoginCamera(player);
+            }
+            else
+            {
+                API.triggerClientEvent(player, "phone:enable", false);
             }
 
             API.triggerClientEvent(player, "cef:baseUrl", Environment.GetEnvironmentVariable("WORLD_UI_URL"));
@@ -124,8 +124,8 @@ namespace Liberty.SpawnManager
             if (spawns.ContainsKey((string)data.spawnName))
             {
                 startPos = spawns[(string)data.spawnName];
-            } 
-            else 
+            }
+            else
             {
                 startPos = unsetSpawns[random.Next(unsetSpawns.Count)];
             }

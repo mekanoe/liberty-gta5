@@ -12,6 +12,11 @@ export default {
     return superagent.get(url)
   },
 
+  rpcGetWorldData () {
+    const url = '/api/rpc/world-data'
+    return superagent.get(url)
+  },
+
   loginPost (data) {
     const url = '/api/auth/login'
 

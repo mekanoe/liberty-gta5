@@ -84,7 +84,7 @@
 	<script src="user-manager/CUserUI.js" lang="javascript" type="client" />
 
 	<script src="static-uis/CVehicleHUD.js" lang="javascript" type="client" />
-	<!--<script src="static-uis/CPhone.js" lang="javascript" type="client" />-->
+	<script src="static-uis/CPhone.js" lang="javascript" type="client" />
 	<!-- <script src="static-uis/ScaleformTesting.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CAdminAnnounce.js" lang="javascript" type="client" /> -->
 	<!-- <script src="static-uis/CContextWheel.js" lang="javascript" type="client" /> -->

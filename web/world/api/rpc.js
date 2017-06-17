@@ -27,4 +27,10 @@ module.exports = R => {
     let rsp = await ctx.rpc.callRpc(null, 'SUserManager', 'charCreationPreset', ctx.session.token, ctx.request.body.idx)
     ctx.body = rsp.text
   })
+
+  R.get('/api/rpc/world-data', async (ctx, next) => {
+    let rsp = await ctx.rpc.callRpc(null, 'SWorldController', 'RGetWorldData')
+    ctx.body = rsp.text
+    ctx.type = 'application/json'
+  })
 }
