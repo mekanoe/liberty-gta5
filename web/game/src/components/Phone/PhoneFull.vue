@@ -8,7 +8,7 @@
       </div>
       <div class="lower">
         <div class="home-button">
-          <div class="home-button-inner"></div>
+          <a href="/me/phone/full" class="home-button-inner"></a>
         </div>
       </div>
       <div class="content">
@@ -293,6 +293,9 @@ export default {
       let hoursText = hours
       if (hours >= 13) {
         hoursText = hours - 12
+      }
+      if (hours === 0) {
+        hoursText = '12'
       }
       return `${hoursText}:${('00' + mins).slice(-2)}${ampm}`
     },
