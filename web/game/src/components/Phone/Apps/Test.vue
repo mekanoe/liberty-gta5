@@ -1,0 +1,15 @@
+<template>
+  <div class="app">
+
+  </div>
+</template>
+
+<style lang="sass" scoped>
+  .app
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #08f
+</style>
