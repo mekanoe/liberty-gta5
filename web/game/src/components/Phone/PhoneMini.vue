@@ -289,6 +289,9 @@ export default {
       if (hours >= 13) {
         hoursText = hours - 12
       }
+      if (hours === 0) {
+        hoursText = '12'
+      }
       return `${hoursText}:${('00' + mins).slice(-2)}${ampm}`
     },
     cap (str) {

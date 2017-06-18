@@ -7,11 +7,6 @@ import apps from '@/components/Phone/Apps'
 
 export default {
   components: apps,
-  props: [ 'appId' ],
-  data () {
-    return {
-
-    }
-  }
+  props: [ 'appId' ]
 }
 </script>
