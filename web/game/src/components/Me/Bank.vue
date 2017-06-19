@@ -8,10 +8,10 @@
     <div class="settings">
 
       <p class="section no-pad"> Cash on Hand </p>
-      <p class="section neg-pad"> ${{characters[0].cash}}</p>
+      <p class="section neg-pad"> $ </p>
 
       <p class="section half-pad"> Account Balance </p>
-      <p class="section neg-pad"> ${{characters[0].bank}} </p>
+      <p class="section neg-pad"> $ </p>
 
       <p class="section half-pad">Transfer Amount</p>
 
@@ -110,7 +110,7 @@ export default {
     return {
       transaction: 'withdraw',
       inProgress: false,
-      characters: [],
+      characters: {},
       playDebounceDone: true,
       amount: this.amount
     }
@@ -123,24 +123,26 @@ export default {
       setTimeout(() => { componentHandler.upgradeDom() }, 250)
     }
 
-    const { body: { status, characters } } = await api.getCharacters()
-
-    if (status !== 'ok') {
-      // handle the error somehow
+    let rsp = await api.getCurrentChar()
+    if (rsp.body.status !== 'ok') {
+      console.error('oh nooooo', rsp)
+      return
     }
-    this.characters = characters
+    this.character = rsp.body.character
   },
   methods: {
     async transferMoney () {
       this.inProgress = true
       if (this.transaction === 'withdraw') {
-        if (this.characters[0].bank >= this.amount) {
-          this.characters[0].bank = this.characters[0].bank - this.amount
-          this.characters[0].cash = this.characters[0].cash + this.amount
+        if (this.character.bank >= (+this.amount)) {
+          this.character.bank = this.character.bank - (+this.amount)
+          this.character.cash = this.character.cash + (+this.amount)
         }
       } else if (this.transaction === 'deposit') {
-        this.characters[0].cash = this.characters[0].cash - this.amount
-        this.characters[0].bank = this.characters[0].bank + this.amount
+        if (this.character.cash >= (+this.amount)) {
+          this.character.cash = this.character.cash - (+this.amount)
+          this.character.bank = this.character.bank + (+this.amount)
+        }
       }
     },
     humanizeMoney (val) {

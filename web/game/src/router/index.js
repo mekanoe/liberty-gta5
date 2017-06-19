@@ -53,6 +53,10 @@ export default new Router({
       component: PhoneFull
     },
     {
+      path: '/me/bank',
+      component: Bank
+    },
+    {
       path: '*',
       component: Blank
     }
