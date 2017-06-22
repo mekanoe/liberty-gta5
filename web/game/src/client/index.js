@@ -62,5 +62,10 @@ export default {
   getCharacters () {
     const url = '/api/me/chars'
     return superagent.get(url)
+  },
+
+  postBank (data) {
+    const url = '/api/me/bank'
+    return superagent.post(url).send(data)
   }
 }

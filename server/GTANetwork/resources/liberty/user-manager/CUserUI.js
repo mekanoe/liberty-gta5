@@ -70,6 +70,7 @@ API.onResourceStop.connect(() => {
 })
 
 API.onServerEventTrigger.connect((name, args) => {
+  API.sendChatMessage(name)
   switch (name) {
     case 'user:loginStart':
       createLogin()
@@ -128,7 +129,7 @@ async function createCharSelect () {
   API.showCursor(true)
   API.setChatVisible(false)
   cefRect = new UIKit.Rect({ x: safe.offsetX + 200 + 25, y: (safe.screenY * 0.5) + 100, w: 400, h: 600, fromCenter: true, color: '#f00', opacity: 100 })
-  cef = cefRect.cef({ url: '/me/char-select' }).getCef()
+  cef = (await cefRect.cef({ url: '/me/char-select' })).getCef()
   cef.activate()
   moveCharSelect(0)
 }
