@@ -58,7 +58,8 @@ async function purge () {
       }
 
       if (cef.GetMainFrame().Url === '/internal/closer') {
-        // API.sendChatMessage('purging one')
+        API.sendChatMessage('purging one')
+        // API.showCursor(false)
         API.destroyCefBrowser(cef)
       } else {
         // API.sendChatMessage('not purging')

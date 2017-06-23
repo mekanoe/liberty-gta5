@@ -93,5 +93,10 @@ namespace Liberty.npcBusinesses {
             API.createMarker(28, bankBoxEnd, new Vector3(), new Vector3(),
                 new Vector3(1f, 1f, 1f), 255, 0, 255, 0);
         }
+
+        public void updateChatCursor(string userToken) {
+            Client player = (Client) API.call("SUserManager", "GetByToken", userToken);
+            API.triggerClientEvent(player, "updateChatCursor", "bank", bankName);
+        }
     }
 }
