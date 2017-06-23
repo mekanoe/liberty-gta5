@@ -22,7 +22,7 @@ API.onUpdate.connect(() => {
     }
   }
 
-  if (menuOpen && API.isControlPressed(177)) {
+  if (menuOpen && API.isControlPressed(25)) { // Temporary
     menuClose()
   }
 })
@@ -37,6 +37,10 @@ API.onServerEventTrigger.connect((name, args) => {
       case 'npcbiz:triggerExit':
         triggerActive = false
         allowTrigger = true
+        break
+      case 'updateChatCursor':
+        API.showCursor(false)
+        API.setChatVisible(true)
         break
     }
   }

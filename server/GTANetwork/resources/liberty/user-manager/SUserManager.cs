@@ -17,6 +17,11 @@ namespace Liberty.userManager
             API.onPlayerFinishedDownload += onPlayerDownload;
         }
 
+        public Client GetByToken(string userToken)
+        {
+            return userHash[userToken];
+        }
+
         public void assignCRC32(Client player)
         {
             byte[] playerinfo = Encoding.UTF8.GetBytes(player.address + player.name);
@@ -88,6 +93,5 @@ namespace Liberty.userManager
             Client player = userHash[userToken];
             player.triggerEvent("charCreationPreset", (int)idx);
         }
-
     }
 }
