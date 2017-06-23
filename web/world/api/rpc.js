@@ -33,4 +33,9 @@ module.exports = R => {
     ctx.body = rsp.text
     ctx.type = 'application/json'
   })
+
+  R.post('/api/rpc/update-chat-cursor', async (ctx, next) => {
+    let rsp = await ctx.rpc.callRpc(null, 'Bank', 'updateChatCursor', ctx.session.token)
+    ctx.body = rsp.text
+  })
 }

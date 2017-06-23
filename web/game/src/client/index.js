@@ -59,6 +59,11 @@ export default {
     return superagent.post(url).send({idx})
   },
 
+  rpcUpdateChatCursor () {
+    const url = '/api/rpc/update-chat-cursor'
+    return superagent.post(url)
+  },
+
   getCharacters () {
     const url = '/api/me/chars'
     return superagent.get(url)
