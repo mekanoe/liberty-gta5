@@ -16,7 +16,7 @@
       <p class="section half-pad">Transfer Amount</p>
 
       <div class="mdl-textfield mdl-js-textfield">
-        <input type="text" @click="label = ''" class="mdl-textfield__input" v-model="amount">
+        <input type="text" @click="label = ' '" class="mdl-textfield__input" v-model="amount">
         <label class="mdl-textfield__label">{{label}}</label>
       </div>
 
@@ -37,7 +37,7 @@
         <button v-if="inProgress === 'done'" disabled class="mdl-button mdl-js-button mdl-button--raised">
           {{feedback}}
         </button>
-        <button @click="cleanCEF" class="mdl-button mdl-js-button mdl-button--colored">
+        <button @click="cancelTransaction" class="mdl-button mdl-js-button mdl-button--colored">
           Cancel Transaction
         </button>
       </div>
@@ -96,9 +96,6 @@
     .mdl-textfield__label
       color: #efefef - #555
       text-align: center
-    
-  
-    
 </style>
 
 
@@ -132,58 +129,59 @@ export default {
     }
     this.character = rsp.body.character
   },
-  methods: { // Sometimes the CEF doesnt get destroyed only hidden (?)
-    cleanCEF () { // This closes the window but mouse and chat need to change tried couple things didn't work
+  methods: {
+    cleanCEF () {
       setTimeout(() => {
         location.href = '/internal/closer'
       }, 900)
     },
     async transferMoney () {
-      var rsp2 = null
       if (this.transaction === 'withdraw' && (+this.amount) > 0) {
         if (this.character.bank >= (+this.amount)) {
-          this.feedback = 'IAIAIA'
           this.character.bank = this.character.bank - (+this.amount)
           this.character.cash = this.character.cash + (+this.amount)
-          rsp2 = await api.postBank({
+          await api.postBank({
             bank: this.character.bank,
             cash: this.character.cash
           })
-          this.cleanCEF()
+          this.feedback = 'Transfer Successful'
         } else {
-          console.error('not enough funds')
-          this.inProgress = 'done'
-          this.feedback = 'Insuficient Funds' // Is this cool or should we do a notification? Chat message? Both? Both + this feedback thing?
-          this.cleanCEF()
-          return
+          this.feedback = 'Insuficient Funds'
         }
       } else if (this.transaction === 'deposit' && (+this.amount) > 0) {
         if (this.character.cash >= (+this.amount)) {
-          this.feedback = 'Transfering Money'
           this.character.cash = this.character.cash - (+this.amount)
           this.character.bank = this.character.bank + (+this.amount)
-          rsp2 = await api.postBank({
+          await api.postBank({
             bank: this.character.bank,
             cash: this.character.cash
           })
-          this.cleanCEF()
+          this.feedback = 'Transfer Successful'
         } else {
-          console.error('not enough funds')
-          this.inProgress = 'done'
           this.feedback = 'Insuficient Funds'
-          this.cleanCEF()
-          return
         }
       } else {
-        console.error('negative amount') // If I take out the return all the function still runs
-        this.inProgress = 'done'
         this.feedback = 'Invalid input'
-        this.cleanCEF()
-        return
       }
-      console.log(rsp2)
       this.inProgress = 'done'
-      this.feedback = 'Transfer Successful' // Find a way to throw an error and change feedback
+      if (this.feedback === 'Transfer Successful') {
+        this.cleanCEF()
+        await api.rpcUpdateChatCursor()
+      } else {
+        setTimeout(() => {
+          this.resetCEF()
+        }, 900)
+      }
+    },
+    async cancelTransaction () {
+      this.cleanCEF()
+      await api.rpcUpdateChatCursor()
+    },
+    resetCEF () {
+      this.inProgress = 'waiting'
+      this.feedback = 'Transfer'
+      this.amount = ''
+      this.label = '500'
     },
     humanizeMoney (val) {
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
