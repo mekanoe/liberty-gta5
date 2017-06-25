@@ -43,4 +43,16 @@ module.exports = R => {
       ctx.body = { status: 'err', err: e }
     }
   })
+
+  R.post('/api/me/bank', async (ctx, next) => {
+    let character = await ctx.M.Character.findOne({ where: { id: ctx.session.character } })
+    if (character === null) {
+      ctx.body = { status: 'err', character: null }
+      return
+    }
+    character.bank = ctx.request.body.bank
+    character.cash = ctx.request.body.cash
+    await character.save()
+    ctx.body = { status: 'ok', character: character}
+  })
 }
